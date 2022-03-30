@@ -140,3 +140,12 @@ This is a feasibility exploration of moving from GeoNetwork monolithic applicati
 * better Search Engine Optimization by implementing an OGC API records service with a landing page builder mechanism
 * be in capacity to have background tasks like harvester and indexing that do not alter performances of the main web application.
 
+## GIM
+
+### Getting started
+
+First, start a GeoNetwork env by running
+
+```shell
+docker-compose -f dev-docker-compose.yml up -d
+```
