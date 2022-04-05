@@ -7,7 +7,7 @@ gn:
   baseurl: http://geonetwork:8080
   legacy.url: http://geonetwork:8080/geonetwork
   index:
-    url: http://elasticsearch:9200
+    url: http://localhost:9200
     records: gn-records
     username:
     password:

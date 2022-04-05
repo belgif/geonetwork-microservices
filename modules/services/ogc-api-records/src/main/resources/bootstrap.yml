@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 #  address: localhost
 #  forward-headers-strategy: NATIVE
 #  servlet:
@@ -47,9 +47,9 @@ spring:
   rabbitmq.host: localhost
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/gn
-    username: www-data
-    password: www-data
+    url: jdbc:postgresql://localhost:5432/geonetwork
+    username: geonetwork
+    password: geonetwork
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     jpa.generate-ddl: false

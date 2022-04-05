@@ -149,3 +149,22 @@ First, start a GeoNetwork env by running
 ```shell
 docker-compose -f dev-docker-compose.yml up -d
 ```
+
+Once all the containers are started:
+
+- GeoNetwork: 
+  - URL: http://localhost:8080/geonetwork
+  - username: admin
+  - password: admin
+- Postgres database: 
+  - host: localhost
+  - port: 5432
+  - database: geonetwork
+  - username: geonetwork
+  - password: geonetwork
+- Elastic search:
+  - URL: http://localhost:9200
+
+Next, import some metadata in GeoNetwork. E.g. by harvesting http://publish.geo.be/geonetwork/
+
+Then, start the ogc-api-record microservice with the spring profile "standalone"
