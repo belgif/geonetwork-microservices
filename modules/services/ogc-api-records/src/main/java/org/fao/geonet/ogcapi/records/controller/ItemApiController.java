@@ -7,6 +7,9 @@ package org.fao.geonet.ogcapi.records.controller;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
@@ -14,10 +17,8 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+
+import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,9 +28,14 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamWriter;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang.StringUtils;
@@ -41,6 +47,7 @@ import org.fao.geonet.common.search.SearchConfiguration;
 import org.fao.geonet.common.search.SearchConfiguration.Format;
 import org.fao.geonet.common.search.SearchConfiguration.Operations;
 import org.fao.geonet.common.search.domain.es.EsSearchResults;
+import org.fao.geonet.common.xml.XsltUtil;
 import org.fao.geonet.domain.Metadata;
 import org.fao.geonet.domain.Source;
 import org.fao.geonet.index.JsonUtils;
@@ -63,6 +70,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -270,32 +278,52 @@ public class ItemApiController {
 
     try {
       String formatParameter = request.getParameter("f");
-      boolean isTurtle =
-          (formatParameter != null && "dcat_turtle".equals(formatParameter))
-              || GnMediaType.TEXT_TURTLE_VALUE.equals(acceptHeader);
-      boolean isDcat =
-          (formatParameter != null && "dcat".equals(formatParameter))
-              || GnMediaType.TEXT_TURTLE_VALUE.equals(acceptHeader);
-      boolean isRdfXml =
-          (formatParameter != null && "rdfxml".equals(formatParameter))
-              || GnMediaType.APPLICATION_RDF_XML_VALUE.equals(acceptHeader);
+      boolean isTurtle = "dcat_turtle".equals(formatParameter) ||
+          GnMediaType.TEXT_TURTLE_VALUE.equals(acceptHeader);
+      boolean isDcat = "dcat".equals(formatParameter) ||
+          GnMediaType.TEXT_TURTLE_VALUE.equals(acceptHeader);
+      boolean isRdfXml = "rdfxml".equals(formatParameter) ||
+          GnMediaType.APPLICATION_RDF_XML_VALUE.equals(acceptHeader);
       boolean isLinkedData = (isTurtle || isRdfXml || isDcat);
 
       JsonNode record = getRecordAsJson(collectionId, recordId, request, source,
           isLinkedData ? "json" : "schema.org");
 
       if (isLinkedData) {
-        JAXBContext context = null;
-        context = JAXBContext.newInstance(
-            CatalogRecord.class, Dataset.class, DataService.class);
-        Marshaller marshaller = context.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        IndexRecord indexRecord = new ObjectMapper()
+            .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
+            .readValue(record.get(IndexRecordFieldNames.source).toString(), IndexRecord.class);
 
-        CatalogRecord catalogRecord = dcatConverter.convert(record);
-        StringWriter sw = new StringWriter();
-        marshaller.marshal(catalogRecord, sw);
-        String dcatXml = sw.toString();
+        String xsltFileName = String.format("xslt/ogcapir/formats/dcat/dcat-%s.xsl", indexRecord.getDocumentStandard());
+        File xsltFile = new ClassPathResource(xsltFileName).getFile();
+
+        String dcatXml;
+        if (xsltFile.exists()) {
+          Node metadataXml = getRecordAsXml(collectionId, recordId, request, source);
+          XMLOutputFactory factory = XMLOutputFactory.newInstance();
+          StringWriter stringOut = new StringWriter();
+          XMLStreamWriter writer = factory.createXMLStreamWriter(stringOut);
+
+          // TODO: Doesn't works, maybe add a new method in XsltUtil that returns the results as a String directly
+          XsltUtil.transformAndStreamInDocument(
+              XmlUtil.getNodeString(metadataXml),
+              new FileInputStream(xsltFile),
+              writer
+          );
+          dcatXml = writer.toString();
+        } else {
+          JAXBContext context = null;
+          context = JAXBContext.newInstance(
+              CatalogRecord.class, Dataset.class, DataService.class);
+          Marshaller marshaller = context.createMarshaller();
+          marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+          marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
+          CatalogRecord catalogRecord = dcatConverter.convert(indexRecord);
+          StringWriter sw = new StringWriter();
+          marshaller.marshal(catalogRecord, sw);
+          dcatXml = sw.toString();
+        }
 
         if (isTurtle) {
           org.eclipse.rdf4j.model.Model model = Rio.parse(
@@ -342,23 +370,7 @@ public class ItemApiController {
     }
 
     try {
-      String collectionFilter = collectionService.retrieveCollectionFilter(source);
-      String query = recordsEsQueryBuilder.buildQuerySingleRecord(recordId, collectionFilter, null);
-
-      String queryResponse = proxy.searchAndGetResult(request.getSession(), request, query, null);
-
-      Document queryResult = XmlUtil.parseXmlString(queryResponse);
-      String total = queryResult.getChildNodes().item(0).getAttributes().getNamedItem("total")
-          .getNodeValue();
-
-      if (Integer.parseInt(total) == 0) {
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-            messages.getMessage("ogcapir.exception.collectionItem.notFound",
-                new String[]{recordId, collectionId},
-                request.getLocale()));
-      }
-
-      Node metadataResult = queryResult.getChildNodes().item(0).getFirstChild();
+      Node metadataResult = getRecordAsXml(collectionId, recordId, request, source);
 
       streamResult(response, XmlUtil.getNodeString(metadataResult),
           MediaType.APPLICATION_XML_VALUE);
@@ -460,6 +472,34 @@ public class ItemApiController {
     return "json".equals(type)
         ? actualObj.get("hits").get("hits").get(0)
         : actualObj.get("dataFeedElement").get(0);
+  }
+
+  private Node getRecordAsXml(String collectionId, String recordId, HttpServletRequest request, Source source) throws Exception {
+    String collectionFilter = collectionService.retrieveCollectionFilter(source);
+    String query = recordsEsQueryBuilder.buildQuerySingleRecord(recordId, collectionFilter, null);
+    HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper(request) {
+      @Override
+      public String getHeader(String name) {
+        if (name.equals("Accept")) {
+          return MediaType.APPLICATION_XML_VALUE;
+        }
+        return super.getHeader(name);
+      }
+    };
+    String queryResponse = proxy.searchAndGetResult(request.getSession(), wrapper, query, null);
+
+    Document queryResult = XmlUtil.parseXmlString(queryResponse);
+    String total = queryResult.getChildNodes().item(0).getAttributes().getNamedItem("total")
+        .getNodeValue();
+
+    if (Integer.parseInt(total) == 0) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+          messages.getMessage("ogcapir.exception.collectionItem.notFound",
+              new String[]{recordId, collectionId},
+              request.getLocale()));
+    }
+
+    return queryResult.getChildNodes().item(0).getFirstChild();
   }
 
 

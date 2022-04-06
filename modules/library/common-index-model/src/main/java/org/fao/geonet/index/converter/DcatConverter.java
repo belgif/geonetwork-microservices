@@ -98,219 +98,208 @@ public class DcatConverter {
   /**
    * Convert an index document into a DCAT object.
    */
-  public CatalogRecord convert(JsonNode doc) {
+  public CatalogRecord convert(IndexRecord record) {
     CatalogRecord catalogRecord = null;
     Dataset dcatDataset = null;
-    try {
-      IndexRecord record = new ObjectMapper()
-          .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
-          .readValue(doc.get(IndexRecordFieldNames.source).toString(), IndexRecord.class);
+    String recordIdentifier = record.getMetadataIdentifier();
+    String recordUri = formatterConfiguration.buildLandingPageLink(
+            record.getMetadataIdentifier());
+    Optional<ResourceIdentifier> resourceIdentifier =
+        record.getResourceIdentifier().stream().filter(Objects::nonNull).findFirst();
 
-      String recordIdentifier = record.getMetadataIdentifier();
-      String recordUri = formatterConfiguration.buildLandingPageLink(
-              record.getMetadataIdentifier());
-      Optional<ResourceIdentifier> resourceIdentifier =
-          record.getResourceIdentifier().stream().filter(Objects::nonNull).findFirst();
+    // TODO: Define strategy to build IRI
+    final String resourceIdentifierUri = resourceIdentifier.isPresent()
+        ? "local:" + resourceIdentifier.get().getCode()
+        : null;
 
-      // TODO: Define strategy to build IRI
-      final String resourceIdentifierUri = resourceIdentifier.isPresent()
-          ? "local:" + resourceIdentifier.get().getCode()
-          : null;
+    String language = record.getMainLanguage() == null
+        ? defaultLanguage : record.getMainLanguage();
+    String languageUpperCase = language.toUpperCase();
+    // TODO: Need language mapper
+    String iso2letterLanguage = language.substring(0, 2);
 
-      String language = record.getMainLanguage() == null
-          ? defaultLanguage : record.getMainLanguage();
-      String languageUpperCase = language.toUpperCase();
-      // TODO: Need language mapper
-      String iso2letterLanguage = language.substring(0, 2);
+    List<String> resourceLanguage = record.getResourceLanguage();
 
-      List<String> resourceLanguage = record.getResourceLanguage();
+    List<String> resourceType = record.getResourceType();
+    boolean isInspireResource = resourceType.contains("dataset")
+        || resourceType.contains("series")
+        || resourceType.contains("service");
 
-      List<String> resourceType = record.getResourceType();
-      boolean isInspireResource = resourceType.contains("dataset")
-          || resourceType.contains("series")
-          || resourceType.contains("service");
-
-      // TODO: Add multilingual support
-      // TODO .resource("https://creativecommons.org/publicdomain/zero/1.0/deed")
+    // TODO: Add multilingual support
+    // TODO .resource("https://creativecommons.org/publicdomain/zero/1.0/deed")
 
 
-      DatasetBuilder datasetBuilder = Dataset.builder()
-          .identifier(record.getResourceIdentifier().stream()
-              .map(c -> c.getCode()).collect(
-              Collectors.toList()))
-          .title(listOfNullable(record.getResourceTitle().get(defaultText)))
-          .description(listOfNullable(record.getResourceAbstract().get(defaultText)))
-          .landingPage(listOfNullable(DcatDocument.builder()
-              .foafDocument(FoafDocument.builder()
-                  .about(formatterConfiguration.buildLandingPageLink(
-                          record.getMetadataIdentifier()))
-                  .title(record.getResourceTitle().get(defaultText))
-                  .build()).build()))
-          .provenance(
-              record.getResourceLineage().stream().map(l ->
-                  Provenance.builder().provenanceStatement(
-                      ProvenanceStatement.builder().label(l.get(defaultText)).build()
-                  ).build()
-              ).collect(Collectors.toList())
-          )
-          .type(record.getResourceType().stream().map(t ->
-              new RdfResource(null, "dcat:" + RESSOURCE_TYPE_MAPPING.get(t), null))
-              .collect(Collectors.toList()))
-          // INSPIRE <dct:type rdf:resource="{$ResourceTypeCodelistUri}/{$ResourceType}"/>
-          .modified(toDate(record.getChangeDate()))
-          .theme(record.getCodelists().get(topic).stream().map(t -> Subject.builder()
-              .skosConcept(SkosConcept.builder()
-                  // TODO: rdf:resource="{$TopicCategoryCodelistUri}/{$TopicCategory}"
-                  .prefLabel(t.getProperties().get(defaultText))
-                  .build()).build()).collect(Collectors.toList()))
-          .theme(record.getTag().stream().map(t -> Subject.builder()
-              // TODO: <skos:ConceptScheme rdf:about="{$OriginatingControlledVocabularyURI}">
-              // TODO: skos:inScheme
-              // See https://github.com/SEMICeu/iso-19139-to-dcat-ap/blob/master/iso-19139-to-dcat-ap.xsl#L2803-L2864
-              .skosConcept(SkosConcept.builder()
-                  .prefLabel(t.get(defaultText))
-                  .build()).build()).collect(Collectors.toList()));
-
-      record.getResourceDate().stream()
-          .filter(d -> "creation".equals(d.getType()))
-          .forEach(d -> datasetBuilder.created(toDate(d.getDate())));
-
-      record.getResourceDate().stream()
-          .filter(d -> "publication".equals(d.getType()))
-          .forEach(d -> datasetBuilder.issued(toDate(d.getDate())));
-
-      record.getResourceDate().stream()
-          .filter(d -> "revision".equals(d.getType()))
-          .forEach(d -> datasetBuilder.modified(toDate(d.getDate())));
-
-      // TODO: Convert to meter ?
-      datasetBuilder.spatialResolutionInMeters(
-          record.getResolutionScaleDenominator().stream()
-              .map(BigDecimal::new).collect(Collectors.toList()));
-
-      // INSPIRE
-      if (record.getSpecificationConformance().size() > 0) {
-        datasetBuilder.wasUsedBy(
-            record.getSpecificationConformance().stream().map(c ->
-                DcatActivity.builder().activity(
-                    // TODO: Check RDF encoding
-                    // https://github.com/SEMICeu/iso-19139-to-dcat-ap/blob/master/iso-19139-to-dcat-ap.xsl#L837-L840
-                    ProvActivity.builder()
-                        .used(
-                            new RdfResource(null, resourceIdentifierUri, null)
-                        )
-                        .qualifiedAssociation(
-                            ProvQualifiedAssociation.builder()
-                                .hadPlan(ProvHadPlan.builder()
-                                    .wasDerivedFrom(
-                                        new RdfResource("Resource", null, null, c.getTitle(), null))
-                                    .build())
-                                .build()
-                        )
-                        .generated(
-                            ProvGenerated.builder()
-                                .type(new RdfResource(
-                                    "http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/"
-                                        + INSPIRE_DEGREE_OF_CONFORMITY.get(c.getPass()),
-                                    null))
-                            //RDFParseException: unexpected literal
-                            //.description(c.getExplanation())
-                            .build()
-                        )
-                        .build()).build()
+    DatasetBuilder datasetBuilder = Dataset.builder()
+        .identifier(record.getResourceIdentifier().stream()
+            .map(c -> c.getCode()).collect(
+            Collectors.toList()))
+        .title(listOfNullable(record.getResourceTitle().get(defaultText)))
+        .description(listOfNullable(record.getResourceAbstract().get(defaultText)))
+        .landingPage(listOfNullable(DcatDocument.builder()
+            .foafDocument(FoafDocument.builder()
+                .about(formatterConfiguration.buildLandingPageLink(
+                        record.getMetadataIdentifier()))
+                .title(record.getResourceTitle().get(defaultText))
+                .build()).build()))
+        .provenance(
+            record.getResourceLineage().stream().map(l ->
+                Provenance.builder().provenanceStatement(
+                    ProvenanceStatement.builder().label(l.get(defaultText)).build()
+                ).build()
             ).collect(Collectors.toList())
-        );
-      }
+        )
+        .type(record.getResourceType().stream().map(t ->
+            new RdfResource(null, "dcat:" + RESSOURCE_TYPE_MAPPING.get(t), null))
+            .collect(Collectors.toList()))
+        // INSPIRE <dct:type rdf:resource="{$ResourceTypeCodelistUri}/{$ResourceType}"/>
+        .modified(toDate(record.getChangeDate()))
+        .theme(record.getCodelists().get(topic).stream().map(t -> Subject.builder()
+            .skosConcept(SkosConcept.builder()
+                // TODO: rdf:resource="{$TopicCategoryCodelistUri}/{$TopicCategory}"
+                .prefLabel(t.getProperties().get(defaultText))
+                .build()).build()).collect(Collectors.toList()))
+        .theme(record.getTag().stream().map(t -> Subject.builder()
+            // TODO: <skos:ConceptScheme rdf:about="{$OriginatingControlledVocabularyURI}">
+            // TODO: skos:inScheme
+            // See https://github.com/SEMICeu/iso-19139-to-dcat-ap/blob/master/iso-19139-to-dcat-ap.xsl#L2803-L2864
+            .skosConcept(SkosConcept.builder()
+                .prefLabel(t.get(defaultText))
+                .build()).build()).collect(Collectors.toList()));
 
-      //datasetBuilder.conformsTo(new RdfResource(null, "http://data.europa.eu/r5r/", null));
-      // http://data.europa.eu/930/
-      // dct:source used to link to metadata standard ?
-      // (https://github.com/SEMICeu/iso-19139-to-dcat-ap/blob/master/iso-19139-to-dcat-ap.xsl#L955-L991)
-      // datasetBuilder.source()
+    record.getResourceDate().stream()
+        .filter(d -> "creation".equals(d.getType()))
+        .forEach(d -> datasetBuilder.created(toDate(d.getDate())));
 
-      if (record.getResourceLanguage() != null) {
-        // TODO: Where to put resource language ?
-        datasetBuilder.language(record.getResourceLanguage().stream().map(l ->
-            new RdfResource(null,
-                "http://publications.europa.eu/resource/authority/language/"
-                    + l.toUpperCase(), null)).collect(Collectors.toList()));
-      }
+    record.getResourceDate().stream()
+        .filter(d -> "publication".equals(d.getType()))
+        .forEach(d -> datasetBuilder.issued(toDate(d.getDate())));
 
-      ArrayList<Codelist> updateFrequencyList = record.getCodelists()
-          .get(Codelists.maintenanceAndUpdateFrequency);
-      if (updateFrequencyList != null && updateFrequencyList.size() > 0) {
-        datasetBuilder.accrualPeriodicity(
-            new RdfResource(
-                null,
-                ACCRUAL_PERIODICITY_URI_PREFIX
-                    + ACCRUAL_PERIODICITY_TO_ISO
-                    .get(updateFrequencyList.get(0)
-                        .getProperties().get(CommonField.key)), null));
-      }
+    record.getResourceDate().stream()
+        .filter(d -> "revision".equals(d.getType()))
+        .forEach(d -> datasetBuilder.modified(toDate(d.getDate())));
 
-      // <dct:spatial rdf:parseType="Resource">
-      datasetBuilder.spatial(record.getGeometries().stream().map(g -> DctSpatial.builder()
-          .location(DctLocation.builder().geometry(g).build()).build()).collect(
-          Collectors.toList()));
+    // TODO: Convert to meter ?
+    datasetBuilder.spatialResolutionInMeters(
+        record.getResolutionScaleDenominator().stream()
+            .map(BigDecimal::new).collect(Collectors.toList()));
 
-      datasetBuilder.temporal(
-          record.getResourceTemporalExtentDateRange().stream().map(range -> {
-            DctPeriodOfTimeBuilder periodOfTime = DctPeriodOfTime.builder();
-            if (StringUtils.isNotEmpty(range.getGte())) {
-              periodOfTime.startDate(toDate(range.getGte()));
-            }
-            if (StringUtils.isNotEmpty(range.getLte())) {
-              periodOfTime.endDate(toDate(range.getLte()));
-            }
-            return DctTemporal.builder()
-                .periodOfTime(periodOfTime.build())
-                .build();
-          }).collect(Collectors.toList()));
-
-      record.getLinks().stream().forEach(link -> {
-        DcatDistributionBuilder dcatDistributionBuilder = DcatDistribution.builder()
-            .title(listOfNullable(link.getName()))
-            .description(listOfNullable(link.getDescription()))
-            // TODO <dcat:accessService rdf:parseType="Resource">...
-            // TODO: representation technique = gmd:MD_SpatialRepresentationTypeCode?
-            .representationTechnique(Subject.builder()
-                .skosConcept(SkosConcept.builder()
-                    .prefLabel(link.getProtocol()).build()).build());
-
-        // TODO: depending on function/protocol build page/accessUrl/downloadUrl
-        dcatDistributionBuilder.accessUrl(link.getUrl());
-
-        datasetBuilder.distribution(listOfNullable(DcatDistributionContainer.builder()
-            .distribution(dcatDistributionBuilder.build()).build()));
-      });
-
-      datasetBuilder.contactPoint(
-          record.getContactForResource().stream().map(contact ->
-              DcatContactPoint.builder()
-                  .contact(VcardContact.builder()
-                      .title(contact.getOrganisation())
-                      .role(contact.getRole())
-                      .hasEmail(contact.getEmail()).build()).build()
-          ).collect(Collectors.toList()));
-
-
-      dcatDataset = datasetBuilder.build();
-
-
-      catalogRecord = CatalogRecord.builder()
-          .identifier(listOfNullable(record.getMetadataIdentifier()))
-          .created(toDate(record.getCreateDate()))
-          .modified(toDate(record.getChangeDate()))
-          .language(listOfNullable(new RdfResource(null,
-              "http://publications.europa.eu/resource/authority/language/"
-                  + record.getMainLanguage().toUpperCase())))
-          .primaryTopic(listOfNullable(new ResourceContainer(dcatDataset, null))).build();
-
-    } catch (JsonMappingException e) {
-      e.printStackTrace();
-    } catch (JsonProcessingException e) {
-      e.printStackTrace();
+    // INSPIRE
+    if (record.getSpecificationConformance().size() > 0) {
+      datasetBuilder.wasUsedBy(
+          record.getSpecificationConformance().stream().map(c ->
+              DcatActivity.builder().activity(
+                  // TODO: Check RDF encoding
+                  // https://github.com/SEMICeu/iso-19139-to-dcat-ap/blob/master/iso-19139-to-dcat-ap.xsl#L837-L840
+                  ProvActivity.builder()
+                      .used(
+                          new RdfResource(null, resourceIdentifierUri, null)
+                      )
+                      .qualifiedAssociation(
+                          ProvQualifiedAssociation.builder()
+                              .hadPlan(ProvHadPlan.builder()
+                                  .wasDerivedFrom(
+                                      new RdfResource("Resource", null, null, c.getTitle(), null))
+                                  .build())
+                              .build()
+                      )
+                      .generated(
+                          ProvGenerated.builder()
+                              .type(new RdfResource(
+                                  "http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/"
+                                      + INSPIRE_DEGREE_OF_CONFORMITY.get(c.getPass()),
+                                  null))
+                          //RDFParseException: unexpected literal
+                          //.description(c.getExplanation())
+                          .build()
+                      )
+                      .build()).build()
+          ).collect(Collectors.toList())
+      );
     }
+
+    //datasetBuilder.conformsTo(new RdfResource(null, "http://data.europa.eu/r5r/", null));
+    // http://data.europa.eu/930/
+    // dct:source used to link to metadata standard ?
+    // (https://github.com/SEMICeu/iso-19139-to-dcat-ap/blob/master/iso-19139-to-dcat-ap.xsl#L955-L991)
+    // datasetBuilder.source()
+
+    if (record.getResourceLanguage() != null) {
+      // TODO: Where to put resource language ?
+      datasetBuilder.language(record.getResourceLanguage().stream().map(l ->
+          new RdfResource(null,
+              "http://publications.europa.eu/resource/authority/language/"
+                  + l.toUpperCase(), null)).collect(Collectors.toList()));
+    }
+
+    ArrayList<Codelist> updateFrequencyList = record.getCodelists()
+        .get(Codelists.maintenanceAndUpdateFrequency);
+    if (updateFrequencyList != null && updateFrequencyList.size() > 0) {
+      datasetBuilder.accrualPeriodicity(
+          new RdfResource(
+              null,
+              ACCRUAL_PERIODICITY_URI_PREFIX
+                  + ACCRUAL_PERIODICITY_TO_ISO
+                  .get(updateFrequencyList.get(0)
+                      .getProperties().get(CommonField.key)), null));
+    }
+
+    // <dct:spatial rdf:parseType="Resource">
+    datasetBuilder.spatial(record.getGeometries().stream().map(g -> DctSpatial.builder()
+        .location(DctLocation.builder().geometry(g).build()).build()).collect(
+        Collectors.toList()));
+
+    datasetBuilder.temporal(
+        record.getResourceTemporalExtentDateRange().stream().map(range -> {
+          DctPeriodOfTimeBuilder periodOfTime = DctPeriodOfTime.builder();
+          if (StringUtils.isNotEmpty(range.getGte())) {
+            periodOfTime.startDate(toDate(range.getGte()));
+          }
+          if (StringUtils.isNotEmpty(range.getLte())) {
+            periodOfTime.endDate(toDate(range.getLte()));
+          }
+          return DctTemporal.builder()
+              .periodOfTime(periodOfTime.build())
+              .build();
+        }).collect(Collectors.toList()));
+
+    record.getLinks().stream().forEach(link -> {
+      DcatDistributionBuilder dcatDistributionBuilder = DcatDistribution.builder()
+          .title(listOfNullable(link.getName()))
+          .description(listOfNullable(link.getDescription()))
+          // TODO <dcat:accessService rdf:parseType="Resource">...
+          // TODO: representation technique = gmd:MD_SpatialRepresentationTypeCode?
+          .representationTechnique(Subject.builder()
+              .skosConcept(SkosConcept.builder()
+                  .prefLabel(link.getProtocol()).build()).build());
+
+      // TODO: depending on function/protocol build page/accessUrl/downloadUrl
+      dcatDistributionBuilder.accessUrl(link.getUrl());
+
+      datasetBuilder.distribution(listOfNullable(DcatDistributionContainer.builder()
+          .distribution(dcatDistributionBuilder.build()).build()));
+    });
+
+    datasetBuilder.contactPoint(
+        record.getContactForResource().stream().map(contact ->
+            DcatContactPoint.builder()
+                .contact(VcardContact.builder()
+                    .title(contact.getOrganisation())
+                    .role(contact.getRole())
+                    .hasEmail(contact.getEmail()).build()).build()
+        ).collect(Collectors.toList()));
+
+
+    dcatDataset = datasetBuilder.build();
+
+
+    catalogRecord = CatalogRecord.builder()
+        .identifier(listOfNullable(record.getMetadataIdentifier()))
+        .created(toDate(record.getCreateDate()))
+        .modified(toDate(record.getChangeDate()))
+        .language(listOfNullable(new RdfResource(null,
+            "http://publications.europa.eu/resource/authority/language/"
+                + record.getMainLanguage().toUpperCase())))
+        .primaryTopic(listOfNullable(new ResourceContainer(dcatDataset, null))).build();
 
 
     return catalogRecord;
