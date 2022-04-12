@@ -10,6 +10,7 @@ package org.fao.geonet.common.xml;
 import java.io.File;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.util.JAXBResult;
@@ -21,6 +22,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 import net.sf.saxon.s9api.Processor;
 import net.sf.saxon.s9api.SaxonApiException;
+import net.sf.saxon.s9api.Serializer;
 import net.sf.saxon.s9api.Xslt30Transformer;
 import net.sf.saxon.s9api.XsltCompiler;
 import net.sf.saxon.s9api.XsltExecutable;
@@ -82,5 +84,23 @@ public class XsltUtil {
     } catch (SaxonApiException e) {
       e.printStackTrace();
     }
+  }
+
+  /**
+   * Transform XML string and write result as a string
+   */
+  public static String transformToString(String inputXmlString, InputStream xsltFile) throws Exception {
+    Processor proc = new Processor(false);
+    StringWriter stringWriter = new StringWriter();
+    Serializer out = proc.newSerializer(stringWriter);
+    out.setOutputProperty(Serializer.Property.METHOD, "xml");
+    out.setOutputProperty(Serializer.Property.INDENT, "yes");
+    out.setOutputProperty(Serializer.Property.VERSION, "1.0");
+    out.setOutputProperty(Serializer.Property.ENCODING, "UTF-8");
+    XsltCompiler compiler = proc.newXsltCompiler();
+    XsltExecutable xsl = compiler.compile(new StreamSource(xsltFile));
+    Xslt30Transformer transformer = xsl.load30();
+    transformer.transform(new StreamSource(new StringReader(inputXmlString)), out);
+    return stringWriter.getBuffer().toString();
   }
 }

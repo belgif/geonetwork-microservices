@@ -300,17 +300,8 @@ public class ItemApiController {
         String dcatXml;
         if (xsltFile.exists()) {
           Node metadataXml = getRecordAsXml(collectionId, recordId, request, source);
-          XMLOutputFactory factory = XMLOutputFactory.newInstance();
-          StringWriter stringOut = new StringWriter();
-          XMLStreamWriter writer = factory.createXMLStreamWriter(stringOut);
-
-          // TODO: Doesn't works, maybe add a new method in XsltUtil that returns the results as a String directly
-          XsltUtil.transformAndStreamInDocument(
-              XmlUtil.getNodeString(metadataXml),
-              new FileInputStream(xsltFile),
-              writer
-          );
-          dcatXml = writer.toString();
+          dcatXml = XsltUtil.transformToString(XmlUtil.getNodeString(metadataXml),
+              new FileInputStream(xsltFile));
         } else {
           JAXBContext context = null;
           context = JAXBContext.newInstance(
