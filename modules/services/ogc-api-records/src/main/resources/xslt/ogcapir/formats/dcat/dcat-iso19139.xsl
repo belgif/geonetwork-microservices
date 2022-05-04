@@ -946,35 +946,6 @@
     <!-- Resource description (resource metadata) -->
 
     <xsl:param name="ResourceDescription">
-      <xsl:choose>
-        <xsl:when test="$ResourceType = 'dataset'">
-          <rdf:type rdf:resource="{$dcat}Dataset"/>
-        </xsl:when>
-        <xsl:when test="$ResourceType = 'series'">
-          <rdf:type rdf:resource="{$dcat}Dataset"/>
-        </xsl:when>
-        <xsl:when test="$ResourceType = 'service'">
-          <!-- Mapping moved to core profile for compliance with DCAT-AP 2 -->
-          <!--
-                    <xsl:if test="$profile = $extended">
-          -->
-          <!-- DEPRECATED: Mapping kept for backward compatibility with GeoDCAT-AP v1.* -->
-          <rdf:type rdf:resource="{$dctype}Service"/>
-          <!-- Mapping added for compliance with DCAT-AP 2 -->
-          <rdf:type rdf:resource="{$dcat}DataService"/>
-          <!--
-                    </xsl:if>
-          -->
-          <xsl:if test="$ServiceType = 'discovery'">
-            <!-- DEPRECATED: Mapping kept for backward compatibility with GeoDCAT-AP v1.* -->
-            <rdf:type rdf:resource="{$dcat}Catalog"/>
-            <!-- Mapping added for compliance with DCAT-AP 2 -->
-            <!--
-                        <rdf:type rdf:resource="{$dcat}DataService"/>
-            -->
-          </xsl:if>
-        </xsl:when>
-      </xsl:choose>
       <!-- Mapping moved to core profile for compliance with DCAT-AP 2 -->
       <!--
             <xsl:if test="$profile = $extended">
@@ -1279,7 +1250,16 @@
             </xsl:apply-templates>
       -->
     </xsl:param>
-
+    <xsl:param name="resourceElementName">
+      <xsl:choose>
+        <xsl:when test="$ResourceType = 'dataset'">
+          <xsl:value-of select="'dcat:Dataset'"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="'dcat:DataService'"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:param>
     <xsl:choose>
       <xsl:when test="$ResourceUri != ''">
         <!--
@@ -1287,41 +1267,41 @@
         -->
         <xsl:choose>
           <xsl:when test="$MetadataUri != ''">
-            <rdf:Description rdf:about="{$MetadataUri}">
-              <rdf:type rdf:resource="{$dcat}CatalogRecord"/>
+            <dcat:CatalogRecord rdf:about="{$MetadataUri}">
               <foaf:primaryTopic rdf:resource="{$ResourceUri}"/>
               <xsl:copy-of select="$MetadataDescription"/>
-            </rdf:Description>
+            </dcat:CatalogRecord>
           </xsl:when>
           <xsl:otherwise>
             <xsl:if test="normalize-space($MetadataDescription)">
-              <rdf:Description>
-                <rdf:type rdf:resource="{$dcat}CatalogRecord"/>
+              <dcat:CatalogRecord>
                 <foaf:primaryTopic rdf:resource="{$ResourceUri}"/>
                 <xsl:copy-of select="$MetadataDescription"/>
-              </rdf:Description>
+              </dcat:CatalogRecord>
             </xsl:if>
           </xsl:otherwise>
         </xsl:choose>
         <!--
                 </xsl:if>
         -->
-        <rdf:Description rdf:about="{$ResourceUri}">
+        <xsl:element name="{$resourceElementName}">
+          <xsl:attribute name="rdf:about" >
+            <xsl:value-of select="$ResourceUri"/>
+          </xsl:attribute>
           <xsl:copy-of select="$ResourceDescription"/>
-        </rdf:Description>
+        </xsl:element>
       </xsl:when>
       <xsl:otherwise>
-        <rdf:Description>
+        <xsl:element name="{$resourceElementName}">
           <xsl:if test="normalize-space($MetadataDescription)">
             <foaf:isPrimaryTopicOf>
-              <rdf:Description>
-                <rdf:type rdf:resource="{$dcat}CatalogRecord"/>
+              <dcat:CatalogRecord>
                 <xsl:copy-of select="$MetadataDescription"/>
-              </rdf:Description>
+              </dcat:CatalogRecord>
             </foaf:isPrimaryTopicOf>
           </xsl:if>
           <xsl:copy-of select="$ResourceDescription"/>
-        </rdf:Description>
+        </xsl:element>
       </xsl:otherwise>
     </xsl:choose>
 
@@ -1549,17 +1529,7 @@
     </xsl:param>
     <xsl:param name="ROInfo">
       <xsl:variable name="info">
-        <xsl:choose>
-          <xsl:when test="$IndividualName != ''">
-            <rdf:type rdf:resource="{$foaf}Person"/>
-          </xsl:when>
-          <xsl:when test="$OrganisationName != ''">
-            <rdf:type rdf:resource="{$foaf}Organization"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <rdf:type rdf:resource="{$foaf}Agent"/>
-          </xsl:otherwise>
-        </xsl:choose>
+
         <xsl:if test="$IndividualName != ''">
           <!--
                     <foaf:name xml:lang="{$MetadataLanguage}">
@@ -1616,35 +1586,25 @@
       </xsl:variable>
       <xsl:choose>
         <xsl:when test="$IndividualURI != ''">
-          <rdf:Description rdf:resource="{$IndividualURI}">
+          <foaf:Person rdf:resource="{$IndividualURI}">
             <xsl:copy-of select="$info"/>
-          </rdf:Description>
+          </foaf:Person>
         </xsl:when>
         <xsl:when test="$OrganisationURI != ''">
-          <rdf:Description rdf:resource="{$OrganisationURI}">
+          <foaf:Organization rdf:resource="{$OrganisationURI}">
             <xsl:copy-of select="$info"/>
-          </rdf:Description>
+          </foaf:Organization>
         </xsl:when>
         <xsl:otherwise>
-          <rdf:Description>
+          <foaf:Agent>
             <xsl:copy-of select="$info"/>
-          </rdf:Description>
+          </foaf:Agent>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:param>
     <xsl:param name="ResponsibleParty">
       <xsl:variable name="info">
-        <xsl:choose>
-          <xsl:when test="$IndividualName != ''">
-            <rdf:type rdf:resource="{$vcard}Individual"/>
-          </xsl:when>
-          <xsl:when test="$OrganisationName != ''">
-            <rdf:type rdf:resource="{$vcard}Organization"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <rdf:type rdf:resource="{$vcard}Kind"/>
-          </xsl:otherwise>
-        </xsl:choose>
+
         <xsl:if test="$IndividualName != ''">
           <!--
                     <vcard:fn xml:lang="{$MetadataLanguage}">
@@ -1682,21 +1642,23 @@
               </xsl:for-each>
         -->
       </xsl:variable>
+
+
       <xsl:choose>
         <xsl:when test="$IndividualURI != ''">
-          <rdf:Description rdf:resource="{$IndividualURI}">
+          <foaf:Person rdf:resource="{$IndividualURI}">
             <xsl:copy-of select="$info"/>
-          </rdf:Description>
+          </foaf:Person>
         </xsl:when>
         <xsl:when test="$OrganisationURI != ''">
-          <rdf:Description rdf:resource="{$OrganisationURI}">
+          <foaf:Organization rdf:resource="{$OrganisationURI}">
             <xsl:copy-of select="$info"/>
-          </rdf:Description>
+          </foaf:Organization>
         </xsl:when>
         <xsl:otherwise>
-          <rdf:Description>
+          <foaf:Agent>
             <xsl:copy-of select="$info"/>
-          </rdf:Description>
+          </foaf:Agent>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:param>
@@ -3014,16 +2976,16 @@
     <xsl:choose>
       <xsl:when test="starts-with($link, 'http://') or starts-with($link, 'https://')">
         <dct:conformsTo>
-          <rdf:Description rdf:about="{$link}">
-            <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
-          </rdf:Description>
+          <dcat:Standard rdf:about="{$link}">
+              <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
+          </dcat:Standard>
         </dct:conformsTo>
       </xsl:when>
       <xsl:when test="starts-with($code, 'http://') or starts-with($code, 'https://')">
         <dct:conformsTo>
-          <rdf:Description rdf:about="{$code}">
-            <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
-          </rdf:Description>
+          <dcat:Standard  rdf:about="{$code}">
+              <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
+          </dcat:Standard>
         </dct:conformsTo>
       </xsl:when>
       <xsl:when test="starts-with($code, 'urn:')">
@@ -3036,9 +2998,7 @@
         <xsl:choose>
           <xsl:when test="$srid != '' and string(number($srid)) != 'NaN'">
             <dct:conformsTo>
-              <rdf:Description rdf:about="{$EpsgSrsBaseUri}/{$srid}">
-                <rdf:type rdf:resource="{$dct}Standard"/>
-                <rdf:type rdf:resource="{$skos}Concept"/>
+              <dcat:Standard rdf:about="{$EpsgSrsBaseUri}/{$srid}">
                 <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
                 <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></dct:identifier>
                 <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></skos:notation>
@@ -3048,24 +3008,25 @@
                   </skos:ConceptScheme>
                 </skos:inScheme>
                 <xsl:copy-of select="$version-statement"/>
-              </rdf:Description>
+              </dcat:Standard>
             </dct:conformsTo>
           </xsl:when>
           <xsl:otherwise>
             <dct:conformsTo rdf:parseType="Resource">
-              <rdf:type rdf:resource="{$dct}Standard"/>
-              <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
-              <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></dct:identifier>
-              <xsl:if test="$codespace != ''">
-                <rdf:type rdf:resource="{$skos}Concept"/>
-                <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></skos:notation>
-                <skos:inScheme>
-                  <skos:ConceptScheme>
-                    <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$codespace"/></dct:title>
-                  </skos:ConceptScheme>
-                </skos:inScheme>
-              </xsl:if>
-              <xsl:copy-of select="$version-statement"/>
+              <dcat:Standard>
+                <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
+                <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></dct:identifier>
+                <xsl:if test="$codespace != ''">
+                  <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></skos:notation>
+                  <skos:inScheme>
+                    <skos:ConceptScheme>
+                      <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$codespace"/></dct:title>
+                    </skos:ConceptScheme>
+                  </skos:inScheme>
+                </xsl:if>
+                <xsl:copy-of select="$version-statement"/>
+              </dcat:Standard>
+
             </dct:conformsTo>
           </xsl:otherwise>
         </xsl:choose>
@@ -3074,9 +3035,7 @@
         <xsl:choose>
           <xsl:when test="$code = number($code) and (translate($codespace,$uppercase,$lowercase) = 'epsg' or starts-with(translate($codespace,$uppercase,$lowercase),translate($EpsgSrsBaseUrn,$uppercase,$lowercase)))">
             <dct:conformsTo>
-              <rdf:Description rdf:about="{$EpsgSrsBaseUri}/{$code}">
-                <rdf:type rdf:resource="{$dct}Standard"/>
-                <rdf:type rdf:resource="{$skos}Concept"/>
+              <dcat:Standard rdf:about="{$EpsgSrsBaseUri}/{$code}">
                 <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
                 <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="concat($EpsgSrsBaseUrn,':',$version,':',$code)"/></dct:identifier>
                 <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="concat($EpsgSrsBaseUrn,':',$version,':',$code)"/></skos:notation>
@@ -3086,14 +3045,12 @@
                   </skos:ConceptScheme>
                 </skos:inScheme>
                 <xsl:copy-of select="$version-statement"/>
-              </rdf:Description>
+              </dcat:Standard>
             </dct:conformsTo>
           </xsl:when>
           <xsl:when test="translate(normalize-space(translate($code,$uppercase,$lowercase)),': ','') = 'etrs89'">
             <dct:conformsTo>
-              <rdf:Description rdf:about="{$Etrs89Uri}">
-                <rdf:type rdf:resource="{$dct}Standard"/>
-                <rdf:type rdf:resource="{$skos}Concept"/>
+              <dcat:Standard rdf:about="{$Etrs89Uri}">
                 <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
                 <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$Etrs89Urn"/></dct:identifier>
                 <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$Etrs89Urn"/></skos:notation>
@@ -3105,14 +3062,12 @@
                   </skos:ConceptScheme>
                 </skos:inScheme>
                 <xsl:copy-of select="$version-statement"/>
-              </rdf:Description>
+              </dcat:Standard>
             </dct:conformsTo>
           </xsl:when>
           <xsl:when test="translate(normalize-space(translate($code,$uppercase,$lowercase)),': ','') = 'crs84'">
             <dct:conformsTo>
-              <rdf:Description rdf:about="{$Crs84Uri}">
-                <rdf:type rdf:resource="{$dct}Standard"/>
-                <rdf:type rdf:resource="{$skos}Concept"/>
+              <dcat:Standard rdf:about="{$Crs84Uri}">
                 <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
                 <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$Crs84Urn"/></dct:identifier>
                 <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$Crs84Urn"/></skos:notation>
@@ -3124,24 +3079,25 @@
                   </skos:ConceptScheme>
                 </skos:inScheme>
                 <xsl:copy-of select="$version-statement"/>
-              </rdf:Description>
+              </dcat:Standard>
             </dct:conformsTo>
           </xsl:when>
           <xsl:otherwise>
             <dct:conformsTo rdf:parseType="Resource">
-              <rdf:type rdf:resource="{$dct}Standard"/>
-              <rdf:type rdf:resource="{$skos}Concept"/>
-              <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
-              <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$code"/></dct:title>
-              <xsl:if test="$codespace != ''">
-                <skos:prefLabel xml:lang="{$MetadataLanguage}"><xsl:value-of select="$code"/></skos:prefLabel>
-                <skos:inScheme>
-                  <skos:ConceptScheme>
-                    <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$codespace"/></dct:title>
-                  </skos:ConceptScheme>
-                </skos:inScheme>
-              </xsl:if>
-              <xsl:copy-of select="$version-statement"/>
+              <dcat:Standard>
+
+                <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
+                <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$code"/></dct:title>
+                <xsl:if test="$codespace != ''">
+                  <skos:prefLabel xml:lang="{$MetadataLanguage}"><xsl:value-of select="$code"/></skos:prefLabel>
+                  <skos:inScheme>
+                    <skos:ConceptScheme>
+                      <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$codespace"/></dct:title>
+                    </skos:ConceptScheme>
+                  </skos:inScheme>
+                </xsl:if>
+                <xsl:copy-of select="$version-statement"/>
+              </dcat:Standard>
             </dct:conformsTo>
           </xsl:otherwise>
         </xsl:choose>
