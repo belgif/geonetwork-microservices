@@ -59,4 +59,5 @@ build/
 .vscode/
 
 /data/
-/test_data/output/
+
+test-data/output/

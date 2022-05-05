@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="UTF-8"?><gmd:MD_Metadata xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geonet="http://www.fao.org/geonetwork" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gml="http://www.opengis.net/gml" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gmd:MD_Metadata="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
+  <gmd:fileIdentifier>
+    <gco:CharacterString>629ad470-71dc-11eb-af47-3448ed25ad7c</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset"/>
+  </gmd:hierarchyLevel>
+  <gmd:hierarchyLevelName gmd:hierarchyLevelName="missing">
+    <gco:CharacterString/>
+  </gmd:hierarchyLevelName>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty gmd:CI_ResponsibleParty="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
+      <gmd:individualName>
+        <gco:CharacterString>Benoît Fricheteau</gco:CharacterString>
+      </gmd:individualName>
+      <gmd:organisationName gmd:organisationName="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString>FPS Finance - General Administration of Patrimonial Documentation (GAPD)</gco:CharacterString>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#EN">FPS Finance - General Administration of Patrimonial Documentation (GAPD)</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#FR">SPF Finances - Administration Générale de la Documentation Patrimoniale (AGDP)</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#NL">FOD Financien - Algemene Administratie van de Patrimoniumdocumentatie (AAPD)</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#DE">FOD Finanzen - Generalverwaltung Vermögensdokumentation (GVVD)</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:organisationName>
+      <gmd:contactInfo>
+        <gmd:CI_Contact>
+          <gmd:address>
+            <gmd:CI_Address>
+              <gmd:deliveryPoint gmd:deliveryPoint="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Koning Albert II laan, 33 bus 50</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Koning Albert II laan, 33 bus 50</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Boulevard du Roi Albert II, 33 bte 50</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">Koning Albert II laan, 33 bus 50</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">Boulevard du Roi Albert II, 33 bte 50</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:deliveryPoint>
+              <gmd:city gmd:city="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Schaarbeek</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Schaarbeek</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Schaerbeek</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">Schaarbeek</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">Schaerbeek</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:city>
+              <gmd:postalCode>
+                <gco:CharacterString>1030</gco:CharacterString>
+              </gmd:postalCode>
+              <gmd:country gmd:country="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Belgium</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Belgium</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">België</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:country>
+              <gmd:electronicMailAddress>
+                <gco:CharacterString>datadelivery@minfin.fed.be</gco:CharacterString>
+              </gmd:electronicMailAddress>
+            </gmd:CI_Address>
+          </gmd:address>
+          <gmd:onlineResource>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://finance.belgium.be/en/experts-partners/open-data-patrimony</gmd:URL>
+              </gmd:linkage>
+              <gmd:name gmd:name="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>https://finance.belgium.be/en/experts-partners/open-data-patrimony</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">https://finance.belgium.be/en/experts-partners/open-data-patrimony</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">https://finances.belgium.be/fr/experts_partenaires/donnees-ouvert-patrimoine</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">https://financien.belgium.be/nl/experten_partners/open-patrimoniumdata</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">https://finance.belgium.be/en/experts-partners/open-data-patrimony</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:name>
+            </gmd:CI_OnlineResource>
+          </gmd:onlineResource>
+        </gmd:CI_Contact>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:DateTime>2022-04-05T13:40:31</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName gmd:metadataStandardName="gmd:PT_FreeText_PropertyType">
+    <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+    <gmd:PT_FreeText>
+      <gmd:textGroup>
+        <gmd:LocalisedCharacterString locale="#EN">ISO 19115:2003/19139</gmd:LocalisedCharacterString>
+      </gmd:textGroup>
+    </gmd:PT_FreeText>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+    <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:locale>
+    <gmd:PT_Locale id="FR">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+      </gmd:languageCode>
+      <gmd:characterEncoding/>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+    <gmd:PT_Locale id="NL">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="dut"/>
+      </gmd:languageCode>
+      <gmd:characterEncoding/>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+    <gmd:PT_Locale id="DE">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="ger"/>
+      </gmd:languageCode>
+      <gmd:characterEncoding/>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+    <gmd:PT_Locale id="EN">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+      </gmd:languageCode>
+      <gmd:characterEncoding>
+        <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8"/>
+      </gmd:characterEncoding>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:referenceSystemInfo>
+    <gmd:MD_ReferenceSystem>
+      <gmd:referenceSystemIdentifier>
+        <gmd:RS_Identifier>
+          <gmd:code>
+            <gco:CharacterString>31370</gco:CharacterString>
+          </gmd:code>
+        </gmd:RS_Identifier>
+      </gmd:referenceSystemIdentifier>
+    </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:referenceSystemInfo>
+    <gmd:MD_ReferenceSystem>
+      <gmd:referenceSystemIdentifier>
+        <gmd:RS_Identifier>
+          <gmd:code>
+            <gco:CharacterString>3812</gco:CharacterString>
+          </gmd:code>
+        </gmd:RS_Identifier>
+      </gmd:referenceSystemIdentifier>
+    </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Administrative units - situation on January 1st</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Administrative units - situation on January 1st</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Unités administratives - situation au 1e janvier</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Administratieve eenheden - toestand op 1 januari</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Verwaltungseinheiten – Stand 1. Januar</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:title>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date>2020-12-15</gco:Date>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation"/>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date>2021-01-01</gco:Date>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision"/>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:identifier>
+            <gmd:RS_Identifier>
+              <gmd:code>
+                <gco:CharacterString>62a55bc0-71dc-11eb-9c00-3448ed25ad7c</gco:CharacterString>
+              </gmd:code>
+              <gmd:codeSpace>
+                <gco:CharacterString>GAPD</gco:CharacterString>
+              </gmd:codeSpace>
+            </gmd:RS_Identifier>
+          </gmd:identifier>
+          <gmd:identifier>
+            <gmd:RS_Identifier>
+              <gmd:code>
+                <gco:CharacterString>AU-FiscSit</gco:CharacterString>
+              </gmd:code>
+              <gmd:codeSpace>
+                <gco:CharacterString>GAPD</gco:CharacterString>
+              </gmd:codeSpace>
+            </gmd:RS_Identifier>
+          </gmd:identifier>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract gmd:abstract="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString>Administrative units - situation on January 1st corresponds to the dataset of administrative units from the reference database for the land register data. Administrative limits are legally defined by an administrative entity or between two administrative entities. In Belgium, administrative limits as legally defined are fixed and can only be changed by a law, ordinance or decree. The General Administration of Patrimonial Documentation of the FPS Finance is named by the federal authorities as the authentic source of Belgian administrative limits.
+          This dataset corresponds to the legal situation as defined on January 1st of the reference year.  It is composed of seven geometric classes (polygons and lines) and one class without geometry. The first class corresponds to the whole national territory. The second corresponds to the territory of the three regions, the third to the territory of the provinces, the fourth to the territory of the administrative districts, the fifth to the territory of the municipalities, the sixth to the territory of the Antwerp city districts and the seventh to the administrative boundaries in the form of lines. The class without geometry corresponds to the table of tax situations. The dataset can be freely downloaded as a zipped shapefiles.</gco:CharacterString>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#EN">Administrative units - situation on January 1st corresponds to the dataset of administrative units from the reference database for the land register data. Administrative limits are legally defined by an administrative entity or between two administrative entities. In Belgium, administrative limits as legally defined are fixed and can only be changed by a law, ordinance or decree. The General Administration of Patrimonial Documentation of the FPS Finance is named by the federal authorities as the authentic source of Belgian administrative limits.
+              This dataset corresponds to the legal situation as defined on January 1st of the reference year.  It is composed of seven geometric classes (polygons and lines) and one class without geometry. The first class corresponds to the whole national territory. The second corresponds to the territory of the three regions, the third to the territory of the provinces, the fourth to the territory of the administrative districts, the fifth to the territory of the municipalities, the sixth to the territory of the Antwerp city districts and the seventh to the administrative boundaries in the form of lines. The class without geometry corresponds to the table of tax situations. The dataset can be freely downloaded as a zipped shapefiles.</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#FR">Unités administratives - situation au 1e janvier correspond au jeu de données des unités administratives issues de la base données cadastrales de référence CadGIS. Les limites administratives sont légalement définies par une entité administrative ou entre deux entités administratives. En Belgique, les limites administratives telles qu’elles ont été définies juridiquement sont figées et ne peuvent être modifiées que par une loi, une ordonnance, ou un décret. L’Administration Générale de la Documentation Patrimoniale du SPF Finances est désignée par les autorités fédérales comme la source authentique des limites administratives belges.
+              Ce jeu de données correspond à la situation légale définie 1e janvier de l'année de référence.  Il est composé de sept classes géométriques (polygones et lignes) et d'une classe sans géométrie. La première classe correspond à l'ensemble du territoire national. La deuxième correspond au territoire des trois régions, la troisième au territoire des provinces, la quatrième au territoire des arrondissements administratifs, la cinquième au territoire des communes, la sixième au territoire des districts de la ville d'Anvers et la septième aux limites administratives sous forme de lignes. La classe sans géométrie correspond à la table des situations fiscales. Le jeu de données est librement téléchargeable, sous forme de shapefiles zippés.</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#NL">Administratieve eenheden - toestand op 1 januari komt overeen met de dataset van administratieve eenheden uit de kadastrale CadGIS-referentiedatabank. Administratieve grenzen worden wettelijk vastgesteld door een bestuurseenheid of tussen twee bestuurseenheden. In België liggen de wettelijk bepaalde administratieve grenzen vast en kunnen zij alleen worden gewijzigd door een wet, een verordening of een decreet. De Algemene Administratie van de Patrimoniumdocumentatie van de FOD Financiën is door de federale overheid aangeduid als de authentieke bron van de Belgische administratieve grenzen.
+              Deze dataset komt overeen met de juridische toestand zoals die is vastgesteld op 1 januari van het referentiejaar. Het bestaat uit zeven geometrische klassen (veelhoeken en lijnen) en één klasse zonder geometrie. De eerste klasse komt overeen met het gehele nationale grondgebied. Het tweede komt overeen met het grondgebied van de drie gewesten, het derde met het grondgebied van de provincies, het vierde met het grondgebied van de administratieve arrondissementen, het vijfde met het grondgebied van de gemeenten, het zesde met het grondgebied van districten van de stad Antwerpen en het zevende met de administratieve grenzen in de vorm van lijnen. De klasse zonder geometrie komt overeen met de tabel van fiscale toestanden. De dataset is vrij te downloaden, in de vorm van gezipte shapefiles.</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#DE">Unter Verwaltungseinheiten - Stand 1. Januar versteht man ein Datenpaket der Verwaltungseinheiten aus der Katasterdatenbank CadGIS. Die administrativen Grenzen werden gesetzlich durch eine Verwaltungseinheit oder zwischen zwei Verwaltungseinheiten definiert. In Belgien sind die rechtlich definierten administrativen Grenzen festgelegt und können nur durch ein Gesetz, einen Beschluss oder ein Dekret geändert werden. Die Generalverwaltung Vermögensdokumentation des FÖD Finanzen wird von den Föderalbehörden als authentische Quelle der belgischen administrativen Grenzen bestimmt.
+              Dieses Datenpaket entspricht der gesetzlichen Lage am 1. Januar des Bezugsjahres.  Es besteht aus sieben geometrischen Klassen (Polygone und Linien) und einer Klasse ohne Geometrie. Die erste Klasse entspricht dem gesamten nationalen Hoheitsgebiet. Die zweite entspricht dem Gebiet der drei Regionen, die dritte dem Gebiet der Provinzen, die vierte dem Gebiet der Verwaltungsbezirke, die fünfte dem Gebiet der Gemeinden, die sechste dem Gebiet den Distrikten der Stadt Antwerpen und die siebte den administrativen Grenzen in Form von Linien. Die Klasse ohne Geometrie entspricht der Tabelle der Steuerlagen. Das Datenpaket kann in Form von komprimierten Shapefile-Dateien frei heruntergeladen werden.</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:abstract>
+      <gmd:status>
+        <gmd:MD_ProgressCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed"/>
+      </gmd:status>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty gmd:CI_ResponsibleParty="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
+          <gmd:individualName>
+            <gco:CharacterString>Benoît Fricheteau</gco:CharacterString>
+          </gmd:individualName>
+          <gmd:organisationName gmd:organisationName="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>FPS Finance - General Administration of Patrimonial Documentation (GAPD)</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">FPS Finance - General Administration of Patrimonial Documentation (GAPD)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">SPF Finances - Administration Générale de la Documentation Patrimoniale (AGDP)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">FOD Financien - Algemene Administratie van de Patrimoniumdocumentatie (AAPD)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">FOD Finanzen - Generalverwaltung Vermögensdokumentation (GVVD)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:organisationName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint gmd:deliveryPoint="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>Koning Albert II laan, 33 bus 50</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Koning Albert II laan, 33 bus 50</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Boulevard du Roi Albert II, 33 bte 50</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Koning Albert II laan, 33 bus 50</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Boulevard du Roi Albert II, 33 bte 50</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:deliveryPoint>
+                  <gmd:city gmd:city="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>Schaarbeek</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Schaarbeek</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Schaerbeek</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Schaarbeek</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Schaerbeek</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:city>
+                  <gmd:postalCode>
+                    <gco:CharacterString>1030</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country gmd:country="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>Belgium</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Belgium</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">België</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>datadelivery@minfin.fed.be</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://finance.belgium.be/en/experts-partners/open-data-patrimony</gmd:URL>
+                  </gmd:linkage>
+                  <gmd:name gmd:name="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>https://finance.belgium.be/en/experts-partners/open-data-patrimony</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">https://finance.belgium.be/en/experts-partners/open-data-patrimony</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">https://finances.belgium.be/fr/experts_partenaires/donnees-ouvert-patrimoine</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">https://financien.belgium.be/nl/experten_partners/open-patrimoniumdata</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">https://finance.belgium.be/en/experts-partners/open-data-patrimony</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:name>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher"/>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="annually"/>
+          </gmd:maintenanceAndUpdateFrequency>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
+      <gmd:graphicOverview>
+        <gmd:MD_BrowseGraphic>
+          <gmd:fileName>
+            <gco:CharacterString>https://www.geo.be/thumbs/AGDP_Communes.png</gco:CharacterString>
+          </gmd:fileName>
+        </gmd:MD_BrowseGraphic>
+      </gmd:graphicOverview>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/theme/au">Administrative units</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Administrative units</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Unités administratives</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Administratieve eenheden</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Verwaltungseinheiten</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/theme">GEMET - INSPIRE themes, version 1.0</gmx:Anchor>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">GEMET - INSPIRE themes, version 1.0</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2008-06-01</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor gmx:Anchor="http://csw.geo.be/eng/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="https://www.geo.be/thesaurus/acd.xml">Administrative, statistical and cadastral units</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Administrative, statistical and cadastral units</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Unités administratives, statistiques et cadastrales</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Administratieve, statistische en kadastrale eenheden</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Verwaltungs-, statistische und Katastereinheiten</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                <gmx:Anchor gmx:Anchor="https://www.geo.be/thesaurus/federalthesaurus.rdf">Belgian Federal Thesaurus</gmx:Anchor>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Belgian Federal Thesaurus</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2020-03-01</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor gmx:Anchor="http://publish.geo.be/geonetwork/srv/eng/thesaurus.download?ref=external.theme.federalthesaurus">geonetwork.thesaurus.external.theme.federalthesaurus</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/featureconcept/AdministrativeUnit">Administrative Unit</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Administrative Unit</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Unité administrative</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Bestuurseenheid</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Verwaltungseinheit</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/featureconcept/AdministrativeBoundary">Administrative Boundary</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Administrative Boundary</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Limite administrative</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Administratieve grens</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Verwaltungsgrenze</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/featureconcept">INSPIRE feature concept dictionary</gmx:Anchor>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">INSPIRE feature concept dictionary</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2008-12-05</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor>INSPIRE.feature.concept.dictionary</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://www.eionet.europa.eu/gemet/concept/14931">sub-national boundary</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">sub-national boundary</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">frontière infranationale</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">binnengrens</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Innerstaatliche Grenze</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://www.eionet.europa.eu/gemet/concept/14930">national boundary</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">national boundary</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">frontière nationale</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">landsgrens</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Staatsgrenze</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://www.eionet.europa.eu/gemet/concept/14932">administrative boundary</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">administrative boundary</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">limite administrative</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">bestuurlijke grens</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Verwaltungsgrenze</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://www.eionet.europa.eu/gemet/concept/3144">federal government</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">federal government</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">gouvernement fédéral</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">federale regering</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Bundesregierung</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                <gmx:Anchor gmx:Anchor="https://www.eionet.europa.eu/gemet/en/themes/">GEMET - Concept themes, version 4.01</gmx:Anchor>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">GEMET - Concept themes, version 4.01</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2012-07-20</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor gmx:Anchor="http://csw.geo.be/eng/thesaurus.download?ref=external.theme.gemet">geonetwork.thesaurus.external.theme.gemet</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords gmd:descriptiveKeywords="http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national">National</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">National</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">National</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Nationaal</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">National</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/metadata-codelist/SpatialScope">Spatial scope</gmx:Anchor>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Spatial scope</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2019-05-22</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/registry/res/custompages/SpatialScope.rdf">SpatialScope</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:resourceConstraints gmd:resourceConstraints="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
+        <gmd:MD_LegalConstraints>
+          <gmd:useConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions"/>
+          </gmd:useConstraints>
+          <gmd:otherConstraints gmd:otherConstraints="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>The licence is fully available in French (https://finances.belgium.be/sites/default/files/Licence_plan_opendata_FR.PDF) or in Dutch (https://financien.belgium.be/sites/default/files/Licentie_plan_opendata_NL.PDF).</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">The licence is fully available in French (https://finances.belgium.be/sites/default/files/Licence_plan_opendata_FR.PDF) or in Dutch (https://financien.belgium.be/sites/default/files/Licentie_plan_opendata_NL.PDF).</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Le contenu de la licence est intégrablement consultable ici : https://finances.belgium.be/sites/default/files/Licence_plan_opendata_FR.PDF.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">de inhoud van de licentie is hier volledig doorzoekbaar: https://financien.belgium.be/sites/default/files/Licentie_plan_opendata_NL.PDF.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Die Lizenz ist vollständig in Französisch (https://finances.belgium.be/sites/default/files/Licence_plan_opendata_FR.PDF.) und Niederländisch ((https://financien.belgium.be/sites/default/files/Licentie_plan_opendata_NL.PDF) verfügbar.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints gmd:resourceConstraints="http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+        <gmd:MD_LegalConstraints>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions"/>
+          </gmd:accessConstraints>
+          <gmd:otherConstraints gmd:otherConstraints="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">No limitations on public access</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">No limitations on public access</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Pas de restrictions concernant l'accès public</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Geen beperkingen op openbare toegang</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Öffentliche Zugang nicht beschränkt</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:spatialRepresentationType>
+        <gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="vector"/>
+      </gmd:spatialRepresentationType>
+      <gmd:spatialResolution>
+        <gmd:MD_Resolution>
+          <gmd:equivalentScale>
+            <gmd:MD_RepresentativeFraction>
+              <gmd:denominator>
+                <gco:Integer>10000</gco:Integer>
+              </gmd:denominator>
+            </gmd:MD_RepresentativeFraction>
+          </gmd:equivalentScale>
+        </gmd:MD_Resolution>
+      </gmd:spatialResolution>
+      <gmd:language>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+      </gmd:language>
+      <gmd:language>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="ger"/>
+      </gmd:language>
+      <gmd:language>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+      </gmd:language>
+      <gmd:language>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="dut"/>
+      </gmd:language>
+      <gmd:characterSet>
+        <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="UTF-8"/>
+      </gmd:characterSet>
+      <gmd:topicCategory>
+        <gmd:MD_TopicCategoryCode>planningCadastre</gmd:MD_TopicCategoryCode>
+      </gmd:topicCategory>
+      <gmd:extent>
+        <gmd:EX_Extent>
+          <gmd:description gmd:description="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Belgium</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Belgium</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">België</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:description>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox>
+              <gmd:westBoundLongitude>
+                <gco:Decimal>2.54</gco:Decimal>
+              </gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude>
+                <gco:Decimal>6.41</gco:Decimal>
+              </gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude>
+                <gco:Decimal>49.49</gco:Decimal>
+              </gmd:southBoundLatitude>
+              <gmd:northBoundLatitude>
+                <gco:Decimal>51.51</gco:Decimal>
+              </gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+          <gmd:verticalElement/>
+        </gmd:EX_Extent>
+      </gmd:extent>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name gmd:name="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="https://www.iana.org/assignments/media-types/application/vnd.shp">Esri Shapefile</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Esri Shapefile</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>10.2</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://financien.belgium.be/sites/default/files/AU-FiscSit_20210101_TechSpec_NL.pdf</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:name gmd:name="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>https://financien.belgium.be/sites/default/files/AU-FiscSit_20210101_TechSpec_NL.pdf</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">https://financien.belgium.be/sites/default/files/AU-FiscSit_20210101_TechSpec_NL.pdf</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">https://financien.belgium.be/sites/default/files/AU-FiscSit_20210101_TechSpec_FR.pdf</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">https://financien.belgium.be/sites/default/files/AU-FiscSit_20210101_TechSpec_NL.pdf</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">https://financien.belgium.be/sites/default/files/AU-FiscSit_20210101_TechSpec_FR.pdf</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:name>
+              <gmd:description gmd:description="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Technical documentation of the product</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Technical documentation of the product</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Documentation technique du produit</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">Technische documentatie van het product</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">Technische Dokumentation des Produkts</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information"/>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://eservices.minfin.fgov.be/ecad-web/#/</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description gmd:description="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Application CadGIS Viewer</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Application CadGIS Viewer</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Application CadGIS Viewer</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">CadGIS Viewer Applicatie</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">CadGIS Viewer Anwendung</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="application"/>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://opendata.fin.belgium.be/download/landregistry/2021/administrativeunits/au-fiscsit_20210101_3812.zip</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description gmd:description="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Direct download of resource (version : 2020 - ESPG :  3812)</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Direct download of resource (version : 2020 - ESPG :  3812)</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Téléchargement direct de la ressource (version : 2020 - ESPG :  3812)</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">Directe download van de bron (versie : 2020 - ESPG :  3812)</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">direkter Download der Ressource</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://opendata.fin.belgium.be/download/landregistry/2021/administrativeunits/au-Fiscsit_20210101_31370.zip</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description gmd:description="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Direct download of resource (version : 2020 - ESPG :  31370)</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Direct download of resource (version : 2020 - ESPG :  31370)</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Téléchargement direct de la ressource (version : 2020 - ESPG :  31370)</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">Directe download van de bron (versie : 2020 - ESPG :  31370)</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">direkter Download der Ressource (version : 2020 - ESPG :  31370)</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://financien.belgium.be/nl/particulieren/woning/kadaster/administratieve-eenheden/administratieve-eenheden-downloaden</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description gmd:description="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Direct download of all the versions of the resource</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Direct download of all the versions of the resource</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Téléchargement direct de toutes les versions de la ressource</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">Directe download van al de versies van het bron</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">direkter Download der Ressource</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+    <gmd:DQ_DataQuality>
+      <gmd:scope>
+        <gmd:DQ_Scope>
+          <gmd:level>
+            <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset"/>
+          </gmd:level>
+        </gmd:DQ_Scope>
+      </gmd:scope>
+      <gmd:report>
+        <gmd:DQ_DomainConsistency>
+          <gmd:nameOfMeasure gmd:nameOfMeasure="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>INSPIRE Conformity</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">INSPIRE Conformity</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Conformité INSPIRE</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">INSPIRE Conformiteit</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">INSPIRE Konformität</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:nameOfMeasure>
+          <gmd:result>
+            <gmd:DQ_ConformanceResult>
+              <gmd:specification>
+                <gmd:CI_Citation>
+                  <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                    <gmx:Anchor gmx:Anchor="http://data.europa.eu/eli/reg/2010/1089">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmx:Anchor>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Règlement (UE) N° 1089/2010 de la Commission du 23 novembre 2010 portant modalités d'application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne l'interopérabilité des séries et des services de données géographiques</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Verordening (EU) n r. 1089/2010 van de Commissie van 23 november 2010 ter uitvoering van Richtlijn 2007/2/EG van het Europees Parlement en de Raad betreffende de interoperabiliteit van verzamelingen ruimtelijke gegevens en van diensten met betrekking tot ruimtelijke gegevens</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Verordnung (EG) Nr. 1089/2010 der Kommission vom 23. November 2010 zur Durchführung der Richtlinie 2007/2/EG des Europäischen Parlaments und des Rates hinsichtlich der Interoperabilität von Geodatensätzen und -diensten</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:title>
+                  <gmd:date>
+                    <gmd:CI_Date>
+                      <gmd:date>
+                        <gco:Date>2010-12-08</gco:Date>
+                      </gmd:date>
+                      <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                      </gmd:dateType>
+                    </gmd:CI_Date>
+                  </gmd:date>
+                </gmd:CI_Citation>
+              </gmd:specification>
+              <gmd:explanation gmd:explanation="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>The dataset’s compliance with the technical requirements as defined by the Commission Regulation (EU) No 1089/2010 of 23 November 2010 has not been checked</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">The dataset’s compliance with the technical requirements as defined by the Commission Regulation (EU) No 1089/2010 of 23 November 2010 has not been checked</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">La conformité du jeu de donnée aux exigences techniques telles qu’elles sont définies par le Règlement (UE) n° 1089/2010 de la Commission du 23 novembre 2010 n'a pas été testée</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">De overeenstemming van de dataset met de technische vereisten zoals bepaald in de Verordening (EU) nr 1089/2010 van de Commissie van 23 november 2010 werd niet gecontroleerd</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">Die Kongruenz des Datensatzes mit den technischen Anforderungen wie bestimmt in der Verordnung (EG) Nr. 1089/2010 der Kommission vom 23. November 2010 wurde nicht geprüft</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:explanation>
+              <gmd:pass gmd:pass="unknown"/>
+            </gmd:DQ_ConformanceResult>
+          </gmd:result>
+        </gmd:DQ_DomainConsistency>
+      </gmd:report>
+      <gmd:lineage>
+        <gmd:LI_Lineage>
+          <gmd:statement gmd:statement="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Administrative Units - situation on January 1st is extracted from the reference database for the land register data, CadGIS, whose situation is fixed on January 1st of the reference year. The geometric representation of administrative limits published in CadGIS is made up of a set of sections whose layout (X and Y coordinates) corresponds to the situation of an administrative limits at a given moment. Sometimes the coordinates are legally recorded, but often they are coming from an analysis and interpretation of legal documents, and/or field data or any other relevant information such as regional reference frames, aerial photographs or original plans. Therefore, this layout does not possess the same quality everywhere. Especially in places that have not been subject to recent measurements, (carto)graphic coordinates can be proposed and can therefore change over time if new information of better quality is provided in compliance with the update rules currently being developed. In the CadGIS database, the administrative limits are the delimitations of Belgian administrative entities at different hierarchical levels, i.e. municipalities, administrative arrondissements, provinces, regions and finally the country. Polygons (corresponding to the territories of the different hierarchical levels from the municipality to the country) are generated on the basis of the layout of these limits.</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Administrative Units - situation on January 1st is extracted from the reference database for the land register data, CadGIS, whose situation is fixed on January 1st of the reference year. The geometric representation of administrative limits published in CadGIS is made up of a set of sections whose layout (X and Y coordinates) corresponds to the situation of an administrative limits at a given moment. Sometimes the coordinates are legally recorded, but often they are coming from an analysis and interpretation of legal documents, and/or field data or any other relevant information such as regional reference frames, aerial photographs or original plans. Therefore, this layout does not possess the same quality everywhere. Especially in places that have not been subject to recent measurements, (carto)graphic coordinates can be proposed and can therefore change over time if new information of better quality is provided in compliance with the update rules currently being developed. In the CadGIS database, the administrative limits are the delimitations of Belgian administrative entities at different hierarchical levels, i.e. municipalities, administrative arrondissements, provinces, regions and finally the country. Polygons (corresponding to the territories of the different hierarchical levels from the municipality to the country) are generated on the basis of the layout of these limits.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Unités Administratives - situation au 1e janvier est extrait de la base de données cadastrales de référence, CadGIS, dont la situation est figée au 1e janvier de l’année de référence. La représentation géométrique des limites administratives publiée dans CadGIS est constituée d’un ensemble de tronçons dont le tracé (coordonnées X et Y) correspond à la situation d’une limite administrative à un instant déterminé. Parfois, les coordonnées sont légalement constatées, mais souvent elles proviennent d’une analyse et d’une interprétation de documents légaux, et/ou de données terrain ou de toutes autres informations pertinentes comme les référentiels régionaux, les photographies aériennes ou les plans primitifs. Ces tracés ne possèdent donc pas la même qualité partout. Surtout aux endroits non mesurés récemment, des coordonnées (carto)graphiques peuvent être proposées et peuvent donc évoluer dans le temps si une nouvelle information de meilleure qualité est apportée dans le respect des règles de mises à jour en cours d’élaboration. Dans la base de données CadGIS, les limites administratives sont les délimitations des entités administratives belges à différents niveaux hiérarchiques, à savoir les communes, les arrondissements administratifs, les provinces, les régions et enfin le pays. Les polygones (correspondant aux territoires des différents niveaux hiérarchiques depuis la commune jusqu’au pays) sont générés sur base du tracé de ces limites.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Administratieve eenheden - de toestand op 1 januari is een extractie van de kadastrale referentiedatabank, CadGIS, waarvan de toestand is vastgesteld op 1 januari van het referentiejaar. De in CadGIS gepubliceerde geometrische weergave van administratieve grenzen bestaat uit een reeks segmenten waarvan het tracé (X- en Y-coördinaten) overeenkomt met de toestand van een administratieve grens op een bepaald moment. Soms zijn de coördinaten wettelijk vastgelegd, maar vaak worden zij afgeleid uit een analyse en interpretatie van wettelijke documenten, en/of gegevens van op het terrein of andere relevante informatie zoals regionale referentiebestanden, luchtfoto's of primitieve plannen. Deze tracés hebben dus niet overal dezelfde kwaliteit. Vooral op plaatsen waar geen recente metingen werden verricht, kunnen (carto)grafische coördinaten worden voorgesteld, die dus in de loop van de tijd kunnen veranderen als nieuwe informatie van betere kwaliteit wordt verstrekt overeenkomstig de bijwerkingsregels die momenteel worden ontwikkeld. In de CadGIS-database zijn de administratieve grenzen de afbakeningen van Belgische administratieve entiteiten op verschillende hiërarchische niveaus, d.w.z. gemeenten, administratieve arrondissementen, provincies, regio's en tenslotte het land. De polygonen (die overeenkomen met het grondgebied van de verschillende hiërarchische niveaus van de gemeente tot het land) worden gegenereerd op basis van het tracé van deze grenzen.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Verwaltungseinheiten – Stand 1. Januar wird aus der Katasterdatenbank CadGIS entnommen, mit Stand vom 1. Januar des Referenzjahres. Die in CadGIS veröffentlichte geometrische Darstellung der administrativen Grenzen besteht aus einer Zusammenlegung von Teilstücken, deren Verlauf (X- und Y-Koordinaten) der Lage einer administrativen Grenze zu einem bestimmten Zeitpunkt entspricht. Manchmal sind die Koordinaten gesetzlich festgehalten, oft aber werden sie aus einer Analyse und Interpretation von gesetzlichen Unterlagen und/oder vor Ort erfassten Daten oder anderen sachdienlichen Informationen wie regionalen Referenzdateien, Luftaufnahmen oder primitiven Plänen abgeleitet. Diese Umrisse haben nicht überall die gleiche Qualität. Vor allem an Orten, die längere Zeit nicht vermessen wurden, können (karto)grafische Koordinaten vorgeschlagen werden und sich daher im Laufe der Zeit ändern, wenn neue und bessere Informationen gemäß den derzeit ausgearbeiteten Aktualisierungsregeln geliefert werden. In der CadGIS-Datenbank sind die administrativen Grenzen die Abgrenzungen der belgischen Verwaltungseinheiten auf verschiedenen Hierarchieebenen, d. h. Gemeinden, Verwaltungsbezirke, Provinzen, Regionen und schließlich das Staatsgebiet. Die Polygone (entsprechend den Gebieten der verschiedenen Hierarchieebenen von der Gemeinde bis zum Staatsgebiet) werden auf der Grundlage des Verlaufs dieser Grenzen generiert.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:statement>
+        </gmd:LI_Lineage>
+      </gmd:lineage>
+    </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>
