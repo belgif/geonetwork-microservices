@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+   <skos:ConceptScheme rdf:about="http://publications.europa.eu/resource/authority/frequency">
+      <skos:prefLabel xml:lang="en">Frequency</skos:prefLabel>
+   </skos:ConceptScheme>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/OTHER">
+      <skos:prefLabel xml:lang="de">anderer</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">other</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">autre</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">overige</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/WEEKLY">
+      <skos:prefLabel xml:lang="de">wöchentlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">weekly</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">hebdomadaire</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">wekelijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/ANNUAL">
+      <skos:prefLabel xml:lang="de">jährlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">annual</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">annuel</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">jaarlijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/ANNUAL_2">
+      <skos:prefLabel xml:lang="de">halbjährlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">semiannual</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">semestriel</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">halfjaarlijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/ANNUAL_3">
+      <skos:prefLabel xml:lang="de">dreimal im Jahr</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">three times a year</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">trois fois par an</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">drie keer per jaar</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/BIENNIAL">
+      <skos:prefLabel xml:lang="de">zweijährlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">biennial</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">biennal</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">tweejaarlijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/BIMONTHLY">
+      <skos:prefLabel xml:lang="de">zweimonatlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">bimonthly</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">bimestriel</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">tweemaandelijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/BIWEEKLY">
+      <skos:prefLabel xml:lang="de">zweiwöchentlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">biweekly</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">tous les quinze jours</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">veertiendaags</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/CONT">
+      <skos:prefLabel xml:lang="de">kontinuierlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">continuous</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">continuel</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">voortdurend</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/DAILY">
+      <skos:prefLabel xml:lang="de">täglich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">daily</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">quotidien</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">dagelijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/DAILY_2">
+      <skos:prefLabel xml:lang="de">zweimal täglich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">twice a day</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">deux fois par jour</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">tweemaal per dag</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/IRREG">
+      <skos:prefLabel xml:lang="de">unregelmäßig</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">irregular</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">irrégulier</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">onregelmatig</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/MONTHLY">
+      <skos:prefLabel xml:lang="de">monatlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">monthly</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">mensuel</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">maandelijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/MONTHLY_2">
+      <skos:prefLabel xml:lang="de">zweimal im Monat</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">semimonthly</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">bimensuel</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">twee keer per maand</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/MONTHLY_3">
+      <skos:prefLabel xml:lang="de">dreimal im Monat</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">three times a month</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">trois fois par mois</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">drie keer per maand</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/NEVER">
+      <skos:prefLabel xml:lang="de">niemals</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">never</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">jamais</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">nooit</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/OP_DATPRO">
+      <skos:prefLabel xml:lang="de">Vorläufige Daten</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">Provisional data</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">Données provisoires</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">Voorlopige gegevens</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/QUARTERLY">
+      <skos:prefLabel xml:lang="de">vierteljährlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">quarterly</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">trimestriel</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">driemaandelijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/TRIENNIAL">
+      <skos:prefLabel xml:lang="de">dreijährlich</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">triennial</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">triennal</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">driejaarlijks</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/UNKNOWN">
+      <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">inconnu</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">onbekend</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/UPDATE_CONT">
+      <skos:prefLabel xml:lang="de">ständige Aktualisierung</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">continuously updated</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">mise à jour continuelle</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">voortdurend geactualiseerd</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/WEEKLY_2">
+      <skos:prefLabel xml:lang="de">zweimal in Woche</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">semiweekly</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">bihebdomadaire</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">twee keer per week</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/WEEKLY_3">
+      <skos:prefLabel xml:lang="de">dreimal in Woche</skos:prefLabel>
+      <skos:prefLabel xml:lang="en">three times a week</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">trois fois par semaine</skos:prefLabel>
+      <skos:prefLabel xml:lang="nl">drie keer per week</skos:prefLabel>
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/QUINQUENNIAL">
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/DECENNIAL">
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/HOURLY">
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/QUADRENNIAL">
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/BIHOURLY">
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/TRIHOURLY">
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/BIDECENNIAL">
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/frequency/TRIDECENNIAL">
+      <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/frequency"/>
+   </skos:Concept>
+</rdf:RDF>

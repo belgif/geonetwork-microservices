@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+  <skos:ConceptScheme rdf:about="https://publications.europa.eu/resource/authority/language">
+    <skos:prefLabel xml:lang="en">Language</skos:prefLabel>
+  </skos:ConceptScheme>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/ENG">
+    <skos:prefLabel xml:lang="de">Englisch</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">English</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">anglais</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Engels</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/FRA">
+    <skos:prefLabel xml:lang="de">Französisch</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">French</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">français</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Frans</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/DEU">
+    <skos:prefLabel xml:lang="de">Deutsch</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">German</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">allemand</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Duits</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/NLD">
+    <skos:prefLabel xml:lang="de">Niederländisch</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Dutch</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">néerlandais</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Nederlands</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
+  </skos:Concept>
+</rdf:RDF>
