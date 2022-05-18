@@ -30,11 +30,8 @@ import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
-import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamWriter;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.ListUtils;
@@ -66,6 +63,9 @@ import org.fao.geonet.ogcapi.records.util.RecordsEsQueryBuilder;
 import org.fao.geonet.ogcapi.records.util.XmlUtil;
 import org.fao.geonet.repository.MetadataRepository;
 import org.fao.geonet.view.ViewUtility;
+import org.jdom.Element;
+import org.jdom.Namespace;
+import org.jdom.output.XMLOutputter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.MessageSource;
@@ -80,6 +80,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
@@ -207,7 +208,10 @@ public class ItemApiController {
           MediaType.APPLICATION_JSON_VALUE,
           GnMediaType.APPLICATION_JSON_LD_VALUE,
           MediaType.APPLICATION_RSS_XML_VALUE,
-          MediaType.TEXT_HTML_VALUE
+          MediaType.TEXT_HTML_VALUE,
+          GnMediaType.APPLICATION_RDF_XML_VALUE,
+          GnMediaType.APPLICATION_DCAT2_XML_VALUE,
+          GnMediaType.TEXT_TURTLE_VALUE
       })
   @ResponseStatus(HttpStatus.OK)
   @ApiResponses(value = {
@@ -245,16 +249,29 @@ public class ItemApiController {
       @ApiIgnore HttpServletResponse response,
       @ApiIgnore Model model) throws Exception {
 
-    List<MediaType> allowedMediaTypes =
-        ListUtils.union(MediaTypeUtil.defaultSupportedMediaTypes,
-            Arrays.asList(GnMediaType.APPLICATION_JSON_LD, MediaType.APPLICATION_RSS_XML));
-    MediaType mediaType =
-        mediaTypeUtil.calculatePriorityMediaTypeFromRequest(request, allowedMediaTypes);
+    if (startindex < 0 || limit <= 0) {
+      throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Limit must be superior to 0 and startindex must be equal or greater then 0");
+    }
+
+    List<MediaType> allowedMediaTypes = ListUtils.union(
+        MediaTypeUtil.defaultSupportedMediaTypes,
+        Arrays.asList(
+            GnMediaType.APPLICATION_JSON_LD,
+            MediaType.APPLICATION_RSS_XML,
+            GnMediaType.APPLICATION_RDF_XML,
+            GnMediaType.APPLICATION_DCAT2_XML,
+            GnMediaType.TEXT_TURTLE
+        )
+    );
+    MediaType mediaType = mediaTypeUtil.calculatePriorityMediaTypeFromRequest(request, allowedMediaTypes);
 
     if (mediaType.equals(MediaType.APPLICATION_XML)
         || mediaType.equals(MediaType.APPLICATION_JSON)
         || mediaType.equals(GnMediaType.APPLICATION_JSON_LD)
-        || mediaType.equals(MediaType.APPLICATION_RSS_XML)) {
+        || mediaType.equals(MediaType.APPLICATION_RSS_XML)
+        || mediaType.equals(GnMediaType.APPLICATION_RDF_XML)
+        || mediaType.equals(GnMediaType.APPLICATION_DCAT2_XML)
+        || mediaType.equals(GnMediaType.TEXT_TURTLE)) {
 
       return collectionsCollectionIdItemsGetInternal(
           collectionId, bbox, datetime, limit, startindex, type, q, externalids, sortby,
@@ -318,7 +335,9 @@ public class ItemApiController {
         if (isTurtle) {
           org.eclipse.rdf4j.model.Model model = Rio.parse(
               new ByteArrayInputStream(dcatXml.getBytes()),
-              "", RDFFormat.RDFXML);
+              "",
+              RDFFormat.RDFXML
+          );
           StringWriter turtleWriter = new StringWriter();
           Rio.write(model, turtleWriter, RDFFormat.TURTLE);
           streamResult(response,
@@ -467,16 +486,7 @@ public class ItemApiController {
   private Node getRecordAsXml(String collectionId, String recordId, HttpServletRequest request, Source source) throws Exception {
     String collectionFilter = collectionService.retrieveCollectionFilter(source);
     String query = recordsEsQueryBuilder.buildQuerySingleRecord(recordId, collectionFilter, null);
-    HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper(request) {
-      @Override
-      public String getHeader(String name) {
-        if (name.equals("Accept")) {
-          return MediaType.APPLICATION_XML_VALUE;
-        }
-        return super.getHeader(name);
-      }
-    };
-    String queryResponse = proxy.searchAndGetResult(request.getSession(), wrapper, query, null);
+    String queryResponse = proxy.searchAndGetResult(request.getSession(), getXmlRequestWrapper(request), query, null);
 
     Document queryResult = XmlUtil.parseXmlString(queryResponse);
     String total = queryResult.getChildNodes().item(0).getAttributes().getNamedItem("total")
@@ -551,8 +561,43 @@ public class ItemApiController {
 
     sortby = setDefaultRssSortBy(sortby, request);
 
+    var linkedDataHeaders = Arrays.asList(
+        GnMediaType.APPLICATION_RDF_XML_VALUE,
+        GnMediaType.APPLICATION_DCAT2_XML_VALUE,
+        GnMediaType.TEXT_TURTLE_VALUE
+    );
+    var isLinkedData = linkedDataHeaders.contains(getResponseContentType(request));
+    var isTurtle = GnMediaType.TEXT_TURTLE_VALUE.equals(getResponseContentType(request));
+
+    HttpServletRequestWrapper requestWrapper = null;
+
+    if (isLinkedData) {
+      requestWrapper = getXmlRequestWrapper(request);
+    }
+
     String queryResponse = search(collectionId, bbox, datetime, limit, startindex, type, q,
-        externalids, sortby, request);
+        externalids, sortby, isLinkedData ? requestWrapper: request);
+
+    if (isLinkedData) {
+      ClassPathResource xsltFile = new ClassPathResource("xslt/ogcapir/formats/dcat/dcat-iso19139.xsl");
+      try {
+        var dcatXml = XsltUtil.transformToString(queryResponse, xsltFile);
+
+        dcatXml = addPaging(request, queryResponse, limit, startindex, dcatXml);
+
+        if (isTurtle) {
+          org.eclipse.rdf4j.model.Model model = Rio.parse(new ByteArrayInputStream(dcatXml.getBytes()), "", RDFFormat.RDFXML);
+          StringWriter turtleWriter = new StringWriter();
+          Rio.write(model, turtleWriter, RDFFormat.TURTLE);
+          dcatXml = turtleWriter.toString();
+        }
+
+        queryResponse = dcatXml;
+
+      } catch (Exception e) {
+        throw new RuntimeException(e);
+      }
+    }
 
     try {
       streamResult(response, queryResponse, getResponseContentType(request));
@@ -561,6 +606,70 @@ public class ItemApiController {
     }
 
     return ResponseEntity.ok().build();
+  }
+
+  private String addPaging(HttpServletRequest request, String queryResponse, Integer limit, Integer startindex, String dcatXml) {
+    var hydraNS = Namespace.getNamespace("hydra", "http://www.w3.org/ns/hydra/core#");
+    var rdfNS = Namespace.getNamespace("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+    var total = queryResponse.substring(queryResponse.indexOf("total=\"") + 7);
+    total = total.substring(0, total.indexOf("\""));
+    var totalInt = Integer.parseInt(total);
+    var parameters = request.getParameterMap();
+    StringBuilder baseUrlBuilder = new StringBuilder(request.getRequestURL().toString() + "?");
+    for (var param: parameters.entrySet()) {
+      if (!"limit".equalsIgnoreCase(param.getKey()) && !"startindex".equalsIgnoreCase(param.getKey())) {
+        baseUrlBuilder.append(param.getKey())
+            .append("=")
+            .append(String.join(",", param.getValue()))
+            .append("&");
+      }
+    }
+    String baseUrl = baseUrlBuilder.toString();
+
+    var paging = new Element("PagedCollection", hydraNS);
+    paging.setAttribute("about", baseUrl + "startindex=" + startindex + "&limit=" + limit, rdfNS);
+
+    var type = new Element("type", rdfNS);
+    type.setAttribute("resource", "hydra:PartialCollectionView", rdfNS);
+    paging.addContent(type);
+
+    var totalItems = new Element("totalItems", hydraNS);
+    totalItems.setAttribute("datatype", "http://www.w3.org/2001/XMLSchema#integer", rdfNS);
+    paging.addContent(totalItems);
+    totalItems.addContent(total);
+
+    var itemsPerPage = new Element("itemsPerPage", hydraNS);
+    itemsPerPage.setAttribute("datatype", "http://www.w3.org/2001/XMLSchema#integer", rdfNS);
+    paging.addContent(itemsPerPage);
+    itemsPerPage.addContent(limit.toString());
+
+    var firstPage = new Element("firstPage", hydraNS);
+    firstPage.addContent(baseUrl + "startindex=0&limit=" + limit);
+    paging.addContent(firstPage);
+
+    var lastPage = new Element("lastPage", hydraNS);
+    lastPage.addContent(baseUrl + "startindex=" + (totalInt - (totalInt % limit)) + "&limit=" + limit);
+    paging.addContent(lastPage);
+
+    if (totalInt > (startindex + limit)) {
+      var nextPage = new Element("nextPage", hydraNS);
+      nextPage.addContent(baseUrl + "startindex=" + (startindex + limit) + "&limit=" + limit);
+      paging.addContent(nextPage);
+    }
+
+    if (startindex > 0) {
+      var previousPage = new Element("previousPage", hydraNS);
+      previousPage.addContent(baseUrl + "startindex=" + Math.max((startindex - limit), 0) + "&limit=" + limit);
+      paging.addContent(previousPage);
+    }
+
+    var insertAtIndex = dcatXml.indexOf("<dcat:Catalog");
+    var pagingStr = this.getXmlString(paging).replaceAll(" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"", "");
+    dcatXml = dcatXml.substring(0, insertAtIndex)
+        + pagingStr
+        + "\n   "
+        + dcatXml.substring(insertAtIndex);
+    return dcatXml;
   }
 
 
@@ -664,5 +773,32 @@ public class ItemApiController {
     }
 
     return mediaType;
+  }
+
+  private HttpServletRequestWrapper getXmlRequestWrapper(HttpServletRequest request) {
+    return new HttpServletRequestWrapper(request) {
+      @Override
+      public String getHeader(String name) {
+        if ("accept".equalsIgnoreCase(name)) {
+          return MediaType.APPLICATION_XML_VALUE;
+        } else {
+          return ((HttpServletRequest) getRequest()).getHeader(name);
+        }
+      }
+
+      @Override
+      public String getParameter(String name) {
+        if ("f".equalsIgnoreCase(name)) {
+          return getRequest().getParameter(name) != null ? "xml" : null;
+        } else {
+          return getRequest().getParameter(name);
+        }
+      }
+    };
+  }
+
+  public String getXmlString(Element data) {
+    XMLOutputter outputter = new XMLOutputter(org.jdom.output.Format.getPrettyFormat());
+    return outputter.outputString(data);
   }
 }

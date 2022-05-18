@@ -156,7 +156,7 @@
   <xsl:variable name="INSPIREGlossaryUri" select="'http://inspire.ec.europa.eu/glossary/'"/>
 
   <!-- Other variables -->
-  <xsl:variable name="OgcAPIUrl" select="'http://localhost:8081'" />
+  <xsl:variable name="OgcAPIUrl" select="'http://localhost:8080'" />
   <xsl:variable name="allThesauri">
     <xsl:copy-of select="document('./thesauri/language.rdf')"/>
     <xsl:copy-of select="document('./thesauri/TopicCategory.rdf')"/>
@@ -245,27 +245,27 @@
             <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
           </skos:Concept>
         </dct:language>
-<!--        TODO dct:issued-->
+        <!-- TODO dct:issued -->
         <xsl:variable name="boundingBox">
           <gmd:EX_GeographicBoundingBox>
             <gmd:westBoundLongitude>
               <gco:Decimal>
-                <xsl:value-of select="min(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude/gco:Decimal)"></xsl:value-of>
+                <xsl:value-of select="min(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude/gco:Decimal)"/>
               </gco:Decimal>
             </gmd:westBoundLongitude>
             <gmd:eastBoundLongitude>
               <gco:Decimal>
-                <xsl:value-of select="max(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal)"></xsl:value-of>
+                <xsl:value-of select="max(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal)"/>
               </gco:Decimal>
             </gmd:eastBoundLongitude>
             <gmd:southBoundLatitude>
               <gco:Decimal>
-                <xsl:value-of select="min(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal)"></xsl:value-of>
+                <xsl:value-of select="min(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal)"/>
               </gco:Decimal>
             </gmd:southBoundLatitude>
             <gmd:northBoundLatitude>
               <gco:Decimal>
-                <xsl:value-of select="max(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal)"></xsl:value-of>
+                <xsl:value-of select="max(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal)"/>
               </gco:Decimal>
             </gmd:northBoundLatitude>
           </gmd:EX_GeographicBoundingBox>
@@ -309,21 +309,22 @@
             </skos:ConceptScheme>
           </dcat:themeTaxonomy>
         </xsl:for-each>
-        <!--          TODO dcat:distribution-->
-        <xsl:for-each select="$resources">
+        <!-- TODO dcat:distribution -->
+
+        <xsl:for-each select="$resources/*">
           <xsl:choose>
-            <xsl:when test="name(*) = 'dcat:Dataset'">
+            <xsl:when test="name(.) = 'dcat:Dataset'">
               <dcat:dataset>
                 <xsl:copy-of select="."/>
               </dcat:dataset>
             </xsl:when>
-            <xsl:when test="name(*) = 'dcat:DataService'">
+            <xsl:when test="name(.) = 'dcat:DataService'">
               <dcat:service>
                 <xsl:copy-of select="."/>
               </dcat:service>
             </xsl:when>
             <xsl:otherwise>
-              <xsl:message select="concat('Resource name invalid: ', name(*))"/>
+              <xsl:message select="concat('Resource name invalid: ', name(.))"/>
             </xsl:otherwise>
           </xsl:choose>
         </xsl:for-each>
@@ -851,13 +852,22 @@
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="Email-vCard">
-      <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/*[normalize-space() != '']">
+      <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/*[name() = ('gco:CharacterString', 'gmx:Anchor') and normalize-space() != '']">
         <vcard:hasEmail rdf:resource="mailto:{normalize-space(.)}"/>
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="URL-vCard">
       <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL[normalize-space() != '']">
-        <vcard:hasURL rdf:resource="{normalize-space(.)}"/>
+        <vcard:hasURL>
+          <xsl:choose>
+            <xsl:when test="starts-with(normalize-space(.), 'http://') or starts-with(normalize-space(.), 'https://')">
+              <xsl:attribute name="rdf:resource" select="normalize-space(.)" />
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="rdf:resource" select="concat('http://', normalize-space(.))" />
+            </xsl:otherwise>
+          </xsl:choose>
+        </vcard:hasURL>
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="Telephone-vCard">
@@ -978,13 +988,22 @@
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="Email-FOAF">
-      <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/*[normalize-space() != '']">
+      <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/*[name() = ('gco:CharacterString', 'gmx:Anchor') and normalize-space() != '']">
         <foaf:mbox rdf:resource="mailto:{normalize-space(.)}"/>
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="URL-FOAF">
       <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL[normalize-space() != '']">
-        <foaf:workplaceHomepage rdf:resource="{normalize-space(.)}"/>
+        <foaf:workplaceHomepage>
+          <xsl:choose>
+            <xsl:when test="starts-with(normalize-space(.), 'http://') or starts-with(normalize-space(.), 'https://')">
+              <xsl:attribute name="rdf:resource" select="normalize-space(.)" />
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="rdf:resource" select="concat('http://', normalize-space(.))" />
+            </xsl:otherwise>
+          </xsl:choose>
+        </foaf:workplaceHomepage>
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="Telephone-FOAF">
@@ -1251,7 +1270,7 @@
     <!-- Bbox as GeoJSON -->
     <xsl:variable name="GeoJSONLiteral">{"type":"Polygon","crs":{"type":"name","properties":{"name":"<xsl:value-of select="$SrsUrn"/>"}},"coordinates":[[[<xsl:value-of select="$west"/><xsl:text>,</xsl:text><xsl:value-of select="$north"/>],[<xsl:value-of select="$east"/><xsl:text>,</xsl:text><xsl:value-of select="$north"/>],[<xsl:value-of select="$east"/><xsl:text>,</xsl:text><xsl:value-of select="$south"/>],[<xsl:value-of select="$west"/><xsl:text>,</xsl:text><xsl:value-of select="$south"/>],[<xsl:value-of select="$west"/><xsl:text>,</xsl:text><xsl:value-of select="$north"/>]]]}</xsl:variable>
 
-    <dct:spatial rdf:parseType="Resource">
+    <dct:spatial>
       <dct:Location>
         <!-- Recommended geometry encodings -->
         <locn:geometry rdf:datatype="{$gsp}wktLiteral"><xsl:value-of select="$WKTLiteral"/></locn:geometry>
@@ -1711,10 +1730,10 @@
   <!-- Coordinate and temporal reference system (tentative) -->
   <xsl:template name="ReferenceSystem" match="gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier">
     <xsl:param name="MetadataLanguage"/>
-    <xsl:param name="code" select="gmd:code/*[self::gco:CharacterString|gmx:Anchor]"/>
-    <xsl:param name="link" select="gmd:code/gmx:Anchor/@xlink:href"/>
-    <xsl:param name="codespace" select="gmd:codeSpace/*[self::gco:CharacterString|gmx:Anchor]"/>
-    <xsl:param name="version" select="gmd:version/*[self::gco:CharacterString|gmx:Anchor]"/>
+    <xsl:param name="code" select="gmd:code/gco:CharacterString|gmd:code/gmx:Anchor"/>
+    <xsl:param name="link" select="gmd:code/gmx:Anchor/@*[name() = ('xlink:href', 'gmx:Anchor')]"/>
+    <xsl:param name="codespace" select="gmd:codeSpace/gco:CharacterString|gmd:codeSpace/gmx:Anchor"/>
+    <xsl:param name="version" select="gmd:version/gco:CharacterString|gmd:version/gmx:Anchor"/>
     <xsl:param name="version-statement">
       <xsl:if test="$version != ''">
         <owl:versionInfo xml:lang="{$MetadataLanguage}"><xsl:value-of select="$version"/></owl:versionInfo>
@@ -1731,7 +1750,7 @@
       </xsl:when>
       <xsl:when test="starts-with($code, 'http://') or starts-with($code, 'https://')">
         <dct:conformsTo>
-          <dcat:Standard  rdf:about="{$code}">
+          <dcat:Standard rdf:about="{$code}">
               <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
           </dcat:Standard>
         </dct:conformsTo>
@@ -1742,45 +1761,25 @@
             <xsl:value-of select="substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($code,':'),':'),':'),':'),':'),':')"/>
           </xsl:if>
         </xsl:variable>
-        <xsl:choose>
-          <xsl:when test="$srid != '' and string(number($srid)) != 'NaN'">
-            <dct:conformsTo>
-              <dcat:Standard rdf:about="{$EpsgSrsBaseUri}/{$srid}">
-                <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
-                <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></dct:identifier>
-                <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></skos:notation>
-                <skos:inScheme>
-                  <skos:ConceptScheme rdf:about="{$EpsgSrsBaseUri}">
-                    <dct:title xml:lang="en"><xsl:value-of select="$EpsgSrsName"/></dct:title>
-                  </skos:ConceptScheme>
-                </skos:inScheme>
-                <xsl:copy-of select="$version-statement"/>
-              </dcat:Standard>
-            </dct:conformsTo>
-          </xsl:when>
-          <xsl:otherwise>
-            <dct:conformsTo rdf:parseType="Resource">
-              <dcat:Standard>
-                <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
-                <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></dct:identifier>
-                <xsl:if test="$codespace != ''">
-                  <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></skos:notation>
-                  <skos:inScheme>
-                    <skos:ConceptScheme>
-                      <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$codespace"/></dct:title>
-                    </skos:ConceptScheme>
-                  </skos:inScheme>
-                </xsl:if>
-                <xsl:copy-of select="$version-statement"/>
-              </dcat:Standard>
-
-            </dct:conformsTo>
-          </xsl:otherwise>
-        </xsl:choose>
+        <xsl:if test="$srid != '' and string(number($srid)) != 'NaN'">
+          <dct:conformsTo>
+            <dcat:Standard rdf:about="{$EpsgSrsBaseUri}/{$srid}">
+              <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
+              <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></dct:identifier>
+              <skos:notation rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$code"/></skos:notation>
+              <skos:inScheme>
+                <skos:ConceptScheme rdf:about="{$EpsgSrsBaseUri}">
+                  <dct:title xml:lang="en"><xsl:value-of select="$EpsgSrsName"/></dct:title>
+                </skos:ConceptScheme>
+              </skos:inScheme>
+              <xsl:copy-of select="$version-statement"/>
+            </dcat:Standard>
+          </dct:conformsTo>
+        </xsl:if>
       </xsl:when>
       <xsl:otherwise>
         <xsl:choose>
-          <xsl:when test="$code != '' and matches($code, '^\d+$') and (translate($codespace,$uppercase,$lowercase) = 'epsg' or starts-with(translate($codespace,$uppercase,$lowercase),translate($EpsgSrsBaseUrn,$uppercase,$lowercase)))">
+          <xsl:when test="$code != '' and matches($code, '^\d+$') and (translate($codespace, $uppercase, $lowercase) = 'epsg' or starts-with(translate($codespace, $uppercase, $lowercase),translate($EpsgSrsBaseUrn, $uppercase, $lowercase)) or normalize-space($codespace) = '')">
             <dct:conformsTo>
               <dcat:Standard rdf:about="{$EpsgSrsBaseUri}/{$code}">
                 <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
@@ -1829,24 +1828,6 @@
               </dcat:Standard>
             </dct:conformsTo>
           </xsl:when>
-          <xsl:otherwise>
-            <dct:conformsTo rdf:parseType="Resource">
-              <dcat:Standard>
-
-                <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
-                <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$code"/></dct:title>
-                <xsl:if test="$codespace != ''">
-                  <skos:prefLabel xml:lang="{$MetadataLanguage}"><xsl:value-of select="$code"/></skos:prefLabel>
-                  <skos:inScheme>
-                    <skos:ConceptScheme>
-                      <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="$codespace"/></dct:title>
-                    </skos:ConceptScheme>
-                  </skos:inScheme>
-                </xsl:if>
-                <xsl:copy-of select="$version-statement"/>
-              </dcat:Standard>
-            </dct:conformsTo>
-          </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>

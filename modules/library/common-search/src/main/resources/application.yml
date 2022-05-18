@@ -85,12 +85,14 @@ gn:
         mimeType: application/rdf+xml
         responseProcessor: JsonUserAndSelectionAwareResponseProcessorImpl
         operations:
+          - items
           - item
       -
         name : dcat_turtle
         mimeType : text/turtle
         responseProcessor: JsonUserAndSelectionAwareResponseProcessorImpl
         operations :
+          - items
           - item
 #      -
 #        name : iso19139

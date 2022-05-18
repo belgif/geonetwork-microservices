@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://sd-postgresql-1.int.ngi.be:5432/geonetwork4
+    username: geonetwork
+    password: geonetwork
+
+gn:
+  baseurl: http://metadata-dev:9901
+  language:
+    default: eng
+  legacy.url: http://metadata-dev/geonetwork
+  index:
+    url: http://sd-geonetwork-1.int.ngi.be:9200
+    records: gn-records
+    username:
+    password:
