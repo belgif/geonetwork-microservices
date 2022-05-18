@@ -1324,7 +1324,7 @@
 
     <xsl:if test="gmd:MD_LegalConstraints/*/gmd:MD_RestrictionCode/@codeListValue = 'otherRestrictions'">
       <xsl:choose>
-        <xsl:when test="starts-with(gmd:MD_LegalConstraints/gmd:otherConstraints/gmx:Anchor/@*[name() = ('xlink:href', 'gmx:Anchor')], 'http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess')">
+        <xsl:when test="count(gmd:MD_LegalConstraints/gmd:otherConstraints/gmx:Anchor[starts-with(@xlink:href|@gmx:Anchor, 'http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess')]) > 0">
           <xsl:variable name="xlink" select="string(gmd:MD_LegalConstraints/gmd:otherConstraints/gmx:Anchor/@*[name() = ('xlink:href', 'gmx:Anchor')])"/>
           <xsl:variable name="accessRightId">
             <xsl:choose>
