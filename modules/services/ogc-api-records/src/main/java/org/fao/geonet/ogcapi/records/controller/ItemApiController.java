@@ -295,13 +295,12 @@ public class ItemApiController {
             .readValue(record.get(IndexRecordFieldNames.source).toString(), IndexRecord.class);
 
         String xsltFileName = String.format("xslt/ogcapir/formats/dcat/dcat-%s.xsl", indexRecord.getDocumentStandard());
-        File xsltFile = new ClassPathResource(xsltFileName).getFile();
+        ClassPathResource xsltFile = new ClassPathResource(xsltFileName);
 
         String dcatXml;
         if (xsltFile.exists()) {
           Node metadataXml = getRecordAsXml(collectionId, recordId, request, source);
-          dcatXml = XsltUtil.transformToString(XmlUtil.getNodeString(metadataXml),
-              new FileInputStream(xsltFile));
+          dcatXml = XsltUtil.transformToString(XmlUtil.getNodeString(metadataXml), xsltFile);
         } else {
           JAXBContext context = null;
           context = JAXBContext.newInstance(

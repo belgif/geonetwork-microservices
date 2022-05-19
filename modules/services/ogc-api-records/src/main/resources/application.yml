@@ -1,0 +1,166 @@
+server:
+  port: 8081
+  instance-id: ${spring.application.name}:${spring.application.instance_id:${spring.cloud.client.ip-address}}:${server.port}
+  servlet:
+    encoding:
+      charset: UTF-8
+      force-response: true
+
+spring:
+  application.name: ogc-records-service
+  cloud:
+    loadbalancer.ribbon.enabled: false # ribbon is in maintenance mode and should be replaced by spring-cloud-loadbalancer
+    config:
+      fail-fast: true
+      retry:
+        max-attempts: 20
+      discovery:
+        enabled: false
+        service-id: config-service
+      enabled: false
+  rabbitmq.host: localhost
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    jpa.generate-ddl: false
+    jpa.hibernate.ddl-auto: none
+
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+    instance-id: ${server.instance-id}
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 30
+  client:
+    enabled: false
+    registerWithEureka: false
+    fetchRegistry: false
+    registry-fetch-interval-seconds: 30
+    serviceUrl:
+      defaultZone: ${eureka.server.url:http://localhost:8761/eureka}
+    healthcheck:
+      enabled: true
+
+logging:
+  level:
+    # geonetwork roots
+    org.fao.geonet: INFO
+    org.fao.geonet.ogcapi: DEBUG
+    org.fao.geonet.searching: DEBUG
+
+springfox:
+  documentation:
+    swaggerUi:
+      baseUrl: /openapi
+    openApi:
+      v3:
+        path: /openapi/v3/api-docs
+    swagger:
+      v2:
+        path: /openapi/v2/api-docs
+
+
+gn:
+  search:
+    queryBase: 'any:(${any}) resourceTitleObject.default:(${any})^2'
+    scoreConfig: >
+      {
+        "boost": "5",
+        "functions": [
+          { // Boost down member of a series
+            "filter": { "exists": { "field": "parentUuid" } },
+            "weight": 0.3
+          },
+          { // Boost down obsolete records
+            "filter": { "match": { "cl_status.key": "obsolete" } },
+            "weight": 0.3
+          },
+          {
+            "gauss": {
+              "dateStamp": {
+                "scale": "365d",
+                "offset": "90d",
+                "decay": 0.5
+              }
+            }
+          }
+        ],
+        "score_mode": "multiply"
+      }
+    sortables:
+      - "relevance"
+      - "createDate:desc"
+      - "resourceTitleObject.default.keyword"
+      - "rating:desc"
+      - "popularity:desc"
+    formats:
+      - name: html
+        mimeType: text/html
+        responseProcessor: JsonUserAndSelectionAwareResponseProcessorImpl
+        operations:
+          - root
+          - collections
+          - collection
+          - items
+          - item
+      - name: xml
+        mimeType: application/xml
+        responseProcessor: XmlResponseProcessorImpl
+        operations:
+          - root
+          - collections
+          - collection
+          - items
+          - item
+      - name: json
+        mimeType: application/json
+        responseProcessor: JsonUserAndSelectionAwareResponseProcessorImpl
+        operations:
+          - root
+          - collections
+          - collection
+          - items
+          - item
+      - name: gn
+        mimeType: application/gn+xml
+        responseProcessor: XsltResponseProcessorImpl
+      - name: opensearch
+        mimeType: application/opensearchdescription+xml
+        operations:
+          - collection
+      - name: schema.org
+        mimeType: application/ld+json
+        responseProcessor: JsonLdResponseProcessorImpl
+        operations:
+          - items
+          - item
+      - name: dcat
+        mimeType: application/rdf+xml
+        responseProcessor: JsonUserAndSelectionAwareResponseProcessorImpl
+        operations:
+          - items
+          - item
+      - name: dcat_turtle
+        mimeType: text/turtle
+        responseProcessor: JsonUserAndSelectionAwareResponseProcessorImpl
+        operations:
+          - items
+          - item
+      - name: rss
+        mimeType: application/rss+xml
+        responseProcessor: RssResponseProcessorImpl
+        operations:
+          - items
+    defaultMimeType: application/rdf+xml
+    sources:
+      - "resourceTitleObject"
+      - "resourceAbstractObject"
+      - "resourceType"
+      - "overview"
+      - "uuid"
+      - "schema"
+      - "link"
+      - "allKeywords"
+      - "contactForResource"
+      - "cl_status"
+      - "edit"

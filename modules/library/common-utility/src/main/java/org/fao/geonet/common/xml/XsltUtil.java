@@ -7,18 +7,14 @@
 package org.fao.geonet.common.xml;
 
 
-import java.io.File;
-import java.io.InputStream;
-import java.io.StringReader;
-import java.io.StringWriter;
+import java.io.*;
+import java.net.URL;
+import java.nio.file.Paths;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.util.JAXBResult;
 import javax.xml.stream.XMLStreamWriter;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamSource;
 import net.sf.saxon.s9api.Processor;
 import net.sf.saxon.s9api.SaxonApiException;
@@ -26,6 +22,7 @@ import net.sf.saxon.s9api.Serializer;
 import net.sf.saxon.s9api.Xslt30Transformer;
 import net.sf.saxon.s9api.XsltCompiler;
 import net.sf.saxon.s9api.XsltExecutable;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -89,7 +86,7 @@ public class XsltUtil {
   /**
    * Transform XML string and write result as a string
    */
-  public static String transformToString(String inputXmlString, InputStream xsltFile) throws Exception {
+  public static String transformToString(String inputXmlString, ClassPathResource xsltFile) throws Exception {
     Processor proc = new Processor(false);
     StringWriter stringWriter = new StringWriter();
     Serializer out = proc.newSerializer(stringWriter);
@@ -97,9 +94,27 @@ public class XsltUtil {
     out.setOutputProperty(Serializer.Property.INDENT, "yes");
     out.setOutputProperty(Serializer.Property.VERSION, "1.0");
     out.setOutputProperty(Serializer.Property.ENCODING, "UTF-8");
+    var resolver = new URIResolver() {
+      @Override
+      public Source resolve(String href, String base) {
+        try {
+          if (href.startsWith("http://") || href.startsWith("https://")) {
+            return new StreamSource(new URL(href).openStream());
+          } else {
+            String path = Paths.get(xsltFile.getPath()).getParent().resolve(href).toString();
+            return new StreamSource(new ClassPathResource(path).getInputStream());
+          }
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    };
+
     XsltCompiler compiler = proc.newXsltCompiler();
-    XsltExecutable xsl = compiler.compile(new StreamSource(xsltFile));
+    compiler.setURIResolver(resolver);
+    XsltExecutable xsl = compiler.compile(new StreamSource(xsltFile.getInputStream()));
     Xslt30Transformer transformer = xsl.load30();
+    transformer.setURIResolver(resolver);
     transformer.transform(new StreamSource(new StringReader(inputXmlString)), out);
     return stringWriter.getBuffer().toString();
   }
