@@ -172,9 +172,166 @@
    -->
   <xsl:template match="/">
     <rdf:RDF>
-      <xsl:apply-templates select="gmd:MD_Metadata|//gmd:MD_Metadata"/>
+      <dcat:Catalog>
+        <xsl:variable name="resources">
+          <xsl:apply-templates select="gmd:MD_Metadata|//gmd:MD_Metadata"/>
+        </xsl:variable>
+        <dct:title xml:lang="en">Geoportal of the Belgian federal institutions</dct:title>
+        <dct:title xml:lang="fr">Géoportail des institutions fédérales belges</dct:title>
+        <dct:title xml:lang="nl">Geoportaal van de Belgische federale instellingen</dct:title>
+        <dct:title xml:lang="de">Geoportal des belgischen Institutionen</dct:title>
+        <dct:description xml:lang="en">TODO (en)</dct:description>
+        <dct:description xml:lang="fr">TODO (fr)</dct:description>
+        <dct:description xml:lang="nl">TODO (nl)</dct:description>
+        <dct:description xml:lang="de">TODO (de)</dct:description>
+        <dct:publisher>
+          <foaf:Organization>
+            <foaf:name xml:lang="en">National Geographic Institute</foaf:name>
+            <foaf:name xml:lang="fr">Institut géographique national</foaf:name>
+            <foaf:name xml:lang="nl">Nationaal Geografisch Instituut</foaf:name>
+            <foaf:name xml:lang="de">Nationales geographisches Institut</foaf:name>
+            <foaf:mbox rdf:resource="mailto:products@ngi.be"/>
+            <foaf:workplaceHomepage rdf:resource="http://www.ngi.be"/>
+            <locn:address>
+              <locn:Address>
+                <locn:thoroughfare xml:lang="en">Kortenberglaan 115</locn:thoroughfare>
+                <locn:thoroughfare xml:lang="fr">Avenue de Cortenbergh 115</locn:thoroughfare>
+                <locn:thoroughfare xml:lang="nl">Kortenberglaan 115</locn:thoroughfare>
+                <locn:thoroughfare xml:lang="de">Avenue de Cortenbergh 115</locn:thoroughfare>
+                <locn:postName xml:lang="en">Brussels</locn:postName>
+                <locn:postCode>1000</locn:postCode>
+                <locn:adminUnitL1 xml:lang="en">Belgium</locn:adminUnitL1>
+                <locn:adminUnitL1 xml:lang="fr">Belgique</locn:adminUnitL1>
+                <locn:adminUnitL1 xml:lang="nl">België</locn:adminUnitL1>
+                <locn:adminUnitL1 xml:lang="de">Belgien</locn:adminUnitL1>
+              </locn:Address>
+            </locn:address>
+          </foaf:Organization>
+        </dct:publisher>
+        <foaf:homepage rdf:resource="https://www.geo.be/home"/>
+        <dct:language>
+          <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/ENG">
+            <skos:prefLabel xml:lang="de">Englisch</skos:prefLabel>
+            <skos:prefLabel xml:lang="en">English</skos:prefLabel>
+            <skos:prefLabel xml:lang="fr">anglais</skos:prefLabel>
+            <skos:prefLabel xml:lang="nl">Engels</skos:prefLabel>
+            <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
+          </skos:Concept>
+        </dct:language>
+        <dct:language>
+          <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/DEU">
+            <skos:prefLabel xml:lang="de">Deutsch</skos:prefLabel>
+            <skos:prefLabel xml:lang="en">German</skos:prefLabel>
+            <skos:prefLabel xml:lang="fr">allemand</skos:prefLabel>
+            <skos:prefLabel xml:lang="nl">Duits</skos:prefLabel>
+            <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
+          </skos:Concept>
+        </dct:language>
+        <dct:language>
+          <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/FRA">
+            <skos:prefLabel xml:lang="de">Französisch</skos:prefLabel>
+            <skos:prefLabel xml:lang="en">French</skos:prefLabel>
+            <skos:prefLabel xml:lang="fr">français</skos:prefLabel>
+            <skos:prefLabel xml:lang="nl">Frans</skos:prefLabel>
+            <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
+          </skos:Concept>
+        </dct:language>
+        <dct:language>
+          <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/NLD">
+            <skos:prefLabel xml:lang="de">Niederländisch</skos:prefLabel>
+            <skos:prefLabel xml:lang="en">Dutch</skos:prefLabel>
+            <skos:prefLabel xml:lang="fr">néerlandais</skos:prefLabel>
+            <skos:prefLabel xml:lang="nl">Nederlands</skos:prefLabel>
+            <skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/language"/>
+          </skos:Concept>
+        </dct:language>
+<!--        TODO dct:issued-->
+        <xsl:variable name="boundingBox">
+          <gmd:EX_GeographicBoundingBox>
+            <gmd:westBoundLongitude>
+              <gco:Decimal>
+                <xsl:value-of select="min(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude/gco:Decimal)"></xsl:value-of>
+              </gco:Decimal>
+            </gmd:westBoundLongitude>
+            <gmd:eastBoundLongitude>
+              <gco:Decimal>
+                <xsl:value-of select="max(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal)"></xsl:value-of>
+              </gco:Decimal>
+            </gmd:eastBoundLongitude>
+            <gmd:southBoundLatitude>
+              <gco:Decimal>
+                <xsl:value-of select="min(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal)"></xsl:value-of>
+              </gco:Decimal>
+            </gmd:southBoundLatitude>
+            <gmd:northBoundLatitude>
+              <gco:Decimal>
+                <xsl:value-of select="max(//gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal)"></xsl:value-of>
+              </gco:Decimal>
+            </gmd:northBoundLatitude>
+          </gmd:EX_GeographicBoundingBox>
+        </xsl:variable>
+        <xsl:apply-templates select="$boundingBox/*"/>
+        <dcat:contactPoint>
+          <vcard:Organization>
+            <vcard:organization-name xml:lang="en">Geoportal of the Belgian federal institutions</vcard:organization-name>
+            <vcard:organization-name xml:lang="fr">Géoportail des institutions fédérales belges</vcard:organization-name>
+            <vcard:organization-name xml:lang="nl">Geoportaal van de Belgische federale instellingen</vcard:organization-name>
+            <vcard:organization-name xml:lang="de">Geoportal des belgischen Institutionen</vcard:organization-name>
+            <vcard:hasEmail rdf:resource="mailto:products@ngi.be"/>
+            <vcard:hasURL rdf:resource="http://www.ngi.be"/>
+            <vcard:hasAddress>
+              <vcard:Address>
+                <vcard:street-address xml:lang="en">Kortenberglaan 115</vcard:street-address>
+                <vcard:street-address xml:lang="fr">Avenue de Cortenbergh 115</vcard:street-address>
+                <vcard:street-address xml:lang="nl">Kortenberglaan 115</vcard:street-address>
+                <vcard:street-address xml:lang="de">Avenue de Cortenbergh 115</vcard:street-address>
+                <vcard:locality xml:lang="en">Brussels</vcard:locality>
+                <vcard:postal-code>1000</vcard:postal-code>
+                <vcard:country-name xml:lang="en">Belgium</vcard:country-name>
+                <vcard:country-name xml:lang="fr">Belgique</vcard:country-name>
+                <vcard:country-name xml:lang="nl">België</vcard:country-name>
+                <vcard:country-name xml:lang="de">Belgien</vcard:country-name>
+              </vcard:Address>
+            </vcard:hasAddress>
+          </vcard:Organization>
+        </dcat:contactPoint>
+        <dct:isPartOf rdf:resource="{$OgcAPIUrl}/collections/main/items"/>
+        <xsl:for-each select="distinct-values($resources//skos:inScheme/@rdf:resource)">
+          <dcat:themeTaxonomy>
+            <skos:ConceptScheme rdf:about="{string(.)}">
+              <xsl:variable name="schemeUri" select="string(.)"/>
+              <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/skos:prefLabel"/>
+              <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:title"/>
+              <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:issued"/>
+              <dct:identifier>
+                <xsl:value-of select="string(.)"/>
+              </dct:identifier>
+            </skos:ConceptScheme>
+          </dcat:themeTaxonomy>
+        </xsl:for-each>
+        <!--          TODO dcat:distribution-->
+        <xsl:for-each select="$resources">
+          <xsl:choose>
+            <xsl:when test="name(*) = 'dcat:Dataset'">
+              <dcat:dataset>
+                <xsl:copy-of select="."/>
+              </dcat:dataset>
+            </xsl:when>
+            <xsl:when test="name(*) = 'dcat:DataService'">
+              <dcat:service>
+                <xsl:copy-of select="."/>
+              </dcat:service>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:message select="concat('Resource name invalid: ', name(*))"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:for-each>
+      </dcat:Catalog>
     </rdf:RDF>
   </xsl:template>
+
+
 
   <!--
     Metadata template
