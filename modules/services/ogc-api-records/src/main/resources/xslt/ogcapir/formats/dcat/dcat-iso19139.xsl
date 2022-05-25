@@ -372,31 +372,6 @@
       </xsl:for-each>
     </xsl:variable>
 
-    <!-- Metadata description (metadata on metadata) -->
-    <xsl:variable name="MetadataDescription">
-      <!-- Metadata language -->
-      <xsl:if test="$ormlang != ''">
-        <dct:language rdf:resource="{concat($oplang, translate($ormlang, $lowercase, $uppercase))}"/>
-      </xsl:if>
-      <!-- Metadata date -->
-      <xsl:if test="$MetadataDate != ''">
-        <xsl:variable name="data-type">
-          <xsl:call-template name="DateDataType">
-            <xsl:with-param name="date" select="$MetadataDate"/>
-          </xsl:call-template>
-        </xsl:variable>
-        <dct:modified rdf:datatype="{$xsd}{$data-type}">
-          <xsl:value-of select="$MetadataDate"/>
-        </dct:modified>
-      </xsl:if>
-      <!-- Metadata file identifier (tentative) -->
-      <xsl:for-each select="gmd:fileIdentifier/gco:CharacterString">
-        <dct:identifier rdf:datatype="{$xsd}string">
-          <xsl:value-of select="."/>
-        </dct:identifier>
-      </xsl:for-each>
-    </xsl:variable>
-
     <!-- Resource description (resource metadata) -->
     <xsl:variable name="ResourceDescription">
 
@@ -619,44 +594,10 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <xsl:choose>
-      <xsl:when test="$ResourceUri != ''">
-        <xsl:choose>
-          <xsl:when test="$MetadataUri != ''">
-            <dcat:CatalogRecord rdf:about="{$MetadataUri}">
-              <foaf:primaryTopic rdf:resource="{$ResourceUri}"/>
-              <xsl:copy-of select="$MetadataDescription"/>
-            </dcat:CatalogRecord>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:if test="normalize-space($MetadataDescription)">
-              <dcat:CatalogRecord>
-                <foaf:primaryTopic rdf:resource="{$ResourceUri}"/>
-                <xsl:copy-of select="$MetadataDescription"/>
-              </dcat:CatalogRecord>
-            </xsl:if>
-          </xsl:otherwise>
-        </xsl:choose>
-        <xsl:element name="{$resourceElementName}">
-          <xsl:attribute name="rdf:about" >
-            <xsl:value-of select="$ResourceUri"/>
-          </xsl:attribute>
-          <xsl:copy-of select="$ResourceDescription"/>
-        </xsl:element>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:element name="{$resourceElementName}">
-          <xsl:if test="normalize-space($MetadataDescription)">
-            <foaf:isPrimaryTopicOf>
-              <dcat:CatalogRecord>
-                <xsl:copy-of select="$MetadataDescription"/>
-              </dcat:CatalogRecord>
-            </foaf:isPrimaryTopicOf>
-          </xsl:if>
-          <xsl:copy-of select="$ResourceDescription"/>
-        </xsl:element>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:element name="{$resourceElementName}">
+      <xsl:attribute name="rdf:about" select="$ResourceUri" />
+      <xsl:copy-of select="$ResourceDescription"/>
+    </xsl:element>
   </xsl:template>
 
   <!--
@@ -1065,15 +1006,11 @@
       <!-- The use of @uriref is still under discussion by the INSPIRE MIG. -->
       <xsl:when test="$uriref != ''">
         <dcat:servesDataset rdf:resource="{@uriref}"/>
-        <!-- DEPRECATED: Mapping kept for backward compatibility with GeoDCAT-AP v1.* -->
-        <dct:hasPart rdf:resource="{@uriref}"/>
       </xsl:when>
       <xsl:when test="$code != ''">
         <xsl:choose>
           <xsl:when test="starts-with($code, 'http://') or starts-with($code, 'https://')">
             <dcat:servesDataset rdf:resource="{$code}"/>
-            <!-- DEPRECATED: Mapping kept for backward compatibility with GeoDCAT-AP v1.* -->
-            <dct:hasPart rdf:resource="{$code}"/>
           </xsl:when>
           <xsl:otherwise>
             <dcat:servesDataset rdf:parseType="Resource">
@@ -1085,28 +1022,7 @@
                   <dct:identifier rdf:datatype="{$xsd}string"><xsl:value-of select="$resID"/></dct:identifier>
                 </xsl:otherwise>
               </xsl:choose>
-              <xsl:if test="$href != '' and $href != '' and (starts-with($href, 'http://') or starts-with($href, 'https://'))">
-                <foaf:isPrimaryTopicOf>
-                  <dcat:CatalogRecord rdf:about="{$href}"/>
-                </foaf:isPrimaryTopicOf>
-              </xsl:if>
             </dcat:servesDataset>
-            <!-- DEPRECATED: Mapping kept for backward compatibility with GeoDCAT-AP v1.* -->
-            <dct:hasPart rdf:parseType="Resource">
-              <xsl:choose>
-                <xsl:when test="starts-with($resID, 'http://') or starts-with($resID, 'https://')">
-                  <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$resID"/></dct:identifier>
-                </xsl:when>
-                <xsl:otherwise>
-                  <dct:identifier rdf:datatype="{$xsd}string"><xsl:value-of select="$resID"/></dct:identifier>
-                </xsl:otherwise>
-              </xsl:choose>
-              <xsl:if test="$href != '' and $href != '' and (starts-with($href, 'http://') or starts-with($href, 'https://'))">
-                <foaf:isPrimaryTopicOf>
-                  <dcat:CatalogRecord rdf:about="{$href}"/>
-                </foaf:isPrimaryTopicOf>
-              </xsl:if>
-            </dct:hasPart>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:when>
