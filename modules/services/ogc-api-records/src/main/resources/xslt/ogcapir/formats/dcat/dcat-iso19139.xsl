@@ -721,7 +721,7 @@
     <xsl:param name="MetadataLanguage"/>
     <xsl:param name="ResourceType"/>
     <xsl:variable name="role" select="string(gmd:role/gmd:CI_RoleCode/@codeListValue)" />
-    <xsl:variable name="IndividualName" select="normalize-space(gmd:individualName/*)" />
+    <xsl:variable name="IndividualName" select="normalize-space(gmd:individualName/*[self::gco:CharacterString|gmx:Anchor])" />
     <xsl:variable name="OrganisationName" select="normalize-space(gmd:organisationName/*[self::gco:CharacterString|gmx:Anchor])" />
     <xsl:variable name="OrganisationURI" select="normalize-space(gmd:organisationName/*/@xlink:href)" />
 
