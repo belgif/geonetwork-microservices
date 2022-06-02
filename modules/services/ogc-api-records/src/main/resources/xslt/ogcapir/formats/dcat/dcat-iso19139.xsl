@@ -163,6 +163,7 @@
     <xsl:copy-of select="document('./thesauri/frequency.rdf')"/>
     <xsl:copy-of select="document('./thesauri/access-rights.rdf')"/>
     <xsl:copy-of select="document('./thesauri/SpatialRepresentationType.rdf')"/>
+    <xsl:copy-of select="document('./thesauri/ServiceType.rdf')"/>
   </xsl:variable>
 
 
@@ -533,10 +534,6 @@
     <!-- Resource description (resource metadata) -->
     <xsl:variable name="ResourceDescription">
 
-      <xsl:if test="$InspireResourceType != ''">
-        <dct:type rdf:resource="{$ResourceTypeCodelistUri}/{$ResourceType}"/>
-      </xsl:if>
-
       <xsl:copy-of select="$ResourceTitle"/>
       <xsl:copy-of select="$ResourceAbstract"/>
 
@@ -582,7 +579,10 @@
 
       <!-- Spatial service type -->
       <xsl:if test="$ResourceType = 'service'">
-        <dct:type rdf:resource="{$SpatialDataServiceTypeCodelistUri}/{$ServiceType}"/>
+        <dct:type>
+          <xsl:copy-of
+            select="$allThesauri//skos:Concept[@rdf:about = concat($SpatialDataServiceTypeCodelistUri,'/', $ServiceType)]"/>
+        </dct:type>
       </xsl:if>
 
       <!-- Spatial extent -->
@@ -1177,32 +1177,7 @@
       </xsl:choose>
     </xsl:param>
     <xsl:param name="resID" select="concat($codespace, $code)"/>
-    <xsl:param name="uriref" select="@uriref"/>
-    <xsl:choose>
-      <!-- The use of @uriref is still under discussion by the INSPIRE MIG. -->
-      <xsl:when test="$uriref != ''">
-        <dcat:servesDataset rdf:resource="{@uriref}"/>
-      </xsl:when>
-      <xsl:when test="$code != ''">
-        <xsl:choose>
-          <xsl:when test="starts-with($code, 'http://') or starts-with($code, 'https://')">
-            <dcat:servesDataset rdf:resource="{$code}"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <dcat:servesDataset rdf:parseType="Resource">
-              <xsl:choose>
-                <xsl:when test="starts-with($resID, 'http://') or starts-with($resID, 'https://')">
-                  <dct:identifier rdf:datatype="{$xsd}anyURI"><xsl:value-of select="$resID"/></dct:identifier>
-                </xsl:when>
-                <xsl:otherwise>
-                  <dct:identifier rdf:datatype="{$xsd}string"><xsl:value-of select="$resID"/></dct:identifier>
-                </xsl:otherwise>
-              </xsl:choose>
-            </dcat:servesDataset>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:when>
-    </xsl:choose>
+    <dcat:servesDataset rdf:resource="{$OgcAPIUrl}/collections/main/items/{$resID}"/>
   </xsl:template>
 
   <!-- Conformity -->
@@ -2025,25 +2000,25 @@
     <xsl:param name="protocol"/>
     <xsl:choose>
       <xsl:when test="$protocol = 'csw'">
-        <xsl:text>http://www.opengeospatial.org/standards/cat</xsl:text>
+        <xsl:text>http://www.opengis.net/def/serviceType/ogc/csw</xsl:text>
       </xsl:when>
       <xsl:when test="$protocol = 'sos'">
-        <xsl:text>http://www.opengeospatial.org/standards/sos</xsl:text>
+        <xsl:text>http://www.opengis.net/def/serviceType/ogc/sos</xsl:text>
       </xsl:when>
       <xsl:when test="$protocol = 'sps'">
         <xsl:text>http://www.opengeospatial.org/standards/sps</xsl:text>
       </xsl:when>
       <xsl:when test="$protocol = 'wcs'">
-        <xsl:text>http://www.opengeospatial.org/standards/wcs</xsl:text>
+        <xsl:text>http://www.opengis.net/def/serviceType/ogc/wcs</xsl:text>
       </xsl:when>
       <xsl:when test="$protocol = 'wfs'">
-        <xsl:text>http://www.opengeospatial.org/standards/wfs</xsl:text>
+        <xsl:text>http://www.opengis.net/def/serviceType/ogc/wfs</xsl:text>
       </xsl:when>
       <xsl:when test="$protocol = 'wms'">
-        <xsl:text>http://www.opengeospatial.org/standards/wms</xsl:text>
+        <xsl:text>http://www.opengis.net/def/serviceType/ogc/wms</xsl:text>
       </xsl:when>
       <xsl:when test="$protocol = 'wmts'">
-        <xsl:text>http://www.opengeospatial.org/standards/wmts</xsl:text>
+        <xsl:text>http://www.opengis.net/def/serviceType/ogc/wmts</xsl:text>
       </xsl:when>
       <xsl:when test="$protocol = 'wps'">
         <xsl:text>http://www.opengeospatial.org/standards/wps</xsl:text>
@@ -2099,9 +2074,6 @@
     </xsl:param>
     <xsl:if test="$endpoint-url != ''">
       <dcat:endpointURL rdf:resource="{$endpoint-url}"/>
-    </xsl:if>
-    <xsl:if test="$endpoint-description != ''">
-      <dcat:endpointDescription rdf:resource="{$endpoint-description}"/>
     </xsl:if>
   </xsl:template>
 
