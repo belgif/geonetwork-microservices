@@ -22,41 +22,36 @@
   (http://ec.europa.eu/isa/actions/01-trusted-information-exchange/1-17action_en.htm).
 
 -->
-<xsl:stylesheet
-  xmlns:adms   = "http://www.w3.org/ns/adms#"
-  xmlns:cnt    = "http://www.w3.org/2011/content#"
-  xmlns:dc     = "http://purl.org/dc/elements/1.1/"
-  xmlns:dcat   = "http://www.w3.org/ns/dcat#"
-  xmlns:dct    = "http://purl.org/dc/terms/"
-  xmlns:dctype = "http://purl.org/dc/dcmitype/"
-  xmlns:earl   = "http://www.w3.org/ns/earl#"
-  xmlns:foaf   = "http://xmlns.com/foaf/0.1/"
-  xmlns:gco    = "http://www.isotc211.org/2005/gco"
-  xmlns:gmd    = "http://www.isotc211.org/2005/gmd"
-  xmlns:gml    = "http://www.opengis.net/gml"
-  xmlns:gmx    = "http://www.isotc211.org/2005/gmx"
-  xmlns:gsp    = "http://www.opengis.net/ont/geosparql#"
-  xmlns:i      = "http://inspire.ec.europa.eu/schemas/common/1.0"
-  xmlns:i-gp   = "http://inspire.ec.europa.eu/schemas/geoportal/1.0"
-  xmlns:locn   = "http://www.w3.org/ns/locn#"
-  xmlns:owl    = "http://www.w3.org/2002/07/owl#"
-  xmlns:org    = "http://www.w3.org/ns/org#"
-  xmlns:prov   = "http://www.w3.org/ns/prov#"
-  xmlns:rdf    = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:rdfs   = "http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:schema = "http://schema.org/"
-  xmlns:skos   = "http://www.w3.org/2004/02/skos/core#"
-  xmlns:srv    = "http://www.isotc211.org/2005/srv"
-  xmlns:vcard  = "http://www.w3.org/2006/vcard/ns#"
-  xmlns:wdrs   = "http://www.w3.org/2007/05/powder-s#"
-  xmlns:xlink  = "http://www.w3.org/1999/xlink"
-  xmlns:xsi    = "http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsl    = "http://www.w3.org/1999/XSL/Transform"
-  xmlns:dqv    = "http://www.w3.org/ns/dqv#"
-  xmlns:geodcat="http://data.europa.eu/930/"
-  xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
-  exclude-result-prefixes="earl gco gmd gml gmx i i-gp srv xlink xsi xsl wdrs"
-  version="2.0">
+<xsl:stylesheet xmlns:adms="http://www.w3.org/ns/adms#"
+                xmlns:cnt="http://www.w3.org/2011/content#"
+                xmlns:dcat="http://www.w3.org/ns/dcat#"
+                xmlns:dct="http://purl.org/dc/terms/"
+                xmlns:earl="http://www.w3.org/ns/earl#"
+                xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                xmlns:gco="http://www.isotc211.org/2005/gco"
+                xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                xmlns:gml="http://www.opengis.net/gml"
+                xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                xmlns:i="http://inspire.ec.europa.eu/schemas/common/1.0"
+                xmlns:locn="http://www.w3.org/ns/locn#"
+                xmlns:owl="http://www.w3.org/2002/07/owl#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:schema="http://schema.org/"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:srv="http://www.isotc211.org/2005/srv"
+                xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+                xmlns:wdrs="http://www.w3.org/2007/05/powder-s#"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:dqv="http://www.w3.org/ns/dqv#"
+                xmlns:geodcat="http://data.europa.eu/930/"
+                xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
+                xmlns:atom="http://www.w3.org/2005/Atom"
+                xmlns:georss="http://www.georss.org/georss"
+                exclude-result-prefixes="earl gco gmd gml gmx i srv xlink xsi xsl wdrs"
+                version="2.0">
 
   <xsl:output method="xml"
               indent="yes"
@@ -164,6 +159,14 @@
     <xsl:copy-of select="document('./thesauri/access-rights.rdf')"/>
     <xsl:copy-of select="document('./thesauri/SpatialRepresentationType.rdf')"/>
     <xsl:copy-of select="document('./thesauri/ServiceType.rdf')"/>
+    <xsl:if test="//gmd:hierarchyLevel/gmd:MD_ScopeCode[@codeListValue = ('dataset', 'series')]">
+      <xsl:copy-of select="document('./thesauri/file-types.rdf')"/>
+    </xsl:if>
+  </xsl:variable>
+  <xsl:variable name="atomDownloadService">
+    <xsl:if test="//gmd:hierarchyLevel/gmd:MD_ScopeCode[@codeListValue = ('dataset', 'series')]">
+      <xsl:copy-of select="document('https://ac.ngi.be/remoteclient-open/GeoBePartners-open/ATOM/Atomfeed-en.xml')"/>
+    </xsl:if>
   </xsl:variable>
 
 
@@ -341,14 +344,8 @@
    -->
   <xsl:template match="gmd:MD_Metadata|//gmd:MD_Metadata">
 
+    <xsl:variable name="ResourceUUID" select="string(gmd:fileIdentifier/gco:CharacterString)" />
     <xsl:variable name="ResourceUri" select="concat($OgcAPIUrl, '/collections/main/items/', gmd:fileIdentifier/gco:CharacterString)" />
-
-    <xsl:variable name="MetadataUri">
-      <xsl:variable name="mURI" select="gmd:fileIdentifier/gco:CharacterString"/>
-      <xsl:if test="$mURI != '' and ( starts-with($mURI, 'http://') or starts-with($mURI, 'https://') )">
-        <xsl:value-of select="$mURI"/>
-      </xsl:if>
-    </xsl:variable>
 
     <!--
 
@@ -636,110 +633,120 @@
         <xsl:with-param name="ResourceType" select="$ResourceType"/>
       </xsl:apply-templates>
 
-      <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution">
-        <!-- Encoding -->
-        <xsl:variable name="Encoding">
-          <xsl:apply-templates select="gmd:distributionFormat/gmd:MD_Format/gmd:name/*"/>
-        </xsl:variable>
-        <!-- Resource locators (access / download URLs) -->
-        <xsl:for-each select="gmd:transferOptions/*/gmd:onLine/*">
-          <xsl:variable name="url" select="gmd:linkage/gmd:URL"/>
-          <xsl:variable name="protocol" select="string(gmd:protocol/*)"/>
-          <xsl:variable name="function" select="string(gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue)"/>
-          <xsl:variable name="Title">
-            <xsl:for-each select="gmd:name">
-              <dct:title xml:lang="{$MetadataLanguage}"><xsl:value-of select="normalize-space(gco:CharacterString)"/></dct:title>
-              <xsl:call-template name="LocalisedString">
-                <xsl:with-param name="term">dct:title</xsl:with-param>
-                <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
-              </xsl:call-template>
-            </xsl:for-each>
-          </xsl:variable>
-          <xsl:variable name="Description">
-            <xsl:for-each select="gmd:description">
-              <dct:description xml:lang="{$MetadataLanguage}"><xsl:value-of select="normalize-space(gco:CharacterString)"/></dct:description>
-              <xsl:call-template name="LocalisedString">
-                <xsl:with-param name="term">dct:description</xsl:with-param>
-                <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
-              </xsl:call-template>
-            </xsl:for-each>
-          </xsl:variable>
-          <xsl:variable name="TitleAndDescription">
-            <xsl:copy-of select="$Title"/>
-            <xsl:copy-of select="$Description"/>
-          </xsl:variable>
 
-          <xsl:choose>
-            <xsl:when test="$ResourceType = 'service'">
-              <xsl:call-template name="service-endpoint">
-                <xsl:with-param name="function" select="$function"/>
-                <xsl:with-param name="protocol" select="$protocol"/>
-                <xsl:with-param name="url" select="$url"/>
-              </xsl:call-template>
-              <xsl:call-template name="service-protocol">
-                <xsl:with-param name="function" select="$function"/>
-                <xsl:with-param name="protocol" select="$protocol"/>
-                <xsl:with-param name="url" select="$url"/>
-              </xsl:call-template>
-            </xsl:when>
-            <!-- Distributions -->
-            <xsl:when test="$ResourceType = 'dataset' or $ResourceType = 'series'">
-              <xsl:variable name="points-to-service">
-                <xsl:call-template name="detect-service">
-                  <xsl:with-param name="function" select="$function"/>
-                  <xsl:with-param name="protocol" select="$protocol"/>
-                  <xsl:with-param name="url" select="$url"/>
-                </xsl:call-template>
-              </xsl:variable>
+      <xsl:choose>
+        <xsl:when test="$ResourceType = 'service'">
+          <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/*/gmd:onLine/*">
+            <xsl:variable name="url" select="gmd:linkage/gmd:URL"/>
+            <xsl:variable name="protocol" select="string(gmd:protocol/*)"/>
+            <xsl:variable name="function" select="string(gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue)"/>
+
+            <xsl:call-template name="service-endpoint">
+              <xsl:with-param name="function" select="$function"/>
+              <xsl:with-param name="protocol" select="$protocol"/>
+              <xsl:with-param name="url" select="$url"/>
+            </xsl:call-template>
+            <xsl:call-template name="service-protocol">
+              <xsl:with-param name="function" select="$function"/>
+              <xsl:with-param name="protocol" select="$protocol"/>
+              <xsl:with-param name="url" select="$url"/>
+            </xsl:call-template>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:when test="$ResourceType = 'dataset' or $ResourceType = 'series'">
+          <xsl:for-each select="$atomDownloadService/atom:feed/atom:entry[contains(atom:id, concat('/', $ResourceUUID, '/'))]">
+            <xsl:variable name="datasetFeed" select="document(atom:id)"/>
+            <xsl:variable name="datasetFeedLang">
               <xsl:choose>
-                <xsl:when test="$points-to-service = 'yes' or $function = 'download' or $function = 'offlineAccess' or $function = 'order'">
-                  <dcat:distribution>
-                    <dcat:Distribution>
-                      <!-- Title and description -->
-                      <xsl:copy-of select="$TitleAndDescription"/>
-                      <!-- Access URL -->
-                      <dcat:accessURL rdf:resource="{$url}"/>
-                      <xsl:choose>
-                        <xsl:when test="$points-to-service = 'yes'">
-                          <dcat:accessService rdf:parseType="Resource">
-                            <xsl:call-template name="service-endpoint">
-                              <xsl:with-param name="function" select="$function"/>
-                              <xsl:with-param name="protocol" select="$protocol"/>
-                              <xsl:with-param name="url" select="$url"/>
-                            </xsl:call-template>=
-                            <xsl:call-template name="service-protocol">
-                              <xsl:with-param name="function" select="$function"/>
-                              <xsl:with-param name="protocol" select="$protocol"/>
-                              <xsl:with-param name="url" select="$url"/>
-                            </xsl:call-template>
-                          </dcat:accessService>
-                        </xsl:when>
-                      </xsl:choose>
-
-                      <!-- Encoding -->
-                      <xsl:copy-of select="$Encoding"/>
-                      <!-- Resource character encoding -->
-                      <xsl:copy-of select="$ResourceCharacterEncoding"/>
-                    </dcat:Distribution>
-                  </dcat:distribution>
-                </xsl:when>
-                <xsl:when test="$function = 'information' and $protocol = 'WWW:LINK-1.0-http--link'">
-                  <xsl:for-each select="gmd:linkage/gmd:URL">
-                    <foaf:page>
-                      <foaf:Document rdf:about="{.}">
-                        <xsl:copy-of select="$TitleAndDescription"/>
-                      </foaf:Document>
-                    </foaf:page>
-                  </xsl:for-each>
+                <xsl:when test="$datasetFeed/atom:feed/@xml:lang">
+                  <xsl:value-of select="string($datasetFeed/atom:feed/@xml:lang)"/>
                 </xsl:when>
                 <xsl:otherwise>
-                  <!-- Nothing ? -->
+                  <xsl:value-of select="'en'"/>
                 </xsl:otherwise>
               </xsl:choose>
-            </xsl:when>
-          </xsl:choose>
-        </xsl:for-each>
-      </xsl:for-each>
+            </xsl:variable>
+
+            <xsl:for-each select="$datasetFeed/atom:feed/atom:entry">
+              <dcat:distribution>
+                <dcat:Distribution>
+                  <!-- rdf:about -->
+                  <xsl:if test="atom:id">
+                    <xsl:attribute name="rdf:about" select="string(atom:id)"/>
+                  </xsl:if>
+                  <!-- dct:title -->
+                  <xsl:for-each select="atom:title">
+                    <dct:title xml:lang="{$datasetFeedLang}">
+                      <xsl:value-of select="string()"/>
+                    </dct:title>
+                  </xsl:for-each>
+                  <!-- dct:description -->
+                  <xsl:for-each select="atom:subtitle">
+                    <dct:description xml:lang="{$datasetFeedLang}">
+                      <xsl:value-of select="string()"/>
+                    </dct:description>
+                  </xsl:for-each>
+                  <!-- Access links -->
+                  <xsl:for-each select="atom:id">
+                    <dct:accessURL rdf:resource="{string()}"/>
+                  </xsl:for-each>
+                  <!-- Download links -->
+                  <xsl:for-each select="atom:link">
+                    <dct:downloadURL rdf:resource="{string(@href)}"/>
+                    <xsl:variable name="type" select="normalize-space(@type)"/>
+                    <xsl:if test="$type != ''">
+                      <xsl:variable name="fileTypeConcept" select="$allThesauri//skos:Concept[
+                        skos:inScheme/@rdf:resource = 'http://publications.europa.eu/resource/authority/file-type'
+                        and dct:conformsTo = concat('https://www.iana.org/assignments/media-types/', $type)
+                      ][1]"/>
+                      <xsl:if test="normalize-space($fileTypeConcept) != ''">
+                        <dct:format rdf:resource="{$fileTypeConcept/@rdf:about}"/>
+                      </xsl:if>
+
+                      <dcat:mediaType rdf:resource="https://www.iana.org/assignments/media-types/{$type}"/>
+                      <dcat:compressFormat rdf:resource="https://www.iana.org/assignments/media-types/{$type}"/>
+                    </xsl:if>
+                  </xsl:for-each>
+
+                  <!-- Conformity -->
+                  <xsl:for-each select="atom:category/@term">
+                    <dct:conformsTo rdf:resource="{string()}" />
+                  </xsl:for-each>
+
+                  <xsl:for-each select="georss:box">
+                    <xsl:variable name="tokens" select="tokenize(string(), ' ')"/>
+                    <xsl:variable name="gmdExtent">
+                      <gmd:EX_GeographicBoundingBox>
+                        <gmd:northBoundLatitude>
+                          <gco:Decimal>
+                            <xsl:value-of select="$tokens[3]"/>
+                          </gco:Decimal>
+                        </gmd:northBoundLatitude>
+                        <gmd:eastBoundLongitude>
+                          <gco:Decimal>
+                            <xsl:value-of select="$tokens[4]"/>
+                          </gco:Decimal>
+                        </gmd:eastBoundLongitude>
+                        <gmd:southBoundLatitude>
+                          <gco:Decimal>
+                            <xsl:value-of select="$tokens[1]"/>
+                          </gco:Decimal>
+                        </gmd:southBoundLatitude>
+                        <gmd:westBoundLongitude>
+                          <gco:Decimal>
+                            <xsl:value-of select="$tokens[2]"/>
+                          </gco:Decimal>
+                        </gmd:westBoundLongitude>
+                      </gmd:EX_GeographicBoundingBox>
+                    </xsl:variable>
+                    <xsl:apply-templates select="$gmdExtent/gmd:EX_GeographicBoundingBox"/>
+                  </xsl:for-each>
+                </dcat:Distribution>
+              </dcat:distribution>
+            </xsl:for-each>
+          </xsl:for-each>
+        </xsl:when>
+      </xsl:choose>
     </xsl:variable>
 
     <xsl:variable name="resourceElementName">

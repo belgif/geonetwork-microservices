@@ -340,19 +340,12 @@ public class ItemApiController {
           );
           StringWriter turtleWriter = new StringWriter();
           Rio.write(model, turtleWriter, RDFFormat.TURTLE);
-          streamResult(response,
-              turtleWriter.toString(),
-              GnMediaType.TEXT_TURTLE_VALUE);
+          streamResult(response, turtleWriter.toString(), GnMediaType.TEXT_TURTLE_VALUE);
         } else {
-          streamResult(response,
-              dcatXml,
-              MediaType.APPLICATION_XML_VALUE);
+          streamResult(response, dcatXml, MediaType.APPLICATION_XML_VALUE);
         }
-
       } else {
-        streamResult(response,
-            record.toString(),
-            GnMediaType.APPLICATION_JSON_LD_VALUE);
+        streamResult(response,  record.toString(), GnMediaType.APPLICATION_JSON_LD_VALUE);
       }
       return ResponseEntity.ok().build();
     } catch (Exception ex) {

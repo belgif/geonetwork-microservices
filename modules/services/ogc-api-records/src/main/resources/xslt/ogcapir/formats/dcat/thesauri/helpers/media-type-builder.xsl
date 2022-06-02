@@ -5,7 +5,7 @@
                 xmlns:iana="http://www.iana.org/assignments"
                 version="2.0">
 
-  <!-- XSLT stylesheet used to build the file-types.rdf thesaurus -->
+  <!-- XSLT stylesheet used to build the media-types.rdf thesaurus -->
 
   <xsl:output method="xml" indent="yes" encoding="utf-8"/>
 
