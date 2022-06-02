@@ -636,22 +636,30 @@
 
       <xsl:choose>
         <xsl:when test="$ResourceType = 'service'">
-          <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/*/gmd:onLine/*">
-            <xsl:variable name="url" select="gmd:linkage/gmd:URL"/>
-            <xsl:variable name="protocol" select="string(gmd:protocol/*)"/>
-            <xsl:variable name="function" select="string(gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue)"/>
+          <xsl:variable name="serviceDistro">
+            <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/*/gmd:onLine/*">
+              <xsl:variable name="url" select="gmd:linkage/gmd:URL"/>
+              <xsl:variable name="protocol" select="string(gmd:protocol/*)"/>
+              <xsl:variable name="function" select="string(gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue)"/>
 
-            <xsl:call-template name="service-endpoint">
-              <xsl:with-param name="function" select="$function"/>
-              <xsl:with-param name="protocol" select="$protocol"/>
-              <xsl:with-param name="url" select="$url"/>
-            </xsl:call-template>
-            <xsl:call-template name="service-protocol">
-              <xsl:with-param name="function" select="$function"/>
-              <xsl:with-param name="protocol" select="$protocol"/>
-              <xsl:with-param name="url" select="$url"/>
-            </xsl:call-template>
-          </xsl:for-each>
+              <xsl:call-template name="service-endpoint">
+                <xsl:with-param name="function" select="$function"/>
+                <xsl:with-param name="protocol" select="$protocol"/>
+                <xsl:with-param name="url" select="$url"/>
+              </xsl:call-template>
+              <xsl:call-template name="service-protocol">
+                <xsl:with-param name="function" select="$function"/>
+                <xsl:with-param name="protocol" select="$protocol"/>
+                <xsl:with-param name="url" select="$url"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:variable>
+          <xsl:for-each-group select="$serviceDistro/dcat:endpointURL" group-by="@rdf:resource">
+            <xsl:copy-of select="current-group()[1]"/>
+          </xsl:for-each-group>
+          <xsl:for-each-group select="$serviceDistro/dct:conformsTo" group-by="@rdf:resource">
+            <xsl:copy-of select="current-group()[1]"/>
+          </xsl:for-each-group>
         </xsl:when>
         <xsl:when test="$ResourceType = 'dataset' or $ResourceType = 'series'">
           <xsl:for-each select="$atomDownloadService/atom:feed/atom:entry[contains(atom:id, concat('/', $ResourceUUID, '/'))]">
@@ -2066,18 +2074,6 @@
           <xsl:value-of select="$url"/>
         </xsl:otherwise>
       </xsl:choose>
-    </xsl:param>
-    <xsl:param name="endpoint-description">
-      <xsl:choose>
-        <xsl:when test="contains(substring-after(translate($url, $uppercase, $lowercase), '?'), 'request=getcapabilities')">
-          <xsl:value-of select="$url"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="$url"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:param>
-    <xsl:param name="service-type">
     </xsl:param>
     <xsl:if test="$endpoint-url != ''">
       <dcat:endpointURL rdf:resource="{$endpoint-url}"/>

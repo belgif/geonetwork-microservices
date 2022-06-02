@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geonet="http://www.fao.org/geonetwork" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gmd:MD_Metadata="http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+  <gmd:fileIdentifier>
+    <gco:CharacterString>042ad31c-ebce-4b51-8213-3142aa22c544</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode" codeListValue="service"/>
+  </gmd:hierarchyLevel>
+  <gmd:hierarchyLevelName>
+    <gco:CharacterString>INSPIRE download service for the Marine Spatial Plan-WFS</gco:CharacterString>
+  </gmd:hierarchyLevelName>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName gmd:organisationName="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString>Royal Belgian Institute for Natural Sciences, Directorate Natural Environment, GeoCell</gco:CharacterString>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#NL">Koninklijk Belgisch Instituut voor Natuurwetenschappen, Operationele Directie Natuurlijk Milieu, GeoCell</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#FR">Institut royal des Sciences naturelles de Belgique, Direction opérationnelle Milieux naturels, GeoCell</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#DE">Königliches Belgisches Institut für Naturwissenschaften, Operationelle Direktion Natürliche Umwelt, GeoCell</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:organisationName>
+      <gmd:contactInfo>
+        <gmd:CI_Contact>
+          <gmd:address>
+            <gmd:CI_Address>
+              <gmd:deliveryPoint gmd:deliveryPoint="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Vautierstraat 1</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Rue Vautier 1</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">Vautierstraat 1</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:deliveryPoint>
+              <gmd:city gmd:city="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Brussels</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Bruxelles</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">Brussel</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">Brüssel</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:city>
+              <gmd:postalCode>
+                <gco:CharacterString>1000</gco:CharacterString>
+              </gmd:postalCode>
+              <gmd:country gmd:country="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Belgium</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">België</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:country>
+              <gmd:electronicMailAddress>
+                <gco:CharacterString>info@naturalsciences.be</gco:CharacterString>
+              </gmd:electronicMailAddress>
+            </gmd:CI_Address>
+          </gmd:address>
+          <gmd:onlineResource>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://www.naturalsciences.be</gmd:URL>
+              </gmd:linkage>
+            </gmd:CI_OnlineResource>
+          </gmd:onlineResource>
+        </gmd:CI_Contact>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:DateTime>2020-12-10T10:12:58</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+    <gco:CharacterString>Geographic information -- Metadata</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+    <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:locale>
+    <gmd:PT_Locale id="NL">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="dut"/>
+      </gmd:languageCode>
+      <gmd:characterEncoding/>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+    <gmd:PT_Locale id="FR">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+      </gmd:languageCode>
+      <gmd:characterEncoding/>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+    <gmd:PT_Locale id="DE">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="ger"/>
+      </gmd:languageCode>
+      <gmd:characterEncoding/>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:identificationInfo>
+    <srv:SV_ServiceIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>INSPIRE download service for the 2014 Marine Spatial Plan-WFS</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Service de téléchargement INSPIRE pour le Plan d'Aménagement des espaces marins de 2014-WFS</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">INSPIRE downloaddienst voor het Marien Ruimtelijk Plan van 2014-WFS</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">INSPIRE Download-Dienste für den Meeresraumplan 2014-WFS</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:title>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date>2015-06-22</gco:Date>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:identifier>
+            <gmd:RS_Identifier>
+              <gmd:authority>
+                <gmd:CI_Citation>
+                  <gmd:title>
+                    <gco:CharacterString>Belgian Marine Data Centre</gco:CharacterString>
+                  </gmd:title>
+                  <gmd:date gmd:date="inapplicable"/>
+                </gmd:CI_Citation>
+              </gmd:authority>
+              <gmd:code>
+                <gco:CharacterString>042ad31c-ebce-4b51-8213-3142aa22c544</gco:CharacterString>
+              </gmd:code>
+              <gmd:codeSpace>
+                <gco:CharacterString>http://metadata.naturalsciences.be</gco:CharacterString>
+              </gmd:codeSpace>
+            </gmd:RS_Identifier>
+          </gmd:identifier>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract gmd:abstract="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString>INSPIRE compliant download service (WFS) for geographic information of the Marine Spatial Plan made available by the Royal Belgian Institute for Natural Sciences (RBINS).</gco:CharacterString>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#FR">Service de téléchargement (WFS) conforme à INSPIRE pour des informations géographiques du Plan d'Aménagement des espaces marins mises à disposition par l'Institut royal des Sciences naturelles de Belgique (IRSNB).</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#NL">INSPIRE-conforme downloaddienst (WFS) voor geografische informatie van het Marien Ruimtelijk Plan die beschikbaar gesteld wordt door het Koninklijk Belgisch Instituut voor Natuurwetenschappen (KBIN).</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#DE">INSPIRE-konformer Download-Dienste (WFS) für geografische Informationen des belgisches Meeresraumplan, der vom Königlichen Belgischen Institut für Naturwissenschaften zur Verfügung gestellt wurde.</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:abstract>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName gmd:organisationName="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Royal Belgian Institute for Natural Sciences, Directorate Natural Environment, GeoCell</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Koninklijk Belgisch Instituut voor Natuurwetenschappen, Operationele Directie Natuurlijk Milieu, GeoCell</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Institut royal des Sciences naturelles de Belgique, Direction opérationnelle Milieux naturels, GeoCell</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Königliches Belgisches Institut für Naturwissenschaften, Operationelle Direktion Natürliche Umwelt, GeoCell</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:organisationName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString>+32 (0)2 773 21 23</gco:CharacterString>
+                  </gmd:voice>
+                  <gmd:facsimile>
+                    <gco:CharacterString>+32(0)2 770 69 72</gco:CharacterString>
+                  </gmd:facsimile>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint gmd:deliveryPoint="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>Vautierstraat 1</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Rue Vautier 1</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Vautierstraat 1</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE"/>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:deliveryPoint>
+                  <gmd:city gmd:city="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>Brussels</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Bruxelles</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Brussel</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Brüssel</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:city>
+                  <gmd:postalCode>
+                    <gco:CharacterString>1000</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country gmd:country="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>Belgium</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">België</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>info@naturalsciences.be</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>http://www.naturalsciences.be</gmd:URL>
+                  </gmd:linkage>
+                  <gmd:description gmd:description="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>The website of the Royal Belgian Institute for Natural Sciences with references to biological, geological and marine (chemical and physical) data held by or gathered by the Institute</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Le site web de l'Institut royal des Sciences naturelles de Belgique avec des réferences aux données biologiques, géologiques ou marins (chimiques ou physiques), sauvegardées ou collectées par l'Institut</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">De website van het Koninklijk Belgisch Instituut voor Natuurwetenschappen met verwijzingen naar biologische, geologische of mariene (chemische en fysische) data, bijgehouden of verzameld door het Instituut</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE"/>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:description>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+              <gmd:contactInstructions>
+                <gco:CharacterString>https://phonebook.naturalsciences.be</gco:CharacterString>
+              </gmd:contactInstructions>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="originator"/>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:graphicOverview>
+        <gmd:MD_BrowseGraphic>
+          <gmd:fileName>
+            <gco:CharacterString>http://metadata.naturalsciences.be/geonetwork/srv/eng//resources.get?uuid=042ad31c-ebce-4b51-8213-3142aa22c544&amp;fname=MSP_Thumbnail.png</gco:CharacterString>
+          </gmd:fileName>
+          <gmd:fileDescription>
+            <gco:CharacterString>large_thumbnail</gco:CharacterString>
+          </gmd:fileDescription>
+          <gmd:fileType>
+            <gco:CharacterString>png</gco:CharacterString>
+          </gmd:fileType>
+        </gmd:MD_BrowseGraphic>
+      </gmd:graphicOverview>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/theme/lu">Land use</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Land use</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Landgebruik</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Usage des sols</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Bodennutzung</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/theme/ef">Environmental monitoring facilities</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Environmental monitoring facilities</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Milieubewakingsvoorzieningen</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Installations de suivi environnemental</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Umweltüberwachung</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/theme/am">Area management/restriction/regulation zones and reporting units</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Area management/restriction/regulation zones and reporting units</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Gebiedsbeheer, gebieden waar beperkingen gelden, gereguleerde gebieden en rapportage-eenheden</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Zones de gestion, de restriction ou de réglementation et unités de déclaration</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Bewirtschaftungsgebiete/Schutzgebiete/geregelte Gebiete und Berichterstattungseinheiten</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/theme/ps">Protected sites</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Protected sites</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Beschermde gebieden</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Sites protégés</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Schutzgebiete</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/codeList.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/theme#">GEMET - INSPIRE themes, version 1.0</gmx:Anchor>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2008-06-01</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor gmx:Anchor="http://sigalion.rbins.be/geonetwork/srv/eng/thesaurus.download?ref=external.theme.httpinspireeceuropaeutheme-theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/infoFeatureAccessService">infoFeatureAccessService</gmx:Anchor>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>infoFeatureAccessService</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gco:CharacterString>Commission Regulation (EC) No 1205/2008</gco:CharacterString>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2008-12-03</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="https://www.geo.be/thesaurus/end.xml">Environmental data</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Environmental data</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Données environnementales</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Milieugegevens</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Umweltdaten</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                <gmx:Anchor gmx:Anchor="https://www.geo.be/thesaurus/federalthesaurus.rdf">Belgian Federal
+                  Thesaurus</gmx:Anchor>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Belgian Federal Thesaurus</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2020-03-01</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor gmx:Anchor="http://publish.geo.be/geonetwork/srv/fre/thesaurus.download?ref=external.theme.federalthesaurus">geonetwork.thesaurus.external.theme.federalthesaurus</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="https://www.geo.be/thesaurus/lcu.xml">Land and natural area cover and use</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">Land and natural area cover and use</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Occupation et utilisation du sol et des espaces naturels</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Bodem- en natuurgebiedenbedekking en -gebruik</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Boden- und Naturgebietsbedeckung und -nutzung</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                <gmx:Anchor gmx:Anchor="https://www.geo.be/thesaurus/federalthesaurus.rdf">Belgian Federal Thesaurus</gmx:Anchor>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">Belgian Federal Thesaurus</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2020-03-01</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmd:LocalisedCharacterString>geonetwork.thesaurus.external.theme.federalthesaurus</gmd:LocalisedCharacterString>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national">National</gmx:Anchor>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">Theme</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/metadata-codelist/SpatialScope">INSPIRE Registry: Spatial scope</gmx:Anchor>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2019-05-22</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Reporting INSPIRE</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Reporting INSPIRE</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Reporting INSPIRE</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Reporting INSPIRE</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword gmd:keyword="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Federal government</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">föderale Regierung</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">federale regering</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">gouvernement fédéral</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+          </gmd:type>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+            <gco:CharacterString>oceanography</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>marine environment</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>coastal zone planning</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString/>
+          </gmd:keyword>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gco:CharacterString>GEMET - Concepts</gco:CharacterString>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:DateTime>2012-07-20T10:30:00</gco:DateTime>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:edition>
+                <gco:CharacterString>version 3.1</gco:CharacterString>
+              </gmd:edition>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+            <gco:CharacterString>Marine Spatial Plan</gco:CharacterString>
+          </gmd:keyword>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions"/>
+          </gmd:accessConstraints>
+          <gmd:otherConstraints gmd:otherConstraints="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">No limitations on public access</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Geen beperkingen in verband met toegang.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Aucune limitation ne s’applique à l'accès.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Es gelten keine Einschränkungen zum Zugang.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:useConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions"/>
+          </gmd:useConstraints>
+          <gmd:otherConstraints gmd:otherConstraints="gmd:PT_FreeText_PropertyType">
+            <gmx:Anchor gmx:Anchor="http://inspire.ec.europa.eu/metadata-codelist/ ConditionsApplyingToAccessAndUse/noConditionsApply">No conditions apply to access and use</gmx:Anchor>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Aucune condition ne s’applique à l'accès et l'utilisation.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">Geen voorwaarden in verband met toegang en gebruik.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Es gelten keine Bedingungen zum Zugang und Nutzung.</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_SecurityConstraints>
+          <gmd:classification>
+            <gmd:MD_ClassificationCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ClassificationCode" codeListValue="unclassified"/>
+          </gmd:classification>
+        </gmd:MD_SecurityConstraints>
+      </gmd:resourceConstraints>
+      <srv:serviceType>
+        <gco:LocalName codeSpace="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType">download</gco:LocalName>
+      </srv:serviceType>
+      <srv:extent>
+        <gmd:EX_Extent>
+          <gmd:description gmd:description="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Belgium</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">België</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:description>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox>
+              <gmd:westBoundLongitude>
+                <gco:Decimal>2.23701</gco:Decimal>
+              </gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude>
+                <gco:Decimal>3.36329</gco:Decimal>
+              </gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude>
+                <gco:Decimal>51.0939</gco:Decimal>
+              </gmd:southBoundLatitude>
+              <gmd:northBoundLatitude>
+                <gco:Decimal>51.8753</gco:Decimal>
+              </gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+        </gmd:EX_Extent>
+      </srv:extent>
+      <srv:couplingType>
+        <srv:SV_CouplingType codeList="http://www.isotc211.org/2005/iso19119/resources/Codelist/gmxCodelists.xml#SV_CouplingType" codeListValue="loose"/>
+      </srv:couplingType>
+      <srv:containsOperations>
+        <srv:SV_OperationMetadata>
+          <srv:operationName>
+            <gco:CharacterString>GetCapabilities</gco:CharacterString>
+          </srv:operationName>
+          <srv:DCP>
+            <srv:DCPList codeList="http://www.isotc211.org/2005/iso19119/resources/Codelist/gmxCodelists.xml#DCPList" codeListValue="WebServices"/>
+          </srv:DCP>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>http://spatial.naturalsciences.be/geoserver/imsp/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>OGC:WFS</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download">download</gmd:CI_OnLineFunctionCode>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+        </srv:SV_OperationMetadata>
+      </srv:containsOperations>
+      <srv:containsOperations>
+        <srv:SV_OperationMetadata>
+          <srv:operationName>
+            <gco:CharacterString>GetCapabilities</gco:CharacterString>
+          </srv:operationName>
+          <srv:DCP>
+            <srv:DCPList codeList="http://www.isotc211.org/2005/iso19119/resources/Codelist/gmxCodelists.xml#DCPList" codeListValue="WebServices"/>
+          </srv:DCP>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>http://spatial.naturalsciences.be/geoserver/inspire-conservation-zone/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>OGC:WFS</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download">download</gmd:CI_OnLineFunctionCode>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+        </srv:SV_OperationMetadata>
+      </srv:containsOperations>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=9d7b365a-faa8-4179-a385-fa7540c2b8a1" uuidref="9d7b365a-faa8-4179-a385-fa7540c2b8a1"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=aed06813-f5f4-4469-a1fe-1ebf461c3999" uuidref="aed06813-f5f4-4469-a1fe-1ebf461c3999"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=f5606457-7084-41e3-b095-7730bc6adf10" uuidref="f5606457-7084-41e3-b095-7730bc6adf10"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=894c754b-29fd-477b-827f-0be505143c2a" uuidref="894c754b-29fd-477b-827f-0be505143c2a"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=f432b696-ac1a-4971-acc8-184bc79e9b7f" uuidref="f432b696-ac1a-4971-acc8-184bc79e9b7f"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=e2aaecaf-b555-405e-ae77-dfe1b07e0f17" uuidref="e2aaecaf-b555-405e-ae77-dfe1b07e0f17"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=54d2f666-7aee-4463-b60e-3583f84ffce2" uuidref="54d2f666-7aee-4463-b60e-3583f84ffce2"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=9c445e18-005e-478b-987c-39326b4a0d88" uuidref="9c445e18-005e-478b-987c-39326b4a0d88"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=30896e82-9347-4f82-8871-f3a58ce2be58" uuidref="30896e82-9347-4f82-8871-f3a58ce2be58"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=a2780436-e65b-47a8-8f93-212e600717be" uuidref="a2780436-e65b-47a8-8f93-212e600717be"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=f98d0d0f-cb75-4055-b8e4-d3c31cb96d34" uuidref="f98d0d0f-cb75-4055-b8e4-d3c31cb96d34"/>
+      <srv:operatesOn srv:operatesOn="http://metadata.naturalsciences.be/geonetwork/srv/eng/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=9f4131b6-7895-403a-a17e-6bb33befaf16" uuidref="9f4131b6-7895-403a-a17e-6bb33befaf16"/>
+    </srv:SV_ServiceIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>CSV</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>1.0</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>GML</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>2</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>GML</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>3.1</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>GML</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>3.2</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>GeoJSON</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>1.0</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>KML</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>1.0</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>Shapefile</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>1.0</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>http://spatial.naturalsciences.be/geoserver/imsp/ows?SERVICE=WFS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>OGC:WFS</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString>OGC Web server of the Belgian Marine Data Centre serving WFS</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download">download</gmd:CI_OnLineFunctionCode>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>http://spatial.naturalsciences.be/geoserver/imsp/ows?SERVICE=WFS&amp;request=GetCapabilities</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>OGC:WFS-2.0.0-http-get-capabilities</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:name>
+                <gco:CharacterString>BMDC Geoserver WFS GetCapabilities</gco:CharacterString>
+              </gmd:name>
+              <gmd:description>
+                <gco:CharacterString>OGC Web server of the Belgian Marine Data Centre serving WFS</gco:CharacterString>
+              </gmd:description>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+    <gmd:DQ_DataQuality>
+      <gmd:scope>
+        <gmd:DQ_Scope>
+          <gmd:level>
+            <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode" codeListValue="service"/>
+          </gmd:level>
+          <gmd:levelDescription>
+            <gmd:MD_ScopeDescription>
+              <gmd:other>
+                <gco:CharacterString>The datasets contained in the Belgian Marine Spatial Plan and referred to by this service.</gco:CharacterString>
+              </gmd:other>
+            </gmd:MD_ScopeDescription>
+          </gmd:levelDescription>
+        </gmd:DQ_Scope>
+      </gmd:scope>
+      <gmd:report>
+        <gmd:DQ_DomainConsistency>
+          <gmd:nameOfMeasure gmd:nameOfMeasure="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>INSPIRE Conformity</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#EN">INSPIRE Conformity</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#FR">Conformité INSPIRE</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#NL">INSPIRE Conformiteit</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#DE">INSPIRE Konformität</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:nameOfMeasure>
+          <gmd:result>
+            <gmd:DQ_ConformanceResult>
+              <gmd:specification>
+                <gmd:CI_Citation>
+                  <gmd:title gmd:title="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>COMMISSION REGULATION (EU) No 976/2009 of 19 October 2009 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards the Network Services</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">COMMISSION REGULATION (EU) No 976/2009 of 19 October 2009 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards the Network Services</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Règlement (UE) N° 976/2009 de la Commission du 19 octobre 2009 portant modalités d'application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne les services en réseau</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Verordening (EU) n r. 976/2009 van de Commissie van 19 oktober 2009 tot uitvoering van Richtlijn 2007/2/EG van het Europees Parlement en de Raad wat betreft de netwerkdiensten</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Verordnung (EG) Nr. 976/2009 der Kommission vom 19. Oktober 2009 zur Durchführung der Richtlinie 2007/2/EG des Europäischen Parlaments und des Rates hinsichtlich der Netzdienste</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:title>
+                  <gmd:date>
+                    <gmd:CI_Date>
+                      <gmd:date>
+                        <gco:Date>2009-08-19</gco:Date>
+                      </gmd:date>
+                      <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                      </gmd:dateType>
+                    </gmd:CI_Date>
+                  </gmd:date>
+                </gmd:CI_Citation>
+              </gmd:specification>
+              <gmd:explanation gmd:explanation="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>The service described meets the technical requirements as defined by the Commission Regulation (EC) No 976/2009 of 19 October 2009</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#EN">The service described meets the technical requirements as defined by the Commission Regulation (EC) No 976/2009 of 19 October 2009</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#FR">Le service décrit répond aux exigences techniques telles qu’elles sont définies par le Règlement (UE) n° 976/2009 de la Commission du 19 octobre 2009</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#NL">De beschreven service voldoet aan de technische vereisten zoals bepaald in de Verordening (EC) nr 976/2009 van de Commissie van 19 oktober 2009</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#DE">Der beschriebene Dienst entspricht den technischen Anforderungen wie bestimmt in der Verordnung (EG) Nr. 976/2009 der Kommission vom 19. Oktober 2009</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:explanation>
+              <gmd:pass>
+                <gco:Boolean>true</gco:Boolean>
+              </gmd:pass>
+            </gmd:DQ_ConformanceResult>
+          </gmd:result>
+        </gmd:DQ_DomainConsistency>
+      </gmd:report>
+    </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>
