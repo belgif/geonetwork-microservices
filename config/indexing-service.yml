@@ -48,6 +48,3 @@ spring:
 ---
 spring:
   profiles: dev
-  jpa:
-    jpa.generate-ddl: true
-    jpa.hibernate.ddl-auto: update
