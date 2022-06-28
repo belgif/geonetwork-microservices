@@ -8,6 +8,11 @@
       <skos:prefLabel xml:lang="fr">Catégories thématiques conformément à la norme EN ISO 19115</skos:prefLabel>
       <skos:prefLabel xml:lang="nl">Onderwerpcategoriecn overeenkomstig EN ISO 19115</skos:prefLabel>
       <skos:prefLabel xml:lang="de">Themenkategorien nach EN ISO 19115</skos:prefLabel>
+      <dct:title xml:lang="en">Topic categories in accordance with EN ISO 19115</dct:title>
+      <dct:title xml:lang="fr">Catégories thématiques conformément à la norme EN ISO 19115</dct:title>
+      <dct:title xml:lang="nl">Onderwerpcategoriecn overeenkomstig EN ISO 19115</dct:title>
+      <dct:title xml:lang="de">Themenkategorien nach EN ISO 19115</dct:title>
+      <dct:identifier>TopicCategory</dct:identifier>
       <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-08-18T21:39:48.184+02:00</dct:issued>
       <skos:hasTopConcept rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/farming"/>
       <skos:hasTopConcept rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/biota"/>

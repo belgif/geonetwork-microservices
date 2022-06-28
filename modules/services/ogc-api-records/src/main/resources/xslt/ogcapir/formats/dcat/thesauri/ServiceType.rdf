@@ -1,77 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
-  <skos:ConceptScheme
-      rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType">
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dct="http://purl.org/dc/terms/">
+
+  <skos:ConceptScheme rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType">
     <skos:prefLabel xml:lang="de">Art des Geodatendienstes</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Spatial data service type</skos:prefLabel>
     <skos:prefLabel xml:lang="fr">Type de service de données géographiques</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Type dienst met betrekking tot ruimtelijke gegevens
-    </skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Type dienst met betrekking tot ruimtelijke gegevens</skos:prefLabel>
+    <dct:title xml:lang="de">Art des Geodatendienstes</dct:title>
+    <dct:title xml:lang="en">Spatial data service type</dct:title>
+    <dct:title xml:lang="fr">Type de service de données géographiques</dct:title>
+    <dct:title xml:lang="nl">Type dienst met betrekking tot ruimtelijke gegevens</dct:title>
+    <dct:identifier>SpatialDataServiceType</dct:identifier>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-08-18T21:39:49.910+02:00</dct:issued>
   </skos:ConceptScheme>
 
-  <skos:Concept
-      rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/discovery">
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/discovery">
     <skos:prefLabel xml:lang="de">Suchdienste</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Discovery Service</skos:prefLabel>
     <skos:prefLabel xml:lang="fr">Service de recherche</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Zoekdienst</skos:prefLabel>
-    <skos:inScheme
-        rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
   </skos:Concept>
 
-  <skos:Concept
-      rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/view">
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/view">
     <skos:prefLabel xml:lang="nl">Raadpleegdienst</skos:prefLabel>
     <skos:prefLabel xml:lang="en">View Service</skos:prefLabel>
     <skos:prefLabel xml:lang="fr">Service de consultation</skos:prefLabel>
     <skos:prefLabel xml:lang="de">Darstellungsdienste</skos:prefLabel>
-    <skos:inScheme
-        rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
   </skos:Concept>
 
-  <skos:Concept
-      rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download">
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download">
     <skos:prefLabel xml:lang="de">Download-Dienste</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Download Service</skos:prefLabel>
     <skos:prefLabel xml:lang="fr">Service de téléchargement</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Downloaddienst</skos:prefLabel>
-    <skos:inScheme
-        rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
   </skos:Concept>
 
-  <skos:Concept
-      rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/transformation">
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/transformation">
     <skos:prefLabel xml:lang="de">Transformationsdienste</skos:prefLabel>
     <skos:prefLabel xml:lang="fr">Transformation Service</skos:prefLabel>
     <skos:prefLabel xml:lang="fr">Service de transformation</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Verwerkingsdienst</skos:prefLabel>
-    <skos:inScheme
-        rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
   </skos:Concept>
 
-  <skos:Concept
-      rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/invoke">
-    <skos:prefLabel xml:lang="de">Dienste zum Abrufen von Geodatendiensten
-    </skos:prefLabel>
-    <skos:prefLabel xml:lang="en">Invoke Spatial Data Service
-    </skos:prefLabel>
-    <skos:prefLabel xml:lang="fr">Service d’appel de services de données géographiques
-    </skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Oproepdienst
-    </skos:prefLabel>
-    <skos:inScheme
-        rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/invoke">
+    <skos:prefLabel xml:lang="de">Dienste zum Abrufen von Geodatendiensten    </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Invoke Spatial Data Service</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Service d’appel de services de données géographiques</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Oproepdienst</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
   </skos:Concept>
 
-  <skos:Concept
-      rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/other">
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/other">
     <skos:prefLabel xml:lang="de">Sonstige Dienste</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Other Service</skos:prefLabel>
     <skos:prefLabel xml:lang="fr">Autre service</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Andere dienst</skos:prefLabel>
-    <skos:inScheme
-        rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"/>
   </skos:Concept>
 
 </rdf:RDF>

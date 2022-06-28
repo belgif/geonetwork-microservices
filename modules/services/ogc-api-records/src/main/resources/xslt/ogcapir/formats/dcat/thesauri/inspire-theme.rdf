@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dct="http://purl.org/dc/terms/">
+  <skos:ConceptScheme rdf:about="http://inspire.ec.europa.eu/theme">
+    <skos:prefLabel xml:lang="en">GEMET - INSPIRE themes, version 1.0</skos:prefLabel>
+    <dct:title xml:lang="en">GEMET - INSPIRE themes, version 1.0</dct:title>
+    <dct:issued>2008-06-01</dct:issued>
+    <dct:modified>2008-06-01</dct:modified>
+  </skos:ConceptScheme>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/ad">
+    <skos:prefLabel xml:lang="en">Addresses</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Adressen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Adresses</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Adressen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/au">
+    <skos:prefLabel xml:lang="en">Administrative units</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Verwaltungseinheiten</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Unités administratives</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Administratieve eenheden</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/rs">
+    <skos:prefLabel xml:lang="en">Coordinate reference systems</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Koordinatenreferenzsysteme</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Référentiels de coordonnées</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Systemen voor verwijzing door middel van coördinaten</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/gg">
+    <skos:prefLabel xml:lang="en">Geographical grid systems</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Geografische Gittersysteme</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes de maillage géographique</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Geografisch rastersysteem</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/cp">
+    <skos:prefLabel xml:lang="en">Cadastral parcels</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Flurstücke/Grundstücke (Katasterparzellen)</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Parcelles cadastrales</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Kadastrale percelen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/gn">
+    <skos:prefLabel xml:lang="en">Geographical names</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Geografische Bezeichnungen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Dénominations géographiques</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Geografische namen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/hy">
+    <skos:prefLabel xml:lang="en">Hydrography</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Gewässernetz</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Hydrographie</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Hydrografie</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/ps">
+    <skos:prefLabel xml:lang="en">Protected sites</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Schutzgebiete</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Sites protégés</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Beschermde gebieden</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/tn">
+    <skos:prefLabel xml:lang="en">Transport networks</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Verkehrsnetze</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Réseaux de transport</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Vervoersnetwerken</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/el">
+    <skos:prefLabel xml:lang="en">Elevation</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Höhe</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Altitude</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Hoogte</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/ge">
+    <skos:prefLabel xml:lang="en">Geology</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Geologie</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Géologie</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Geologie</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/lc">
+    <skos:prefLabel xml:lang="en">Land cover</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Bodenbedeckung</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Occupation des terres</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Bodemgebruik</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/oi">
+    <skos:prefLabel xml:lang="en">Orthoimagery</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Orthofotografie</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Ortho-imagerie</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Orthobeeldvorming</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/af">
+    <skos:prefLabel xml:lang="en">Agricultural and aquaculture facilities</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Landwirtschaftliche Anlagen und Aquakulturanlagen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Installations agricoles et aquacoles</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Faciliteiten voor landbouw en aquacultuur</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/am">
+    <skos:prefLabel xml:lang="en">Area management/restriction/regulation zones and reporting units</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Bewirtschaftungsgebiete/Schutzgebiete/geregelte Gebiete und Berichterstattungseinheiten</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Zones de gestion, de restriction ou de réglementation et unités de déclaration</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Gebiedsbeheer, gebieden waar beperkingen gelden, gereguleerde gebieden en rapportage-eenheden</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/ac">
+    <skos:prefLabel xml:lang="en">Atmospheric conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Atmosphärische Bedingungen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Conditions atmosphériques</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Atmosferische omstandigheden</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/br">
+    <skos:prefLabel xml:lang="en">Bio-geographical regions</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Biogeografische Regionen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Régions biogéographiques</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Biogeografische gebieden</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/bu">
+    <skos:prefLabel xml:lang="en">Buildings</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Gebäude</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Bâtiments</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Gebouwen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/er">
+    <skos:prefLabel xml:lang="en">Energy resources</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Energiequellen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Sources d'énergie</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Energiebronnen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/ef">
+    <skos:prefLabel xml:lang="en">Environmental monitoring facilities</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Umweltüberwachung</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Installations de suivi environnemental</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Milieubewakingsvoorzieningen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/hb">
+    <skos:prefLabel xml:lang="en">Habitats and biotopes</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Lebensräume und Biotope</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Habitats et biotopes</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Habitats en biotopen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/hh">
+    <skos:prefLabel xml:lang="en">Human health and safety</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Gesundheit und Sicherheit</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Santé et sécurité des personnes</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Menselijke gezondheid en veiligheid</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/lu">
+    <skos:prefLabel xml:lang="en">Land use</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Bodennutzung</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Usage des sols</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Landgebruik</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/mr">
+    <skos:prefLabel xml:lang="en">Mineral resources</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Mineralische Bodenschätze</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Ressources minérales</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Minerale bronnen</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/nz">
+    <skos:prefLabel xml:lang="en">Natural risk zones</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Gebiete mit naturbedingten Risiken</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Zones à risque naturel</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Gebieden met natuurrisico's</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/of">
+    <skos:prefLabel xml:lang="en">Oceanographic geographical features</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Ozeanografisch-geografische Kennwerte</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Caractéristiques géographiques océanographiques</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Oceanografische geografische kenmerken</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/pd">
+    <skos:prefLabel xml:lang="en">Population distribution — demography</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Verteilung der Bevölkerung — Demografie</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Répartition de la population — démographie</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Spreiding van de bevolking — demografie</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/pf">
+    <skos:prefLabel xml:lang="en">Production and industrial facilities</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Produktions- und Industrieanlagen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Lieux de production et sites industriels</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Faciliteiten voor productie en industrie</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/sr">
+    <skos:prefLabel xml:lang="en">Sea regions</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Meeresregionen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Régions maritimes</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Zeegebieden</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/so">
+    <skos:prefLabel xml:lang="en">Soil</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Boden</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Sols</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Bodem</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/sd">
+    <skos:prefLabel xml:lang="en">Species distribution</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Verteilung der Arten</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Répartition des espèces</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Spreiding van soorten</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/su">
+    <skos:prefLabel xml:lang="en">Statistical units</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Statistische Einheiten</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Unités statistiques</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Statistische eenheden</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/us">
+    <skos:prefLabel xml:lang="en">Utility and governmental services</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Versorgungswirtschaft und staatliche Dienste</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Services d'utilité publique et services publics</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Nutsdiensten en overheidsdiensten</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/mf">
+    <skos:prefLabel xml:lang="en">Meteorological geographical features</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Meteorologisch-geografische Kennwerte</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Caractéristiques géographiques météorologiques</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Meteorologische geografische kenmerken</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://inspire.ec.europa.eu/theme"/>
+  </skos:Concept>
+</rdf:RDF>

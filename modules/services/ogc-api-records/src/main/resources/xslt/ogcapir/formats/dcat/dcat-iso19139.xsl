@@ -159,6 +159,9 @@
     <xsl:copy-of select="document('./thesauri/access-rights.rdf')"/>
     <xsl:copy-of select="document('./thesauri/SpatialRepresentationType.rdf')"/>
     <xsl:copy-of select="document('./thesauri/ServiceType.rdf')"/>
+    <xsl:copy-of select="document('./thesauri/federalthesaurus.rdf')"/>
+    <xsl:copy-of select="document('./thesauri/inspire-theme.rdf')"/>
+    <xsl:copy-of select="document('./thesauri/SpatialScope.rdf')"/>
     <xsl:if test="//gmd:hierarchyLevel/gmd:MD_ScopeCode[@codeListValue = ('dataset', 'series')]">
       <xsl:copy-of select="document('./thesauri/file-types.rdf')"/>
     </xsl:if>
@@ -312,9 +315,16 @@
               <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/skos:prefLabel"/>
               <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:title"/>
               <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:issued"/>
-              <dct:identifier>
-                <xsl:value-of select="string(.)"/>
-              </dct:identifier>
+              <xsl:choose>
+                <xsl:when test="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:identified">
+                  <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:issued"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <dct:identifier>
+                    <xsl:value-of select="string(.)"/>
+                  </dct:identifier>
+                </xsl:otherwise>
+              </xsl:choose>
             </skos:ConceptScheme>
           </dcat:themeTaxonomy>
         </xsl:for-each>

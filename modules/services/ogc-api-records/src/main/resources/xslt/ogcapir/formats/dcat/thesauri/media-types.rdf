@@ -5,6 +5,8 @@
          xmlns:skos="http://www.w3.org/2004/02/skos/core#">
    <skos:ConceptScheme rdf:about="https://www.iana.org/assignments/media-types">
       <skos:prefLabel xml:lang="en">Media Types</skos:prefLabel>
+      <dct:title xml:lang="en">Media Types</dct:title>
+      <dct:identifier>https://www.iana.org/assignments/media-types</dct:identifier>
    </skos:ConceptScheme>
    <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/1d-interleaved-parityfec">
       <skos:prefLabel xml:lang="en">1d-interleaved-parityfec</skos:prefLabel>

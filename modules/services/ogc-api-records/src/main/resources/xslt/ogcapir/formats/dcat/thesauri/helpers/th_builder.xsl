@@ -1,6 +1,5 @@
 <xsl:stylesheet xmlns:dct="http://purl.org/dc/terms/"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="2.0">
@@ -14,10 +13,10 @@
 
   <xsl:variable name="thesauri">
     <thesauri>
-      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/SpatialRepresentationType.en.rdf')"/>
-      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/SpatialRepresentationType.fr.rdf')"/>
-      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/SpatialRepresentationType.nl.rdf')"/>
-      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/SpatialRepresentationType.de.rdf')"/>
+      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.en.rdf')"/>
+      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.fr.rdf')"/>
+      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.nl.rdf')"/>
+      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.de.rdf')"/>
     </thesauri>
   </xsl:variable>
 
@@ -41,7 +40,9 @@
     <skos:ConceptScheme>
       <xsl:attribute name="rdf:about" select="$schemes//*[name() = ('rdf:Description', 'skos:ConceptScheme')][1]/@rdf:about" />
       <xsl:copy-of copy-namespaces="no" select="$schemes//*[name() = ('rdf:Description', 'skos:ConceptScheme')]/skos:prefLabel"/>
+      <xsl:copy-of copy-namespaces="no" select="$schemes//*[name() = ('rdf:Description', 'skos:ConceptScheme')]/dct:title"/>
       <xsl:copy-of copy-namespaces="no" select="$schemes//*[name() = ('rdf:Description', 'skos:ConceptScheme')][1]/dct:issued"/>
+      <xsl:copy-of copy-namespaces="no" select="$schemes//*[name() = ('rdf:Description', 'skos:ConceptScheme')][1]/dct:identifier"/>
       <xsl:copy-of copy-namespaces="no" select="$schemes//*[name() = ('rdf:Description', 'skos:ConceptScheme')][1]/skos:hasTopConcept"/>
     </skos:ConceptScheme>
   </xsl:template>

@@ -8,6 +8,11 @@
       <skos:prefLabel xml:lang="fr">Spatial representation type</skos:prefLabel>
       <skos:prefLabel xml:lang="nl">Spatial representation type</skos:prefLabel>
       <skos:prefLabel xml:lang="de">Spatial representation type</skos:prefLabel>
+      <dct:title xml:lang="en">Spatial representation type</dct:title>
+      <dct:title xml:lang="fr">Spatial representation type</dct:title>
+      <dct:title xml:lang="nl">Spatial representation type</dct:title>
+      <dct:title xml:lang="de">Spatial representation type</dct:title>
+      <dct:identifier>http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType</dct:identifier>
       <skos:hasTopConcept rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/vector"/>
       <skos:hasTopConcept rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/grid"/>
       <skos:hasTopConcept rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/textTable"/>

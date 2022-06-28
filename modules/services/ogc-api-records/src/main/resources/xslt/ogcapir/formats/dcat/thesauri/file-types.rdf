@@ -4,6 +4,8 @@
          xmlns:skos="http://www.w3.org/2004/02/skos/core#">
    <skos:ConceptScheme rdf:about="http://publications.europa.eu/resource/authority/file-type">
       <skos:prefLabel xml:lang="en">File type</skos:prefLabel>
+      <dct:title xml:lang="en">File type</dct:title>
+      <dct:identifier>http://publications.europa.eu/resource/authority/file-type</dct:identifier>
    </skos:ConceptScheme>
    <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/file-type/ZIP">
       <skos:prefLabel xml:lang="en">ZIP</skos:prefLabel>
