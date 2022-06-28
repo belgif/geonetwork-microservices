@@ -856,29 +856,11 @@
     <xsl:variable name="OrganisationName" select="normalize-space(gmd:organisationName/*[self::gco:CharacterString|gmx:Anchor])" />
     <xsl:variable name="OrganisationURI" select="normalize-space(gmd:organisationName/*/@xlink:href)" />
 
-    <xsl:variable name="IndividualName-vCard">
-      <xsl:for-each select="gmd:individualName">
-        <vcard:fn xml:lang="{$MetadataLanguage}"><xsl:value-of select="normalize-space(*[self::gco:CharacterString|gmx:Anchor])"/></vcard:fn>
-        <xsl:call-template name="LocalisedString">
-          <xsl:with-param name="term">vcard:fn</xsl:with-param>
-          <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
-        </xsl:call-template>
-      </xsl:for-each>
-    </xsl:variable>
     <xsl:variable name="OrganisationName-vCard">
       <xsl:for-each select="gmd:organisationName">
         <vcard:organization-name xml:lang="{$MetadataLanguage}"><xsl:value-of select="normalize-space(*[self::gco:CharacterString|gmx:Anchor])"/></vcard:organization-name>
         <xsl:call-template name="LocalisedString">
           <xsl:with-param name="term">vcard:organization-name</xsl:with-param>
-          <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
-        </xsl:call-template>
-      </xsl:for-each>
-    </xsl:variable>
-    <xsl:variable name="OrganisationNameAsIndividualName-vCard">
-      <xsl:for-each select="gmd:organisationName">
-        <vcard:fn xml:lang="{$MetadataLanguage}"><xsl:value-of select="normalize-space(*[self::gco:CharacterString|gmx:Anchor])"/></vcard:fn>
-        <xsl:call-template name="LocalisedString">
-          <xsl:with-param name="term">vcard:fn</xsl:with-param>
           <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
         </xsl:call-template>
       </xsl:for-each>
@@ -967,14 +949,8 @@
         <xsl:if test="$OrganisationURI != ''">
           <xsl:attribute name="rdf:about" select="$OrganisationURI" />
         </xsl:if>
-        <xsl:if test="$IndividualName != ''">
-          <xsl:copy-of select="$IndividualName-vCard"/>
-        </xsl:if>
         <xsl:if test="$IndividualName != '' and $OrganisationName != ''">
           <xsl:copy-of select="$OrganisationName-vCard"/>
-        </xsl:if>
-        <xsl:if test="$IndividualName = '' and $OrganisationName != ''">
-          <xsl:copy-of select="$OrganisationNameAsIndividualName-vCard"/>
         </xsl:if>
         <xsl:copy-of select="$Telephone-vCard"/>
         <xsl:copy-of select="$Email-vCard"/>
