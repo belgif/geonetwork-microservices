@@ -187,10 +187,10 @@
         <dct:title xml:lang="fr">Géoportail des institutions fédérales belges</dct:title>
         <dct:title xml:lang="nl">Geoportaal van de Belgische federale instellingen</dct:title>
         <dct:title xml:lang="de">Geoportal des belgischen Institutionen</dct:title>
-        <dct:description xml:lang="en">TODO (en)</dct:description>
-        <dct:description xml:lang="fr">TODO (fr)</dct:description>
-        <dct:description xml:lang="nl">TODO (nl)</dct:description>
-        <dct:description xml:lang="de">TODO (de)</dct:description>
+        <dct:description xml:lang="en">The catalogue contains the metadata records for the geographical data and services of the Belgian federal institutions.</dct:description>
+        <dct:description xml:lang="fr">Le catalogue contient les fiches de métadonnées des données et services géographiques des institutions fédérales belges.</dct:description>
+        <dct:description xml:lang="nl">De catalogus bevat de metadatafiches voor de geografische gegevens en services van de Belgische federale instellingen.</dct:description>
+        <dct:description xml:lang="de">Der Katalog enthält die Metadatenblätter für die geografischen Daten und Dienste der belgischen föderalen Institutionen.</dct:description>
         <dct:publisher>
           <foaf:Organization>
             <foaf:name xml:lang="en">National Geographic Institute</foaf:name>
