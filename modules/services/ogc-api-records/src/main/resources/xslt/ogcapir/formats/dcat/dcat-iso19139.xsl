@@ -573,7 +573,7 @@
       </xsl:apply-templates>
 
       <!-- Unique Resource Identifier -->
-      <xsl:apply-templates select="gmd:identificationInfo/*/gmd:citation/*/gmd:identifier/*"/>
+      <xsl:apply-templates select="(gmd:identificationInfo/*/gmd:citation/*/gmd:identifier/*)[1]"/>
 
       <!-- HTML landing page -->
       <xsl:apply-templates select="gmd:fileIdentifier/gco:CharacterString" />
