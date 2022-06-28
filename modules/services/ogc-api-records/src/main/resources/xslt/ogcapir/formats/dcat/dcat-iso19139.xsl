@@ -277,7 +277,9 @@
             </gmd:northBoundLatitude>
           </gmd:EX_GeographicBoundingBox>
         </xsl:variable>
-        <xsl:apply-templates select="$boundingBox/*"/>
+        <xsl:apply-templates select="$boundingBox/*">
+          <xsl:with-param name="MetadataLanguage" select="'en'"/>
+        </xsl:apply-templates>
         <dcat:contactPoint>
           <vcard:Organization>
             <vcard:organization-name xml:lang="en">Geoportal of the Belgian federal institutions</vcard:organization-name>
@@ -750,7 +752,9 @@
                         </gmd:westBoundLongitude>
                       </gmd:EX_GeographicBoundingBox>
                     </xsl:variable>
-                    <xsl:apply-templates select="$gmdExtent/gmd:EX_GeographicBoundingBox"/>
+                    <xsl:apply-templates select="$gmdExtent/gmd:EX_GeographicBoundingBox">
+                      <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
+                    </xsl:apply-templates>
                   </xsl:for-each>
                 </dcat:Distribution>
               </dcat:distribution>
@@ -1232,11 +1236,14 @@
     <xsl:apply-templates select="gmd:EX_GeographicDescription/gmd:geographicIdentifier/*">
       <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
     </xsl:apply-templates>
-    <xsl:apply-templates select="gmd:EX_GeographicBoundingBox"/>
+    <xsl:apply-templates select="gmd:EX_GeographicBoundingBox">
+      <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
+    </xsl:apply-templates>
   </xsl:template>
 
   <!-- Geographic bounding box -->
   <xsl:template name="GeographicBoundingBox" match="gmd:EX_GeographicBoundingBox">
+    <xsl:param name="MetadataLanguage"/>
     <xsl:variable name="north" select="gmd:northBoundLatitude/gco:Decimal"/>
     <xsl:variable name="east"  select="gmd:eastBoundLongitude/gco:Decimal"/>
     <xsl:variable name="south" select="gmd:southBoundLatitude/gco:Decimal"/>
@@ -1278,6 +1285,14 @@
         <!-- Additional geometry encodings -->
         <dcat:bbox rdf:datatype="{$geojsonMediaTypeUri}"><xsl:value-of select="$GeoJSONLiteral"/></dcat:bbox>
         <dcat:bbox rdf:datatype="{$geojsonLiteralMediaTypeUri}"><xsl:value-of select="$GeoJSONLiteral"/></dcat:bbox>
+
+        <xsl:for-each select="../../gmd:description">
+          <skos:prefLabel xml:lang="{$MetadataLanguage}"><xsl:value-of select="normalize-space(gco:CharacterString|gmx:Anchor)"/></skos:prefLabel>
+          <xsl:call-template name="LocalisedString">
+            <xsl:with-param name="term">skos:prefLabel</xsl:with-param>
+            <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
+          </xsl:call-template>
+        </xsl:for-each>
       </dct:Location>
     </dct:spatial>
   </xsl:template>
