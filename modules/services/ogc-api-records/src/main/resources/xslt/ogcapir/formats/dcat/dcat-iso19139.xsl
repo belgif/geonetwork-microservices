@@ -203,6 +203,9 @@
                 <locn:thoroughfare xml:lang="nl">Kortenberglaan 115</locn:thoroughfare>
                 <locn:thoroughfare xml:lang="de">Avenue de Cortenbergh 115</locn:thoroughfare>
                 <locn:postName xml:lang="en">Brussels</locn:postName>
+                <locn:postName xml:lang="fr">Bruxelles</locn:postName>
+                <locn:postName xml:lang="nl">Brussel</locn:postName>
+                <locn:postName xml:lang="de">Brüssel</locn:postName>
                 <locn:postCode>1000</locn:postCode>
                 <locn:adminUnitL1 xml:lang="en">Belgium</locn:adminUnitL1>
                 <locn:adminUnitL1 xml:lang="fr">Belgique</locn:adminUnitL1>
