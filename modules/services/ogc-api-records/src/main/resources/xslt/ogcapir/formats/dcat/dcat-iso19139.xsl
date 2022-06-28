@@ -151,7 +151,7 @@
   <xsl:variable name="INSPIREGlossaryUri" select="'http://inspire.ec.europa.eu/glossary/'"/>
 
   <!-- Other variables -->
-  <xsl:variable name="OgcAPIUrl" select="'http://localhost:8080'" />
+  <xsl:param name="OgcAPIUrl" select="'http://localhost:8080'" />
   <xsl:variable name="allThesauri">
     <xsl:copy-of select="document('./thesauri/language.rdf')"/>
     <xsl:copy-of select="document('./thesauri/TopicCategory.rdf')"/>
@@ -593,7 +593,7 @@
       <xsl:if test="$ResourceType = 'service'">
         <dct:type>
           <xsl:copy-of
-            select="$allThesauri//skos:Concept[@rdf:about = concat($SpatialDataServiceTypeCodelistUri,'/', $ServiceType)]"/>
+              select="$allThesauri//skos:Concept[@rdf:about = concat($SpatialDataServiceTypeCodelistUri,'/', $ServiceType)]"/>
         </dct:type>
       </xsl:if>
 
@@ -1738,14 +1738,14 @@
       <xsl:when test="starts-with($link, 'http://') or starts-with($link, 'https://')">
         <dct:conformsTo>
           <dcat:Standard rdf:about="{$link}">
-              <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
+            <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
           </dcat:Standard>
         </dct:conformsTo>
       </xsl:when>
       <xsl:when test="starts-with($code, 'http://') or starts-with($code, 'https://')">
         <dct:conformsTo>
           <dcat:Standard rdf:about="{$code}">
-              <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
+            <dct:type rdf:resource="{$INSPIREGlossaryUri}SpatialReferenceSystem"/>
           </dcat:Standard>
         </dct:conformsTo>
       </xsl:when>

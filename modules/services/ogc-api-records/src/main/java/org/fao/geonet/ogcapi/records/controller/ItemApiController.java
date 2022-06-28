@@ -7,16 +7,13 @@ package org.fao.geonet.ogcapi.records.controller;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -34,6 +31,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
 import lombok.extern.slf4j.Slf4j;
+import net.sf.saxon.s9api.QName;
+import net.sf.saxon.s9api.XdmValue;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.rdf4j.rio.RDFFormat;
@@ -317,7 +316,9 @@ public class ItemApiController {
         String dcatXml;
         if (xsltFile.exists()) {
           Node metadataXml = getRecordAsXml(collectionId, recordId, request, source);
-          dcatXml = XsltUtil.transformToString(XmlUtil.getNodeString(metadataXml), xsltFile);
+          var params = new HashMap<QName, XdmValue>();
+          params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
+          dcatXml = XsltUtil.transformToString(XmlUtil.getNodeString(metadataXml), xsltFile, params);
         } else {
           JAXBContext context = null;
           context = JAXBContext.newInstance(
@@ -574,7 +575,9 @@ public class ItemApiController {
     if (isLinkedData) {
       ClassPathResource xsltFile = new ClassPathResource("xslt/ogcapir/formats/dcat/dcat-iso19139.xsl");
       try {
-        var dcatXml = XsltUtil.transformToString(queryResponse, xsltFile);
+        var params = new HashMap<QName, XdmValue>();
+        params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
+        var dcatXml = XsltUtil.transformToString(queryResponse, xsltFile, params);
 
         dcatXml = addPaging(request, queryResponse, limit, startindex, dcatXml);
 

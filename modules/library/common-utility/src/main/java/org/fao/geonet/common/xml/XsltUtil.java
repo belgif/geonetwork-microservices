@@ -10,18 +10,16 @@ package org.fao.geonet.common.xml;
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.util.JAXBResult;
 import javax.xml.stream.XMLStreamWriter;
 import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamSource;
-import net.sf.saxon.s9api.Processor;
-import net.sf.saxon.s9api.SaxonApiException;
-import net.sf.saxon.s9api.Serializer;
-import net.sf.saxon.s9api.Xslt30Transformer;
-import net.sf.saxon.s9api.XsltCompiler;
-import net.sf.saxon.s9api.XsltExecutable;
+
+import net.sf.saxon.s9api.*;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -86,7 +84,7 @@ public class XsltUtil {
   /**
    * Transform XML string and write result as a string
    */
-  public static String transformToString(String inputXmlString, ClassPathResource xsltFile) throws Exception {
+  public static String transformToString(String inputXmlString, ClassPathResource xsltFile, Map<QName, XdmValue> parameters) throws Exception {
     Processor proc = new Processor(false);
     StringWriter stringWriter = new StringWriter();
     Serializer out = proc.newSerializer(stringWriter);
@@ -115,7 +113,18 @@ public class XsltUtil {
     XsltExecutable xsl = compiler.compile(new StreamSource(xsltFile.getInputStream()));
     Xslt30Transformer transformer = xsl.load30();
     transformer.setURIResolver(resolver);
+    if (parameters != null) {
+      transformer.setStylesheetParameters(parameters);
+    }
     transformer.transform(new StreamSource(new StringReader(inputXmlString)), out);
     return stringWriter.getBuffer().toString();
+
+  }
+  public static String transformToString(String inputXmlString, ClassPathResource xsltFile) throws Exception {
+    return transformToString(inputXmlString, xsltFile, null);
+  }
+
+  public static XdmValue stringToParam(String str) {
+    return new XdmValue(List.of(new XdmAtomicValue(str)));
   }
 }
