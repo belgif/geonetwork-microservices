@@ -325,6 +325,9 @@
                 <vcard:street-address xml:lang="nl">Kortenberglaan 115</vcard:street-address>
                 <vcard:street-address xml:lang="de">Avenue de Cortenbergh 115</vcard:street-address>
                 <vcard:locality xml:lang="en">Brussels</vcard:locality>
+                <vcard:locality xml:lang="fr">Bruxelles</vcard:locality>
+                <vcard:locality xml:lang="nl">Brussel</vcard:locality>
+                <vcard:locality xml:lang="de">Brüssel</vcard:locality>
                 <vcard:postal-code>1000</vcard:postal-code>
                 <vcard:country-name xml:lang="en">Belgium</vcard:country-name>
                 <vcard:country-name xml:lang="fr">Belgique</vcard:country-name>
