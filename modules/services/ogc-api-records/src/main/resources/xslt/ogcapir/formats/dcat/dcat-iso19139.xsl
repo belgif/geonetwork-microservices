@@ -1529,7 +1529,7 @@
     <xsl:variable name="spatialType" select="string(../../gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode/@codeListValue)"/>
     <xsl:choose>
       <xsl:when test="$spatialType = 'grid'">
-        <dcat:spatialResolutionInMeters>
+        <dqv:hasQualityMeasurement>
           <dqv:QualityMeasurement>
             <sdmx-attribute:unitMeasure>
               <skos:Concept rdf:about="http://qudt.org/vocab/unit/M">
@@ -1544,7 +1544,7 @@
               <xsl:value-of select="normalize-space(gmd:distance/gco:Distance)"/>
             </dqv:value>
           </dqv:QualityMeasurement>
-        </dcat:spatialResolutionInMeters>
+        </dqv:hasQualityMeasurement>
       </xsl:when>
       <xsl:when test="$spatialType = 'vector'">
         <dqv:hasQualityMeasurement>
