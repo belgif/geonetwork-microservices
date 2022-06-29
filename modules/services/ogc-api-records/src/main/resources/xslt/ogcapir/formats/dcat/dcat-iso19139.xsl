@@ -50,6 +50,7 @@
                 xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
                 xmlns:atom="http://www.w3.org/2005/Atom"
                 xmlns:georss="http://www.georss.org/georss"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema#"
                 exclude-result-prefixes="earl gco gmd gml gmx i srv xlink xsi xsl wdrs"
                 version="2.0">
 
@@ -685,7 +686,7 @@
     <dcat:record>
       <dcat:CatalogRecord>
 
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">
+        <dct:modified rdf:datatype="xs:date">
           <xsl:choose>
             <xsl:when test="gmd:dateStamp/gco:DateTime">
               <xsl:value-of select="substring-before(normalize-space(gmd:dateStamp/gco:DateTime), 'T')"/>
@@ -1378,17 +1379,17 @@
     </xsl:param>
     <xsl:choose>
       <xsl:when test="$type = 'publication'">
-        <dct:issued rdf:datatype="{$xsd}{$data-type}">
+        <dct:issued rdf:datatype="xs:{$data-type}">
           <xsl:value-of select="$date"/>
         </dct:issued>
       </xsl:when>
       <xsl:when test="$type = 'revision'">
-        <dct:modified rdf:datatype="{$xsd}{$data-type}">
+        <dct:modified rdf:datatype="xs:{$data-type}">
           <xsl:value-of select="$date"/>
         </dct:modified>
       </xsl:when>
       <xsl:when test="$type = 'creation'">
-        <dct:created rdf:datatype="{$xsd}{$data-type}">
+        <dct:created rdf:datatype="xs:{$data-type}">
           <xsl:value-of select="$date"/>
         </dct:created>
       </xsl:when>

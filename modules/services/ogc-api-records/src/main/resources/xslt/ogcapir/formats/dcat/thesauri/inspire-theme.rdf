@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema#"
          xmlns:dct="http://purl.org/dc/terms/">
   <skos:ConceptScheme rdf:about="http://inspire.ec.europa.eu/theme">
     <skos:prefLabel xml:lang="en">GEMET - INSPIRE themes, version 1.0</skos:prefLabel>
     <dct:title xml:lang="en">GEMET - INSPIRE themes, version 1.0</dct:title>
-    <dct:issued>2008-06-01</dct:issued>
-    <dct:modified>2008-06-01</dct:modified>
+    <dct:issued rdf:datatype="xs:date">2008-06-01</dct:issued>
+    <dct:modified rdf:datatype="xs:date">2008-06-01</dct:modified>
   </skos:ConceptScheme>
   <skos:Concept rdf:about="http://inspire.ec.europa.eu/theme/ad">
     <skos:prefLabel xml:lang="en">Addresses</skos:prefLabel>
