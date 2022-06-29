@@ -198,7 +198,14 @@
             <foaf:name xml:lang="nl">Nationaal Geografisch Instituut</foaf:name>
             <foaf:name xml:lang="de">Nationales geographisches Institut</foaf:name>
             <foaf:mbox rdf:resource="mailto:products@ngi.be"/>
-            <foaf:workplaceHomepage rdf:resource="http://www.ngi.be"/>
+            <foaf:workplaceHomepage>
+              <rdf:Description rdf:about="https://www.ngi.be/website">
+                <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/NLD"/>
+              </rdf:Description>
+              <rdf:Description rdf:about="https://www.ngi.be/website/fr">
+                <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/FRA"/>
+              </rdf:Description>
+            </foaf:workplaceHomepage>
             <locn:address>
               <locn:Address>
                 <locn:thoroughfare xml:lang="en">Kortenberglaan 115</locn:thoroughfare>
@@ -218,7 +225,20 @@
             </locn:address>
           </foaf:Organization>
         </dct:publisher>
-        <foaf:homepage rdf:resource="https://www.geo.be/home"/>
+        <foaf:homepage>
+          <rdf:Description rdf:about="https://www.geo.be/home?l=en">
+            <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ENG"/>
+          </rdf:Description>
+          <rdf:Description rdf:about="https://www.geo.be/home?l=de">
+            <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/DEU"/>
+          </rdf:Description>
+          <rdf:Description rdf:about="https://www.geo.be/home?l=fr">
+            <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/FRA"/>
+          </rdf:Description>
+          <rdf:Description rdf:about="https://www.geo.be/home?l=nl">
+            <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/NLD"/>
+          </rdf:Description>
+        </foaf:homepage>
         <dct:language>
           <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/ENG">
             <skos:prefLabel xml:lang="de">Englisch</skos:prefLabel>
@@ -290,7 +310,14 @@
             <vcard:organization-name xml:lang="nl">Geoportaal van de Belgische federale instellingen</vcard:organization-name>
             <vcard:organization-name xml:lang="de">Geoportal des belgischen Institutionen</vcard:organization-name>
             <vcard:hasEmail rdf:resource="mailto:products@ngi.be"/>
-            <vcard:hasURL rdf:resource="http://www.ngi.be"/>
+            <vcard:hasURL>
+              <rdf:Description rdf:about="https://www.ngi.be/website">
+                <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/NLD"/>
+              </rdf:Description>
+              <rdf:Description rdf:about="https://www.ngi.be/website/fr">
+                <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/FRA"/>
+              </rdf:Description>
+            </vcard:hasURL>
             <vcard:hasAddress>
               <vcard:Address>
                 <vcard:street-address xml:lang="en">Kortenberglaan 115</vcard:street-address>
@@ -386,83 +413,9 @@
     </xsl:variable>
 
     <xsl:variable name="MetadataLanguage">
-      <xsl:choose>
-        <xsl:when test="$ormlang = 'bul'">
-          <xsl:text>bg</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'cze'">
-          <xsl:text>cs</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'dan'">
-          <xsl:text>da</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'ger'">
-          <xsl:text>de</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'gre'">
-          <xsl:text>el</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'eng'">
-          <xsl:text>en</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'spa'">
-          <xsl:text>es</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'est'">
-          <xsl:text>et</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'fin'">
-          <xsl:text>fi</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'fre'">
-          <xsl:text>fr</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'gle'">
-          <xsl:text>ga</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'hrv'">
-          <xsl:text>hr</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'ita'">
-          <xsl:text>it</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'lav'">
-          <xsl:text>lv</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'lit'">
-          <xsl:text>lt</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'hun'">
-          <xsl:text>hu</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'mlt'">
-          <xsl:text>mt</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'dut'">
-          <xsl:text>nl</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'pol'">
-          <xsl:text>pl</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'por'">
-          <xsl:text>pt</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'rum'">
-          <xsl:text>ru</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'slo'">
-          <xsl:text>sk</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'slv'">
-          <xsl:text>sl</xsl:text>
-        </xsl:when>
-        <xsl:when test="$ormlang = 'swe'">
-          <xsl:text>sv</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="$ormlang"/>
-        </xsl:otherwise>
-      </xsl:choose>
+      <xsl:call-template name="Alpha3-to-Alpha2">
+        <xsl:with-param name="lang" select="$ormlang" />
+      </xsl:call-template>
     </xsl:variable>
 
     <!-- Resource language: corresponding Alpha-2 codes -->
@@ -576,7 +529,9 @@
       <xsl:apply-templates select="(gmd:identificationInfo/*/gmd:citation/*/gmd:identifier/*)[1]"/>
 
       <!-- HTML landing page -->
-      <xsl:apply-templates select="gmd:fileIdentifier/gco:CharacterString" />
+      <xsl:apply-templates select="gmd:fileIdentifier/gco:CharacterString">
+        <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
+      </xsl:apply-templates>
 
       <!-- Coupled resources -->
       <xsl:apply-templates select="gmd:identificationInfo[1]/*/srv:operatesOn">
@@ -806,9 +761,45 @@
 
   <!-- HTML landing page -->
   <xsl:template name="HtmlLandingPage" match="gmd:fileIdentifier/gco:CharacterString">
-    <dcat:landingPage>
-      <xsl:attribute name="rdf:resource" select="concat('https://www.geo.be/catalog/details/', normalize-space())" />
-    </dcat:landingPage>
+    <xsl:param name="MetadataLanguage" />
+
+    <xsl:variable name="uuid" select="normalize-space()"/>
+    <xsl:variable name="mockMultiLingualFileId">
+      <mock>
+        <gco:CharacterString>
+          <xsl:value-of select="concat('https://www.geo.be/catalog/details/', $uuid, '?l=', $MetadataLanguage)"/>
+        </gco:CharacterString>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#EN">
+              <xsl:value-of select="concat('https://www.geo.be/catalog/details/', $uuid, '?l=en')"/>
+            </gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#FR">
+              <xsl:value-of select="concat('https://www.geo.be/catalog/details/', $uuid, '?l=fr')"/>
+            </gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#NL">
+              <xsl:value-of select="concat('https://www.geo.be/catalog/details/', $uuid, '?l=nl')"/>
+            </gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#DE">
+              <xsl:value-of select="concat('https://www.geo.be/catalog/details/', $uuid, '?l=de')"/>
+            </gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </mock>
+    </xsl:variable>
+
+    <xsl:for-each select="$mockMultiLingualFileId/mock">
+      <xsl:call-template name="LocalisedResource">
+        <xsl:with-param name="term" select="'dcat:landingPage'"/>
+        <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
+      </xsl:call-template>
+    </xsl:for-each>
   </xsl:template>
 
   <!-- Languages -->
@@ -871,17 +862,23 @@
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="URL-vCard">
-      <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL[normalize-space() != '']">
-        <vcard:hasURL>
-          <xsl:choose>
-            <xsl:when test="starts-with(normalize-space(.), 'http://') or starts-with(normalize-space(.), 'https://')">
-              <xsl:attribute name="rdf:resource" select="normalize-space(.)" />
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:attribute name="rdf:resource" select="concat('http://', normalize-space(.))" />
-            </xsl:otherwise>
-          </xsl:choose>
-        </vcard:hasURL>
+      <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage[gmd:URL[normalize-space() != '']]">
+        <xsl:choose>
+          <xsl:when test="normalize-space(.) = (../gmd:name/gco:CharacterString, ../gmd:name/gmx:Anchor)">
+            <xsl:for-each select="../gmd:name">
+              <xsl:call-template name="LocalisedResource">
+                <xsl:with-param name="term" select="'vcard:hasURL'"/>
+                <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="LocalisedResource">
+              <xsl:with-param name="term" select="'vcard:hasURL'"/>
+              <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="Telephone-vCard">
@@ -1001,17 +998,23 @@
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="URL-FOAF">
-      <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL[normalize-space() != '']">
-        <foaf:workplaceHomepage>
-          <xsl:choose>
-            <xsl:when test="starts-with(normalize-space(.), 'http://') or starts-with(normalize-space(.), 'https://')">
-              <xsl:attribute name="rdf:resource" select="normalize-space(.)" />
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:attribute name="rdf:resource" select="concat('http://', normalize-space(.))" />
-            </xsl:otherwise>
-          </xsl:choose>
-        </foaf:workplaceHomepage>
+      <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage[gmd:URL[normalize-space() != '']]">
+        <xsl:choose>
+          <xsl:when test="normalize-space(.) = (../gmd:name/gco:CharacterString, ../gmd:name/gmx:Anchor)">
+            <xsl:for-each select="../gmd:name">
+              <xsl:call-template name="LocalisedResource">
+                <xsl:with-param name="term" select="'foaf:workplaceHomepage'"/>
+                <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="LocalisedResource">
+              <xsl:with-param name="term" select="'foaf:workplaceHomepage'"/>
+              <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="Telephone-FOAF">
@@ -1944,6 +1947,88 @@
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template name="Alpha2-to-Alpha3">
+    <xsl:param name="lang"/>
+    <xsl:choose>
+      <xsl:when test="$lang = 'bg'">
+        <xsl:text>bul</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'cs'">
+        <xsl:text>cze</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'da'">
+        <xsl:text>dan</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'de'">
+        <xsl:text>deu</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'el'">
+        <xsl:text>gre</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'en'">
+        <xsl:text>eng</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'es'">
+        <xsl:text>spa</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'et'">
+        <xsl:text>est</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'fi'">
+        <xsl:text>fin</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'fr'">
+        <xsl:text>fra</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'ga'">
+        <xsl:text>gle</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'hr'">
+        <xsl:text>hrv</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'it'">
+        <xsl:text>ita</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'lv'">
+        <xsl:text>lav</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'lt'">
+        <xsl:text>lit</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'hu'">
+        <xsl:text>hun</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'mt'">
+        <xsl:text>mlt</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'nl'">
+        <xsl:text>nld</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'pl'">
+        <xsl:text>pol</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'pt'">
+        <xsl:text>por</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'ru'">
+        <xsl:text>rum</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'sk'">
+        <xsl:text>slo</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'sl'">
+        <xsl:text>slv</xsl:text>
+      </xsl:when>
+      <xsl:when test="$lang = 'sv'">
+        <xsl:text>swe</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$lang"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+
   <!-- Templates for services and distributions pointing to services -->
   <xsl:template name="detect-service">
     <xsl:param name="function"/>
@@ -2084,4 +2169,46 @@
     </xsl:if>
   </xsl:template>
 
+  <xsl:template name="LocalisedResource">
+    <xsl:param name="term"/>
+    <xsl:param name="mdLang"/>
+
+    <xsl:element name="{$term}">
+      <xsl:for-each select="*[name() != 'gmd:PT_FreeText']|gmd:PT_FreeText/*/gmd:LocalisedCharacterString">
+        <xsl:variable name="value">
+          <xsl:choose>
+            <xsl:when test="starts-with(normalize-space(.), 'http://') or starts-with(normalize-space(.), 'https://')">
+              <xsl:value-of select="normalize-space(.)"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="concat('http://', normalize-space(.))"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="alpha2Lang">
+          <xsl:choose>
+            <xsl:when test="name() != 'gmd:LocalisedCharacterString'">
+              <xsl:value-of select="$mdLang"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:call-template name="Alpha3-to-Alpha2">
+                <xsl:with-param name="lang" select="translate(translate(@locale, $uppercase, $lowercase), '#', '')"/>
+              </xsl:call-template>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="alpha3Lang">
+          <xsl:call-template name="Alpha2-to-Alpha3">
+            <xsl:with-param name="lang" select="$alpha2Lang"/>
+          </xsl:call-template>
+        </xsl:variable>
+        <xsl:if test="$value != '' and ($alpha2Lang != $mdLang or name() != 'gmd:LocalisedCharacterString')">
+          <rdf:Description>
+            <xsl:attribute name="rdf:about" select="$value" />
+            <dct:language rdf:resource="{$allThesauri//skos:Concept[@rdf:about = concat($oplang, translate($alpha3Lang, $lowercase, $uppercase))]/@rdf:about}" />
+          </rdf:Description>
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:element>
+  </xsl:template>
 </xsl:stylesheet>
