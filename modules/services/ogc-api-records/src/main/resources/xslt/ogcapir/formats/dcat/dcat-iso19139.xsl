@@ -180,7 +180,7 @@
   <xsl:template match="/">
     <rdf:RDF>
       <dcat:Catalog>
-        <xsl:variable name="resources">
+        <xsl:variable name="records">
           <xsl:apply-templates select="gmd:MD_Metadata|//gmd:MD_Metadata"/>
         </xsl:variable>
         <dct:title xml:lang="en">Geoportal of the Belgian federal institutions</dct:title>
@@ -338,7 +338,7 @@
           </vcard:Organization>
         </dcat:contactPoint>
         <dct:isPartOf rdf:resource="{$OgcAPIUrl}/collections/main/items"/>
-        <xsl:for-each select="distinct-values($resources//skos:inScheme/@rdf:resource)">
+        <xsl:for-each select="distinct-values($records//skos:inScheme/@rdf:resource)">
           <dcat:themeTaxonomy>
             <skos:ConceptScheme rdf:about="{string(.)}">
               <xsl:variable name="schemeUri" select="string(.)"/>
@@ -360,23 +360,7 @@
         </xsl:for-each>
         <!-- TODO dcat:distribution -->
 
-        <xsl:for-each select="$resources/*">
-          <xsl:choose>
-            <xsl:when test="name(.) = 'dcat:Dataset'">
-              <dcat:dataset>
-                <xsl:copy-of select="."/>
-              </dcat:dataset>
-            </xsl:when>
-            <xsl:when test="name(.) = 'dcat:DataService'">
-              <dcat:service>
-                <xsl:copy-of select="."/>
-              </dcat:service>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:message select="concat('Resource name invalid: ', name(.))"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:for-each>
+        <xsl:copy-of select="$records"/>
       </dcat:Catalog>
     </rdf:RDF>
   </xsl:template>
@@ -391,15 +375,6 @@
 
     <xsl:variable name="ResourceUUID" select="string(gmd:fileIdentifier/gco:CharacterString)" />
     <xsl:variable name="ResourceUri" select="concat($OgcAPIUrl, '/collections/main/items/', gmd:fileIdentifier/gco:CharacterString)" />
-
-    <!--
-
-      Other parameters
-      ================
-
-    -->
-
-    <!-- Metadata language: corresponding Alpha-2 codes -->
 
     <xsl:variable name="ormlang">
       <xsl:choose>
@@ -421,16 +396,8 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <!-- Resource language: corresponding Alpha-2 codes -->
-
     <xsl:variable name="IsoScopeCode">
       <xsl:value-of select="normalize-space(gmd:hierarchyLevel/gmd:MD_ScopeCode/@codeListValue)"/>
-    </xsl:variable>
-
-    <xsl:variable name="InspireResourceType">
-      <xsl:if test="$IsoScopeCode = 'dataset' or $IsoScopeCode = 'series' or $IsoScopeCode = 'service'">
-        <xsl:value-of select="$IsoScopeCode"/>
-      </xsl:if>
     </xsl:variable>
 
     <xsl:variable name="ResourceType">
@@ -482,23 +449,6 @@
       </xsl:for-each>
     </xsl:variable>
 
-    <xsl:variable name="MetadataDate">
-      <xsl:choose>
-        <xsl:when test="gmd:dateStamp/gco:Date">
-          <xsl:value-of select="gmd:dateStamp/gco:Date"/>
-        </xsl:when>
-        <xsl:when test="gmd:dateStamp/gco:DateTime">
-          <xsl:value-of select="normalize-space(gmd:dateStamp/gco:DateTime/text())"/>
-        </xsl:when>
-      </xsl:choose>
-    </xsl:variable>
-
-    <xsl:variable name="ResourceCharacterEncoding">
-      <xsl:for-each select="gmd:identificationInfo/gmd:MD_DataIdentification">
-        <xsl:apply-templates select="gmd:characterSet/gmd:MD_CharacterSetCode"/>
-      </xsl:for-each>
-    </xsl:variable>
-
     <!-- Resource description (resource metadata) -->
     <xsl:variable name="ResourceDescription">
 
@@ -508,7 +458,6 @@
       <!-- Metadata point of contact -->
       <xsl:apply-templates select="gmd:contact/gmd:CI_ResponsibleParty">
         <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
-        <xsl:with-param name="ResourceType" select="$ResourceType"/>
       </xsl:apply-templates>
 
       <!-- Maintenance information (tentative) -->
@@ -607,7 +556,6 @@
         <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
         <xsl:with-param name="ResourceType" select="$ResourceType"/>
       </xsl:apply-templates>
-
 
       <xsl:choose>
         <xsl:when test="$ResourceType = 'service'">
@@ -734,20 +682,54 @@
       </xsl:choose>
     </xsl:variable>
 
-    <xsl:variable name="resourceElementName">
-      <xsl:choose>
-        <xsl:when test="$ResourceType = 'dataset'">
-          <xsl:value-of select="'dcat:Dataset'"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="'dcat:DataService'"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:element name="{$resourceElementName}">
-      <xsl:attribute name="rdf:about" select="$ResourceUri" />
-      <xsl:copy-of select="$ResourceDescription"/>
-    </xsl:element>
+    <dcat:record>
+      <dcat:CatalogRecord>
+
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">
+          <xsl:choose>
+            <xsl:when test="gmd:dateStamp/gco:DateTime">
+              <xsl:value-of select="substring-before(normalize-space(gmd:dateStamp/gco:DateTime), 'T')"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="normalize-space(gmd:dateStamp/*)"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </dct:modified>
+
+        <xsl:apply-templates select="gmd:locale/gmd:PT_Locale/gmd:languageCode"/>
+        
+        <xsl:apply-templates select="gmd:contact/gmd:CI_ResponsibleParty">
+          <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
+        </xsl:apply-templates>
+        
+        <dct:identifier>
+          <xsl:value-of select="$ResourceUUID"/>
+        </dct:identifier>
+
+        <dct:source rdf:resource="{concat('http://csw.geo.be/eng/csw?request=GetRecordById&amp;service=CSW&amp;version=2.0.2&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;id=', $ResourceUUID)}"/>
+
+        <xsl:apply-templates select="gmd:fileIdentifier/gco:CharacterString">
+          <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
+        </xsl:apply-templates>
+
+        <foaf:primaryTopic>
+          <xsl:choose>
+            <xsl:when test="$ResourceType = 'dataset'">
+              <dcat:Dataset>
+                <xsl:attribute name="rdf:about" select="$ResourceUri"/>
+                <xsl:copy-of select="$ResourceDescription"/>
+              </dcat:Dataset>
+            </xsl:when>
+            <xsl:otherwise>
+              <dcat:DataService>
+                <xsl:attribute name="rdf:about" select="$ResourceUri"/>
+                <xsl:copy-of select="$ResourceDescription"/>
+              </dcat:DataService>
+            </xsl:otherwise>
+          </xsl:choose>
+        </foaf:primaryTopic>
+      </dcat:CatalogRecord>
+    </dcat:record>
   </xsl:template>
 
   <!--
@@ -808,7 +790,7 @@
   </xsl:template>
 
   <!-- Languages -->
-  <xsl:template name="ResourceLanguage" match="gmd:identificationInfo/*/gmd:language">
+  <xsl:template name="ResourceLanguage" match="gmd:identificationInfo/*/gmd:language|gmd:locale/gmd:PT_Locale/gmd:languageCode">
     <xsl:variable name="orrlang">
       <xsl:choose>
         <xsl:when test="gmd:LanguageCode/@codeListValue != ''">
@@ -846,7 +828,6 @@
   <!-- Responsible Organisation VCARD -->
   <xsl:template name="ResponsibleOrganisationVCard" match="gmd:contact/gmd:CI_ResponsibleParty">
     <xsl:param name="MetadataLanguage"/>
-    <xsl:param name="ResourceType"/>
     <xsl:variable name="role" select="string(gmd:role/gmd:CI_RoleCode/@codeListValue)" />
     <xsl:variable name="IndividualName" select="normalize-space(gmd:individualName/*[self::gco:CharacterString|gmx:Anchor])" />
     <xsl:variable name="OrganisationName" select="normalize-space(gmd:organisationName/*[self::gco:CharacterString|gmx:Anchor])" />
@@ -1385,7 +1366,7 @@
   <!-- Generic date template -->
   <xsl:template name="Dates" match="gmd:date/gmd:CI_Date">
     <xsl:param name="date">
-      <xsl:value-of select="normalize-space(gmd:date/gco:Date)"/>
+      <xsl:value-of select="normalize-space((gmd:date/gco:Date|gmd:date/gco:DateTime)[1])"/>
     </xsl:param>
     <xsl:param name="type">
       <xsl:value-of select="gmd:dateType/gmd:CI_DateTypeCode/@codeListValue"/>
