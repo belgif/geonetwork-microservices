@@ -167,11 +167,6 @@
       <xsl:copy-of select="document('./thesauri/file-types.rdf')"/>
     </xsl:if>
   </xsl:variable>
-  <xsl:variable name="atomDownloadService">
-    <xsl:if test="//gmd:hierarchyLevel/gmd:MD_ScopeCode[@codeListValue = ('dataset', 'series')]">
-      <xsl:copy-of select="document('https://ac.ngi.be/remoteclient-open/GeoBePartners-open/ATOM/Atomfeed-en.xml')"/>
-    </xsl:if>
-  </xsl:variable>
 
 
   <!--
@@ -359,8 +354,6 @@
             </skos:ConceptScheme>
           </dcat:themeTaxonomy>
         </xsl:for-each>
-        <!-- TODO dcat:distribution -->
-
         <xsl:copy-of select="$records"/>
       </dcat:Catalog>
     </rdf:RDF>
@@ -584,45 +577,53 @@
           </xsl:for-each-group>
         </xsl:when>
         <xsl:when test="$ResourceType = 'dataset' or $ResourceType = 'series'">
-          <xsl:for-each select="$atomDownloadService/atom:feed/atom:entry[contains(atom:id, concat('/', $ResourceUUID, '/'))]">
-            <xsl:variable name="datasetFeed" select="document(atom:id)"/>
-            <xsl:variable name="datasetFeedLang">
+          <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:protocol/*=('ATOM') and gmd:function/*/@codeListValue=('download')]">
+            <xsl:variable name="atoms">
               <xsl:choose>
-                <xsl:when test="$datasetFeed/atom:feed/@xml:lang">
-                  <xsl:value-of select="string($datasetFeed/atom:feed/@xml:lang)"/>
+                <xsl:when test="gmd:linkage/gmd:URL = (gmd:name/gco:CharacterString|gmd:name/gmx:Anchor)">
+                  <xsl:element name="{$MetadataLanguage}">
+                    <xsl:copy-of select="document(string(gmd:name/gco:CharacterString|gmd:name/gmx:Anchor))"/>
+                  </xsl:element>
+                  <xsl:for-each select="gmd:name/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
+                    <xsl:variable name="lang" select="translate(translate(@locale, $uppercase, $lowercase), '#', '')"/>
+                    <xsl:if test="$lang != $MetadataLanguage">
+                      <xsl:element name="{$lang}">
+                        <xsl:copy-of select="document(string())"/>
+                      </xsl:element>
+                    </xsl:if>
+                  </xsl:for-each>
                 </xsl:when>
-                <xsl:otherwise>
-                  <xsl:value-of select="'en'"/>
-                </xsl:otherwise>
+                <xsl:when test="normalize-space(gmd:linkage/gmd:URL) != ''">
+                  <xsl:element name="{$MetadataLanguage}">
+                    <xsl:copy-of select="document(string(gmd:linkage/gmd:URL))"/>
+                  </xsl:element>
+                </xsl:when>
               </xsl:choose>
             </xsl:variable>
+            <xsl:for-each select="$atoms/*[1]/atom:feed/atom:entry">
+              <xsl:variable name="pos" select="position()"/>
+              <xsl:for-each select="atom:link">
+                <dcat:distribution>
+                  <dcat:Distribution>
+                    <!-- dct:title -->
+                    <xsl:for-each select="$atoms/*/atom:feed/atom:entry[$pos]/atom:title">
+                      <dct:title xml:lang="{name(../../..)}">
+                        <xsl:value-of select="string()"/>
+                      </dct:title>
+                    </xsl:for-each>
 
-            <xsl:for-each select="$datasetFeed/atom:feed/atom:entry">
-              <dcat:distribution>
-                <dcat:Distribution>
-                  <!-- rdf:about -->
-                  <xsl:if test="atom:id">
-                    <xsl:attribute name="rdf:about" select="string(atom:id)"/>
-                  </xsl:if>
-                  <!-- dct:title -->
-                  <xsl:for-each select="atom:title">
-                    <dct:title xml:lang="{$datasetFeedLang}">
-                      <xsl:value-of select="string()"/>
-                    </dct:title>
-                  </xsl:for-each>
-                  <!-- dct:description -->
-                  <xsl:for-each select="atom:subtitle">
-                    <dct:description xml:lang="{$datasetFeedLang}">
-                      <xsl:value-of select="string()"/>
-                    </dct:description>
-                  </xsl:for-each>
-                  <!-- Access links -->
-                  <xsl:for-each select="atom:id">
-                    <dct:accessURL rdf:resource="{string()}"/>
-                  </xsl:for-each>
-                  <!-- Download links -->
-                  <xsl:for-each select="atom:link">
+                    <!-- dct:description -->
+                    <xsl:for-each select="$atoms/*/atom:feed/atom:entry[$pos]/atom:subtitle">
+                      <dct:description xml:lang="{name(../../..)}">
+                        <xsl:value-of select="string()"/>
+                      </dct:description>
+                    </xsl:for-each>
+
+                    <!-- accessURL and downloadURL -->
+                    <dct:accessURL rdf:resource="{string(@href)}"/>
                     <dct:downloadURL rdf:resource="{string(@href)}"/>
+
+                    <!-- Format and media type -->
                     <xsl:variable name="type" select="normalize-space(@type)"/>
                     <xsl:if test="$type != ''">
                       <xsl:variable name="fileTypeConcept" select="$allThesauri//skos:Concept[
@@ -632,49 +633,49 @@
                       <xsl:if test="normalize-space($fileTypeConcept) != ''">
                         <dct:format rdf:resource="{$fileTypeConcept/@rdf:about}"/>
                       </xsl:if>
-
                       <dcat:mediaType rdf:resource="https://www.iana.org/assignments/media-types/{$type}"/>
                       <dcat:compressFormat rdf:resource="https://www.iana.org/assignments/media-types/{$type}"/>
                     </xsl:if>
-                  </xsl:for-each>
 
-                  <!-- Conformity -->
-                  <xsl:for-each select="atom:category/@term">
-                    <dct:conformsTo rdf:resource="{string()}" />
-                  </xsl:for-each>
+                    <!-- Conformity -->
+                    <xsl:for-each select="$atoms/*[1]/atom:feed/atom:entry[$pos]/atom:category/@term">
+                      <dct:conformsTo rdf:resource="{string()}" />
+                    </xsl:for-each>
 
-                  <xsl:for-each select="georss:box">
-                    <xsl:variable name="tokens" select="tokenize(string(), ' ')"/>
-                    <xsl:variable name="gmdExtent">
-                      <gmd:EX_GeographicBoundingBox>
-                        <gmd:northBoundLatitude>
-                          <gco:Decimal>
-                            <xsl:value-of select="$tokens[3]"/>
-                          </gco:Decimal>
-                        </gmd:northBoundLatitude>
-                        <gmd:eastBoundLongitude>
-                          <gco:Decimal>
-                            <xsl:value-of select="$tokens[4]"/>
-                          </gco:Decimal>
-                        </gmd:eastBoundLongitude>
-                        <gmd:southBoundLatitude>
-                          <gco:Decimal>
-                            <xsl:value-of select="$tokens[1]"/>
-                          </gco:Decimal>
-                        </gmd:southBoundLatitude>
-                        <gmd:westBoundLongitude>
-                          <gco:Decimal>
-                            <xsl:value-of select="$tokens[2]"/>
-                          </gco:Decimal>
-                        </gmd:westBoundLongitude>
-                      </gmd:EX_GeographicBoundingBox>
-                    </xsl:variable>
-                    <xsl:apply-templates select="$gmdExtent/gmd:EX_GeographicBoundingBox">
-                      <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
-                    </xsl:apply-templates>
-                  </xsl:for-each>
-                </dcat:Distribution>
-              </dcat:distribution>
+                    <!-- Spatial extent -->
+                    <xsl:for-each select="$atoms/*[1]/atom:feed/atom:entry[$pos]/georss:box">
+                      <xsl:variable name="tokens" select="tokenize(string(), ' ')"/>
+                      <xsl:variable name="gmdExtent">
+                        <gmd:EX_GeographicBoundingBox>
+                          <gmd:northBoundLatitude>
+                            <gco:Decimal>
+                              <xsl:value-of select="$tokens[3]"/>
+                            </gco:Decimal>
+                          </gmd:northBoundLatitude>
+                          <gmd:eastBoundLongitude>
+                            <gco:Decimal>
+                              <xsl:value-of select="$tokens[4]"/>
+                            </gco:Decimal>
+                          </gmd:eastBoundLongitude>
+                          <gmd:southBoundLatitude>
+                            <gco:Decimal>
+                              <xsl:value-of select="$tokens[1]"/>
+                            </gco:Decimal>
+                          </gmd:southBoundLatitude>
+                          <gmd:westBoundLongitude>
+                            <gco:Decimal>
+                              <xsl:value-of select="$tokens[2]"/>
+                            </gco:Decimal>
+                          </gmd:westBoundLongitude>
+                        </gmd:EX_GeographicBoundingBox>
+                      </xsl:variable>
+                      <xsl:apply-templates select="$gmdExtent/gmd:EX_GeographicBoundingBox">
+                        <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
+                      </xsl:apply-templates>
+                    </xsl:for-each>
+                  </dcat:Distribution>
+                </dcat:distribution>
+              </xsl:for-each>
             </xsl:for-each>
           </xsl:for-each>
         </xsl:when>
@@ -696,11 +697,11 @@
         </dct:modified>
 
         <xsl:apply-templates select="gmd:locale/gmd:PT_Locale/gmd:languageCode"/>
-        
+
         <xsl:apply-templates select="gmd:contact/gmd:CI_ResponsibleParty">
           <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
         </xsl:apply-templates>
-        
+
         <dct:identifier>
           <xsl:value-of select="$ResourceUUID"/>
         </dct:identifier>
