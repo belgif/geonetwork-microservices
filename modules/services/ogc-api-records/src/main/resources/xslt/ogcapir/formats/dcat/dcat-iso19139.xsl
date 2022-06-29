@@ -583,7 +583,9 @@
 
       <!-- Conformity -->
       <xsl:apply-templates select="gmd:dataQualityInfo/*/gmd:report/*/gmd:result/*/gmd:specification/gmd:CI_Citation">
-        <xsl:with-param name="ResourceUri" select="$ResourceUri"/>
+        <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
+      </xsl:apply-templates>
+      <xsl:apply-templates select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:protocol/* = 'WWW:LINK-1.0-http--link'and gmd:function/*/@codeListValue = 'information']">
         <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
       </xsl:apply-templates>
 
@@ -867,7 +869,7 @@
     <xsl:variable name="URL-vCard">
       <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage[gmd:URL[normalize-space() != '']]">
         <xsl:choose>
-          <xsl:when test="normalize-space(.) = (../gmd:name/gco:CharacterString, ../gmd:name/gmx:Anchor)">
+          <xsl:when test="normalize-space(gmd:URL) = (../gmd:name/gco:CharacterString, ../gmd:name/gmx:Anchor)">
             <xsl:for-each select="../gmd:name">
               <xsl:call-template name="LocalisedResource">
                 <xsl:with-param name="term" select="'vcard:hasURL'"/>
@@ -1003,7 +1005,7 @@
     <xsl:variable name="URL-FOAF">
       <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage[gmd:URL[normalize-space() != '']]">
         <xsl:choose>
-          <xsl:when test="normalize-space(.) = (../gmd:name/gco:CharacterString, ../gmd:name/gmx:Anchor)">
+          <xsl:when test="normalize-space(gmd:URL) = (../gmd:name/gco:CharacterString, ../gmd:name/gmx:Anchor)">
             <xsl:for-each select="../gmd:name">
               <xsl:call-template name="LocalisedResource">
                 <xsl:with-param name="term" select="'foaf:workplaceHomepage'"/>
@@ -1196,7 +1198,6 @@
 
   <!-- Conformity -->
   <xsl:template name="Conformity" match="gmd:dataQualityInfo/*/gmd:report/*/gmd:result/gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation">
-    <xsl:param name="ResourceUri"/>
     <xsl:param name="MetadataLanguage"/>
     <dct:conformsTo>
       <dct:Standard>
@@ -1220,6 +1221,28 @@
         <xsl:apply-templates select="gmd:date/gmd:CI_Date"/>
       </dct:Standard>
     </dct:conformsTo>
+  </xsl:template>
+
+  <xsl:template name="TransferConformity" match="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:protocol/* = 'WWW:LINK-1.0-http--link'and gmd:function/*/@codeListValue = 'information']">
+    <xsl:param name="MetadataLanguage"/>
+    <xsl:for-each select="gmd:linkage">
+      <xsl:choose>
+        <xsl:when test="normalize-space(gmd:URL) = (../gmd:name/gco:CharacterString, ../gmd:name/gmx:Anchor)">
+          <xsl:for-each select="../gmd:name">
+            <xsl:call-template name="LocalisedResource">
+              <xsl:with-param name="term" select="'dct:conformsTo'"/>
+              <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
+            </xsl:call-template>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="LocalisedResource">
+            <xsl:with-param name="term" select="'dct:conformsTo'"/>
+            <xsl:with-param name="mdLang" select="$MetadataLanguage"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
   </xsl:template>
 
   <!-- Geographic extent -->
