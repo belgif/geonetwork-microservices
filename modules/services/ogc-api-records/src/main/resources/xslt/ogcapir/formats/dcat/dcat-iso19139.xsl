@@ -567,8 +567,6 @@
               <xsl:variable name="function" select="string(gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue)"/>
 
               <xsl:call-template name="service-endpoint">
-                <xsl:with-param name="function" select="$function"/>
-                <xsl:with-param name="protocol" select="$protocol"/>
                 <xsl:with-param name="url" select="$url"/>
               </xsl:call-template>
               <xsl:call-template name="service-protocol">
@@ -2159,21 +2157,19 @@
   </xsl:template>
 
   <xsl:template name="service-endpoint">
-    <xsl:param name="function"/>
-    <xsl:param name="protocol"/>
     <xsl:param name="url"/>
-    <xsl:param name="endpoint-url">
-      <xsl:choose>
-        <xsl:when test="contains($url, '?')">
-          <xsl:value-of select="substring-before($url, '?')"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="$url"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:param>
-    <xsl:if test="$endpoint-url != ''">
-      <dcat:endpointURL rdf:resource="{$endpoint-url}"/>
+    <!-- <xsl:variable name="endpoint-url"> -->
+    <!--   <xsl:choose> -->
+    <!--     <xsl:when test="contains($url, '?')"> -->
+    <!--       <xsl:value-of select="substring-before($url, '?')"/> -->
+    <!--     </xsl:when> -->
+    <!--     <xsl:otherwise> -->
+    <!--       <xsl:value-of select="$url"/> -->
+    <!--     </xsl:otherwise> -->
+    <!--   </xsl:choose> -->
+    <!-- </xsl:variable> -->
+    <xsl:if test="$url != ''">
+      <dcat:endpointURL rdf:resource="{$url}"/>
     </xsl:if>
   </xsl:template>
 
