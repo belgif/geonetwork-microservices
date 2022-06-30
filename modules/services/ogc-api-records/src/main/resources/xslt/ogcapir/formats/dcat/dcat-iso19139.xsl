@@ -343,7 +343,7 @@
               <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:issued"/>
               <xsl:choose>
                 <xsl:when test="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:identified">
-                  <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:issued"/>
+                  <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:identified"/>
                 </xsl:when>
                 <xsl:otherwise>
                   <dct:identifier>
