@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">01d4aeaf-1302-47a7-83c0-4fd0820b1427</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+      <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+  </gmd:language>
+  <gmd:characterSet>
+      <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                               codeListValue="utf8"/>
+  </gmd:characterSet>
+  <gmd:parentIdentifier>
+      <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">9dbefb96-806f-477d-98ed-604c2a695b5f</gco:CharacterString>
+  </gmd:parentIdentifier>
+  <gmd:hierarchyLevel>
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="dataset"/>
+  </gmd:hierarchyLevel>
+  <gmd:contact>
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Gaël Kruwialis</gco:CharacterString>
+         </gmd:individualName>
+         <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">National Geographic Institute</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">National Geographic Institute</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">Institut géographique national</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#NL">Nationaal Geografisch Instituut</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#DE">Nationales geographisches Institut</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:organisationName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Kortenberglaan 115</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Kortenberglaan 115</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Avenue de Cortenbergh 115</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#NL">Kortenberglaan 115</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#DE">Avenue de Cortenbergh 115</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:deliveryPoint>
+                     <gmd:city xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Brussels</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Brussels</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Bruxelles</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#NL">Brussel</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#DE">Brüssel</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:city>
+                     <gmd:postalCode>
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">1000</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Belgium</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Belgium</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#NL">Belgie</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:country>
+                     <gmd:electronicMailAddress>
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">metadata@ngi.be</gco:CharacterString>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+               <gmd:onlineResource>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>http://www.ngi.be</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">http://www.ngi.be</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">http://www.ngi.be</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">https://www.ngi.be/website/fr/</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#NL">http://www.ngi.be</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#DE">http://www.ngi.be</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                  </gmd:CI_OnlineResource>
+               </gmd:onlineResource>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                             codeListValue="pointOfContact"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+      <gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2022-05-20T09:35:20</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName xsi:type="gmd:PT_FreeText_PropertyType">
+      <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">ISO 19115:2003/19139</gco:CharacterString>
+      <gmd:PT_FreeText>
+         <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#EN">ISO 19115:2003/19139</gmd:LocalisedCharacterString>
+         </gmd:textGroup>
+      </gmd:PT_FreeText>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+      <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:locale>
+      <gmd:PT_Locale id="FR">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding/>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+      <gmd:PT_Locale id="NL">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="dut"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding/>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+      <gmd:PT_Locale id="DE">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="ger"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding/>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+      <gmd:PT_Locale id="EN">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:referenceSystemInfo>
+      <gmd:MD_ReferenceSystem>
+         <gmd:referenceSystemIdentifier>
+            <gmd:RS_Identifier>
+               <gmd:code>
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://www.opengis.net/def/crs/EPSG/0/3812">EPSG:3812</gmx:Anchor>
+               </gmd:code>
+               <gmd:codeSpace>
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">EPSG</gco:CharacterString>
+               </gmd:codeSpace>
+            </gmd:RS_Identifier>
+         </gmd:referenceSystemIdentifier>
+      </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo>
+      <gmd:MD_DataIdentification>
+         <gmd:citation>
+            <gmd:CI_Citation>
+               <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Hydro - Physical Waters</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Hydro - Physical Waters</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Hydrographie – eaux physiques</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Hydro - Fysieke</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Hydro – Physische Gewässer</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2017-03-16</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision"/>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:identifier>
+                  <gmd:RS_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">7ea78bfc-6172-4d39-b824-f1beb1d54e96</gco:CharacterString>
+                     </gmd:code>
+                     <gmd:codeSpace>
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">BE.NGI-IGN</gco:CharacterString>
+                     </gmd:codeSpace>
+                  </gmd:RS_Identifier>
+               </gmd:identifier>
+            </gmd:CI_Citation>
+         </gmd:citation>
+         <gmd:abstract xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">The entities included in the dataset represent the physical network in the sense of the Inspire European directive. The dataset comprises several classes and is in accordance with the INSPIRE specifications.
+
+The Wetland class represents poorly drained or periodically flooded portions of land, the soil of which is saturated with water but where vegetation is nevertheless able to develop.
+
+The StandingWater class represents flooded areas that are, nevertheless, completely surrounded by land.</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">The entities included in the dataset represent the physical network in the sense of the Inspire European directive. The dataset comprises several classes and is in accordance with the INSPIRE specifications.
+
+The Wetland class represents poorly drained or periodically flooded portions of land, the soil of which is saturated with water but where vegetation is nevertheless able to develop.
+
+The StandingWater class represents flooded areas that are, nevertheless, completely surrounded by land.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">Les entités comprises au sein du jeu de données représentent le réseau d’eau physique au sens de la directive européenne INSPIRE. Le jeu de données est composé de plusieurs classes, et est conforme aux spécifications INSPIRE.
+
+La classe « zones humides », Wetland selon les spécifications Inspire, représente les portions de l’espace mal drainées ou périodiquement inondées, dont le sol est saturé d’eau mais où la végétation peut néanmoins se développer.
+
+La classe « eaux stagnantes » -StandingWater- représente les espaces inondés mais néanmoins entièrement entourés de terres.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#NL">De entiteiten die deel uitmaken van de dataset vertegenwoordigen het fysieke waternetwerk zoals gedefinieerd door de Europese INSPIRE-richtlijn. De dataset bestaat uit meerdere klassen, en is conform de INSPIRE specificaties. 
+
+De klasse “wetland”, Wetland volgens de INSPIRE specificaties, vertegenwoordigt de slecht gedraineerde of periodiek overstroomde ruimtes, waarvan de grond verzadigd is met water maar waar vegetatie nog steeds kan groeien.
+De klasse “stilstaand water”, StandingWater volgens de INSPIRE specificaties, vertegenwoordigt de overstroomde gebieden die toch volledig omringd zijn door land.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#DE">Die in dem Datensatz enthaltenen Einheiten stellen das physische Netz im Sinne der europäischen INSPIRE-Richtlinie dar. Der Datensatz besteht aus mehreren Klassen und entspricht den INSPIRE-Spezifikationen.
+
+Die Klasse „Feuchtgebiet“ – Wetland gemäß den Spezifikationen der INSPIRE-Richtlinie genannt – stellt schlecht entwässerte oder periodisch überschwemmte Gebiete dar, in denen der Boden mit Wasser gesättigt ist und dennoch Vegetation gedeiht.
+
+Die Klasse „Stehendes Gewässer“ – StandingWater – stellt überschwemmte Gebiete dar, die aber dennoch vollständig von Land umgeben sind.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:abstract>
+         <gmd:status>
+            <gmd:MD_ProgressCode codeListValue="completed"
+                                 codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"/>
+         </gmd:status>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">National Geographic Institute</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">National Geographic Institute</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Institut géographique national</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Nationaal Geografisch Instituut</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Nationales geographisches Institut</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Kortenberglaan 115</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">Kortenberglaan 115</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">Avenue de Cortenbergh 115</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#NL">Kortenberglaan 115</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#DE">Avenue de Cortenbergh 115</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:deliveryPoint>
+                           <gmd:city xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Brussels</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">Brussels</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">Bruxelles</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#NL">Brussel</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#DE">Brüssel</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:city>
+                           <gmd:postalCode>
+                              <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">1000</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Belgium</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">Belgium</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#NL">Belgie</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:country>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">products@ngi.be</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                     <gmd:onlineResource>
+                        <gmd:CI_OnlineResource>
+                           <gmd:linkage>
+                              <gmd:URL>http://www.ngi.be</gmd:URL>
+                           </gmd:linkage>
+                           <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">http://www.ngi.be</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">http://www.ngi.be</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">https://www.ngi.be/website/fr/</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#NL">http://www.ngi.be</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#DE">http://www.ngi.be</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:name>
+                        </gmd:CI_OnlineResource>
+                     </gmd:onlineResource>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                                   codeListValue="custodian"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:resourceMaintenance>
+            <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+                  <gmd:MD_MaintenanceFrequencyCode codeListValue="quarterly"
+                                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"/>
+               </gmd:maintenanceAndUpdateFrequency>
+            </gmd:MD_MaintenanceInformation>
+         </gmd:resourceMaintenance>
+         <gmd:graphicOverview>
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">https://www.geo.be/thumbs/Top10VectorHydrography_ds.png</gco:CharacterString>
+               </gmd:fileName>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="https://www.geo.be/thesaurus/rpi.xml">Reporting INSPIRE</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Reporting INSPIRE</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Reporting INSPIRE</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Reporting INSPIRE</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Reporting INSPIRE</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="https://www.geo.be/thesaurus/fat.xml">Federal Atom</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Federal Atom</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Federal Atom</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Federal Atom</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Federal Atom</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="https://www.geo.be/thesaurus/hdr.xml">Hydrography</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Hydrography</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Hydrographie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Hydrografie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Hydrographie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    xlink:href="https://www.geo.be/thesaurus/federalthesaurus.rdf">Belgian Federal Thesaurus</gmx:Anchor>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Belgian Federal Thesaurus</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2020-03-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          xlink:href="http://publish.geo.be/geonetwork/srv/eng/thesaurus.download?ref=external.theme.federalthesaurus">geonetwork.thesaurus.external.theme.federalthesaurus</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords xsi:schemaLocation="http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national">National</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">National</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">National</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Nationaal</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">National</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    xlink:href="http://inspire.ec.europa.eu/metadata-codelist/SpatialScope">Spatial scope</gmx:Anchor>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Spatial scope</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2019-05-22</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          xlink:href="http://publish.geo.be/geonetwork/srv/eng/thesaurus.download?ref=external.theme.httpinspireeceuropaeumetadatacodelistSpatialScope-SpatialScope">geonetwork.thesaurus.external.theme.httpinspireeceuropaeumetadatacodelistSpatialScope-SpatialScope</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://inspire.ec.europa.eu/theme/hy">Hydrography</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Hydrography</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Hydrographie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Hydrografie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Gewässernetz</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    xlink:href="http://www.eionet.europa.eu/gemet/inspire_themes">GEMET - INSPIRE themes, version 1.0</gmx:Anchor>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">GEMET - INSPIRE themes, version 1.0</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2008-06-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          xlink:href="http://inspire.ec.europa.eu/theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://inspire.ec.europa.eu/featureconcept/Watercourse">Watercourse</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Watercourse</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Cours d'eau</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Waterloop</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Wasserlauf</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://inspire.ec.europa.eu/featureconcept/Wetland">Wetland</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Wetland</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Zone humide</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Watergebied</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Feuchtgebiet</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://inspire.ec.europa.eu/featureconcept/StandingWater">Standing Water</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Standing Water</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Eaux stagnantes</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Stilstaand water</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Stehendes Gewässer</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    xlink:href="http://inspire.ec.europa.eu/featureconcept">INSPIRE feature concept dictionary</gmx:Anchor>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">INSPIRE feature concept dictionary</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2008-12-05</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          xlink:href="http://inspire.ec.europa.eu/featureconcept">geonetwork.thesaurus.external.theme.httpinspireeceuropaeufeatureconcept-featureconcept</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://www.eionet.europa.eu/gemet/concept/4333">inland water</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">inland water</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">eaux intérieures</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">binnenwater</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Binnengewässer</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://www.eionet.europa.eu/gemet/concept/7495">sea</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">sea</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">mer</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">zee</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Meer</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://www.eionet.europa.eu/gemet/concept/3144">federal government</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">federal government</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">gouvernement fédéral</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">federale regering</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Bundesregierung</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://www.eionet.europa.eu/gemet/concept/9161">watercourse</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">watercourse</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">cours d'eau</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">waterloop</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Wasserlauf</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://www.eionet.europa.eu/gemet/concept/4109">hydrography</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">hydrography</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">hydrographie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">hydrografie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Hydrographie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    xlink:href="https://www.eionet.europa.eu/gemet/en/themes/">GEMET - Concept themes, version 4.01</gmx:Anchor>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">GEMET - Concept themes, version 4.01</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2012-07-20</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          xlink:href="http://csw.geo.be/eng/thesaurus.download?ref=external.theme.gemet">geonetwork.thesaurus.external.theme.gemet</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">•The custodian of the resource holds the rights of property (including the rights of intellectual property) to the geographic files •The custodian grants the user the right to use the data for his internal use. •Commercial use of the data under any form is strictly forbidden •Custodian’s name must be mentioned each time the data are being used publically.</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">•The custodian of the resource holds the rights of property (including the rights of intellectual property) to the geographic files •The custodian grants the user the right to use the data for his internal use. •Commercial use of the data under any form is strictly forbidden •Custodian’s name must be mentioned each time the data are being used publically.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">• Le gestionnaire du jeu de données tel qu’il est défini plus haut possède les droits de propriété (y compris les droits de propriété intellectuelle) se rapportant aux fichiers. • Le gestionnaire accorde au client le droit d’utiliser les données pour son usage interne. • L’usage des données à des fins commerciales, sous quelque forme que ce soit, est formellement interdit. • Le nom du gestionnaire doit apparaître lors de chaque utilisation publique des données.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">•De beheerder van de bron bezit de eigendomsrechten (ook de rechten op de intellectuele eigendom) op de geografische bestanden • De beheerder geeft de klant het recht de gegevens te gebruiken voor intern gebruik •Het commercieel gebruik van de gegevens onder welke vorm dan ook is strikt verboden •De naam van de beheerder moet elke keer vermeld worden als de gegevens publiek gebruikt worden.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">•De beheerder van de bron bezit de eigendomsrechten (ook de rechten op de intellectuele eigendom) op de geografische bestanden • De beheerder geeft de klant het recht de gegevens te gebruiken voor intern gebruik •Het commercieel gebruik van de gegevens onder welke vorm dan ook is strikt verboden •De naam van de beheerder moet elke keer vermeld worden als de gegevens publiek gebruikt worden.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:useLimitation>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:resourceConstraints xsi:schemaLocation="http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+            <gmd:MD_LegalConstraints>
+               <gmd:accessConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:accessConstraints>
+               <gmd:otherConstraints xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">No limitations on public access</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">No limitations on public access</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Pas de restrictions concernant l'accès public</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">Geen beperkingen op openbare toegang</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Öffentliche Zugang nicht beschränkt</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:useConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:useConstraints>
+               <gmd:otherConstraints xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">•The custodian of the resource holds the rights of property (including the rights of intellectual property) to the geographic files •The custodian grants the user the right to use the data for his internal use. •Commercial use of the data under any form is strictly forbidden •Custodian’s name must be mentioned each time the data are being used publically.</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">•The custodian of the resource holds the rights of property (including the rights of intellectual property) to the geographic files •The custodian grants the user the right to use the data for his internal use. •Commercial use of the data under any form is strictly forbidden •Custodian’s name must be mentioned each time the data are being used publically.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">• Le gestionnaire du jeu de données tel qu’il est défini plus haut possède les droits de propriété (y compris les droits de propriété intellectuelle) se rapportant aux fichiers. • Le gestionnaire accorde au client le droit d’utiliser les données pour son usage interne. • L’usage des données à des fins commerciales, sous quelque forme que ce soit, est formellement interdit. • Le nom du gestionnaire doit apparaître lors de chaque utilisation publique des données.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">•De beheerder van de bron bezit de eigendomsrechten (ook de rechten op de intellectuele eigendom) op de geografische bestanden • De beheerder geeft de klant het recht de gegevens te gebruiken voor intern gebruik •Het commercieel gebruik van de gegevens onder welke vorm dan ook is strikt verboden •De naam van de beheerder moet elke keer vermeld worden als de gegevens publiek gebruikt worden.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">• Der Datensatzverwalter wie höher beschrieben besitzt die Eigentumsrechte (geistiges Eigentum einbegriffen) über die Dateien.• Der Verwalter gewährt dem Kunden das Recht, die Daten intern zu benutzen.• Die Daten zu irgendwelchen kommerziellen Zwecken zu benutzen ist strikt verboten.• Der Name des Verwalters muss bei jeder öffentlichen Benutzung der Daten gemeldet werden.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:spatialRepresentationType>
+            <gmd:MD_SpatialRepresentationTypeCode codeListValue="vector"
+                                                  codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"/>
+         </gmd:spatialRepresentationType>
+         <gmd:spatialResolution>
+            <gmd:MD_Resolution>
+               <gmd:equivalentScale>
+                  <gmd:MD_RepresentativeFraction>
+                     <gmd:denominator>
+                        <gco:Integer xmlns:gco="http://www.isotc211.org/2005/gco">10000</gco:Integer>
+                     </gmd:denominator>
+                  </gmd:MD_RepresentativeFraction>
+               </gmd:equivalentScale>
+            </gmd:MD_Resolution>
+         </gmd:spatialResolution>
+         <gmd:language>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="dut"/>
+         </gmd:language>
+         <gmd:language>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+         </gmd:language>
+         <gmd:characterSet>
+            <gmd:MD_CharacterSetCode codeListValue="8859part15"
+                                     codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+         </gmd:characterSet>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>inlandWaters</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:extent>
+            <gmd:EX_Extent>
+               <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Belgium</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Belgium</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Belgique</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">België</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Belgien</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:description>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">2.54</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">6.41</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">49.49</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">51.51</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+               <gmd:verticalElement/>
+            </gmd:EX_Extent>
+         </gmd:extent>
+      </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="template">
+            <gmd:MD_Format>
+               <gmd:name gco:nilReason="template" xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              xlink:href="https://www.iana.org/assignments/media-types/application/gml+xml">GML</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">GML</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR"/>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL"/>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE"/>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:name>
+               <gmd:version gco:nilReason="template">
+                  <gco:CharacterString>3.2.1</gco:CharacterString>
+               </gmd:version>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://wms.ngi.be/inspire/ngi_inspire_view_service/service?request=GetCapabilities&amp;service=WMS&amp;version=1.3.0</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">OGC:WMS</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">View service</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">View service</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Service de visualisation</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#NL">Raadpleegdienst</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#DE">Darstellungsdienste</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="view"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+         <gmd:transferOptions xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://ac.ngi.be/remoteclient-open/GeoBePartners-open/ATOM/Atomfeed-en.xml</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">ATOM</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Service does not display good with Chrome. Use rather Mozilla or Explorer.</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Service does not display good with Chrome. Use rather Mozilla or Explorer.</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Ce service ne s'affiche pas correctement avec Chrome. Utilisez plutôt Mozilla ou Explorer.</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#NL">Gebruik Mozilla of Explorer om deze service correct te kunnen bekijken</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#DE">Dieser Dienst wird mit Chrome nicht korrekt angezeigt. Benutzen Sie bitte eher Mozilla oder Explorer.</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="download"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://ac.ngi.be/catalogue/order/ngi-inspire/Vectordata/HydrographyPhysicalNetwork_gml_L08.zip?language=en</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">WWW:LINK-1.0-http--link</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Direct access to the webshop</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Direct access to the webshop</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Accès direct à la boutique en ligne</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#NL">Directe toegang tot de online winkel</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#DE">Direkter Zugang zum Online-Shop</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="order"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+      <gmd:DQ_DataQuality>
+         <gmd:scope>
+            <gmd:DQ_Scope>
+               <gmd:level>
+                  <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                                    codeListValue="dataset"/>
+               </gmd:level>
+            </gmd:DQ_Scope>
+         </gmd:scope>
+         <gmd:report xmlns:xlink="http://www.w3.org/1999/xlink"
+                     xlink:href="local://srv/api/registries/entries/8c94e065-3cdd-49bc-88f1-6f8f6f097ed6?lang=eng,fre,dut,ger&amp;schema=iso19139"/>
+         <gmd:report>
+            <gmd:DQ_DomainConsistency>
+               <gmd:nameOfMeasure xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">INSPIRE Conformity</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">INSPIRE Conformity</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Conformité INSPIRE</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">INSPIRE Conformiteit</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">INSPIRE Konformität</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:nameOfMeasure>
+               <gmd:result>
+                  <gmd:DQ_ConformanceResult>
+                     <gmd:specification>
+                        <gmd:CI_Citation>
+                           <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          xlink:href="http://data.europa.eu/eli/reg/2010/1089">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmx:Anchor>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">Règlement (UE) N° 1089/2010 de la Commission du 23 novembre 2010 portant modalités d'application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne l'interopérabilité des séries et des services de données géographiques</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#NL">Verordening (EU) n r. 1089/2010 van de Commissie van 23 november 2010 ter uitvoering van Richtlijn 2007/2/EG van het Europees Parlement en de Raad betreffende de interoperabiliteit van verzamelingen ruimtelijke gegevens en van diensten met betrekking tot ruimtelijke gegevens</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#DE">Verordnung (EG) Nr. 1089/2010 der Kommission vom 23. November 2010 zur Durchführung der Richtlinie 2007/2/EG des Europäischen Parlaments und des Rates hinsichtlich der Interoperabilität von Geodatensätzen und -diensten</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:title>
+                           <gmd:date>
+                              <gmd:CI_Date>
+                                 <gmd:date>
+                                    <gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2010-12-08</gco:Date>
+                                 </gmd:date>
+                                 <gmd:dateType>
+                                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                         codeListValue="publication"/>
+                                 </gmd:dateType>
+                              </gmd:CI_Date>
+                           </gmd:date>
+                        </gmd:CI_Citation>
+                     </gmd:specification>
+                     <gmd:explanation xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">The dataset described fills the technical requirements sustaining the interoperability of data sets and services, as stipulated in the Commission Regulation (EU) No 1089/2010 of 23 November 2010</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">The dataset described fills the technical requirements sustaining the interoperability of data sets and services, as stipulated in the Commission Regulation (EU) No 1089/2010 of 23 November 2010</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Le jeu de données décrit répond aux exigences techniques assurant l’interopérabilité des jeux de données et des services, telles qu’elles sont définies par le Règlement (UE) n° 1089/2010 de la Commission du 23 novembre 2010.</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#NL">De beschreven dataset beantwoordt aan de technische vereisten die de interoperabiliteit van verzamelingen gegevens et van diensten verzekeren, zoals bepaald in de Verordening (EU) Nr. 1089/2010 van de Commissie van 23 november 2010</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#DE">Der beschriebene Datensatz erfüllt die technischen Anforderungen, die die Interoperabilität der Datensätze und Dienste versichern, wie festgelegt in der Verordnung (EG) Nr. 1089/2010 der Kommission vom 23. November 2010</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:explanation>
+                     <gmd:pass>
+                        <gco:Boolean xmlns:gco="http://www.isotc211.org/2005/gco">true</gco:Boolean>
+                     </gmd:pass>
+                  </gmd:DQ_ConformanceResult>
+               </gmd:result>
+            </gmd:DQ_DomainConsistency>
+         </gmd:report>
+         <gmd:lineage>
+            <gmd:LI_Lineage>
+               <gmd:statement xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">The data have been collected in two different ways: on the one hand, by field survey, writing down the attribute data on mat-pale photographs, followed by the photogrammetric stereo restitution of the geometry in a CAD-file (with Lambert72 xyz-coordinates) and finally the topological cleaning up and the import of the attribute data in a 2D-database. On the other hand, by photogrammetric stereo restitution of the geometry in a CAD-file (with Lambert72 xyz-coordinates), followed by the import (on-site) of the attribute data in the CAD-files and finally the topological cleaning up in a 2D-database.During the dataloading into the new ITGI-model, the contents of the 2D-database have been mapped and converted into a database with Lambert2008-coordinates. The z-coordinate was recovered from the photogrammetric restitution's CAD-files or calculated on the basis of the DTM.</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">The data have been collected in two different ways: on the one hand, by field survey, writing down the attribute data on mat-pale photographs, followed by the photogrammetric stereo restitution of the geometry in a CAD-file (with Lambert72 xyz-coordinates) and finally the topological cleaning up and the import of the attribute data in a 2D-database. On the other hand, by photogrammetric stereo restitution of the geometry in a CAD-file (with Lambert72 xyz-coordinates), followed by the import (on-site) of the attribute data in the CAD-files and finally the topological cleaning up in a 2D-database.During the dataloading into the new ITGI-model, the contents of the 2D-database have been mapped and converted into a database with Lambert2008-coordinates. The z-coordinate was recovered from the photogrammetric restitution's CAD-files or calculated on the basis of the DTM.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Les données ont été collectées de deux manières différentes. D'une part en notant sur le terrain les données d'attributs sur des photos de couleur mate pâle, pour ensuite reconstituer la géométrie par restitution photogrammétrique dans un fichier CAD (avec des coordonnées xyz Lambert72) et enfin le nettoyage topologique et l'introduction des données d'attributs dans une base de données 2D.
+
+D'autre part, la collecte a été faite par la restitution photogrammétrique de la géométrie dans un fichier CAD (avec des coordonnées xyz en Lambert72), puis (sur place sur le terrain) par l'introduction des données d'attributs dans les fichiers CAD, et enfin le nettoyage topologique dans une base de données 2D. 
+
+Pendant le dataloading vers le nouveau modèle propre de l'Institut Géographique National, le contenu de la base de données 2D a été mappé et converti dans une base de données en coordonnées xyz Lambert2008. La coordonnée z a été récupérée dans les fichiers CAD de la restitution photogrammétrique ou calculée à l'aide du Modèle numérique de terrain (MNT).</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#NL">De gegevens werden op twee verschillende manieren verzameld: Enerzijds door op het terrein noteren van attribuutgegevens op matbleke foto’s, gevolgd door fotogrammetrische stereorestitutie van de geometrie in een CAD-bestand (met Lambert72 xyz-coördinaten) en ten slotte topologische opkuis plus invoering van de attribuutgegevens in een 2D-databank. Anderzijds door Fotogrammetrische stereorestitutie van de geometrie in een CAD-bestand (met Lambert72 xyz-coördinaten), daarna (ter plaatse op het terrein) invoering van de attribuutgegevens in de CAD-bestanden en ten slotte topologische opkuis in een 2D-databank.Tijdens de dataloading naar het nieuwe ITGI-model werd de inhoud van de 2D-databank gemapped en omgevormd naar een database met Lambert2008 xyz-coördinaten. De z-coördinaat werd gerecupereerd uit de CAD-bestanden van de fotogrammetrische restitutie of berekend a.d.h.v. het DTM.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#DE">Die Daten wurden auf zwei verschiedenen Weisen gesammelt: einerseits werden vor Ort die Attributdaten auf den matt-blass Bilder aufgeschrieben, danach wird die Geometrie durch photogrammetrische Auswertung in eine CAD-Datei  (mit  Lambert72 XYZ-Koordinaten) wieder aufgebaut und schlieβlich wird eine topologische Reinigung ausgeführt und die Attributdaten werden in eine 2D-Databank eingegeben; und andererseits wird die photogrammetrische Auswertung der Geometrie in eine CAD-Datei (mit Lambert72 XYZ-Koordinaten) ausgeführt, dann (vor Ort) werden die Attributdaten in die CAD-Dateien eingegeben und schlieβlich wird die topologische Reinigung in einer 2D-Databank ausgeführt. Während der Dataloading nach dem neuen ITGI-Modell wurde der Inhalt der 2D-Databank gemappt und in eine Databank mit Lambert2008 XYZ-Koordinaten umgestellt. Die Z-Koordinate wurde in den CAD-Dateien der photogrammetischen Auswertung zurückbekommen oder anhand dem Digitalen Geländemodell berechnet (DGM).</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:statement>
+            </gmd:LI_Lineage>
+         </gmd:lineage>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>

@@ -620,8 +620,9 @@
                     </xsl:for-each>
 
                     <!-- accessURL and downloadURL -->
-                    <dct:accessURL rdf:resource="{string(@href)}"/>
-                    <dct:downloadURL rdf:resource="{string(@href)}"/>
+                    <xsl:variable name="url" select="replace(string(@href), ' ', '%20')"/>
+                    <dct:accessURL rdf:resource="{$url}"/>
+                    <dct:downloadURL rdf:resource="{$url}"/>
 
                     <!-- Format and media type -->
                     <xsl:variable name="type" select="normalize-space(@type)"/>
@@ -639,7 +640,11 @@
 
                     <!-- Conformity -->
                     <xsl:for-each select="$atoms/*[1]/atom:feed/atom:entry[$pos]/atom:category/@term">
-                      <dct:conformsTo rdf:resource="{string()}" />
+                      <xsl:choose>
+                        <xsl:when test="not(contains(string(), ' ') or contains(string(), '&#xA;'))">
+                          <dct:conformsTo rdf:resource="{string()}" />
+                        </xsl:when>
+                      </xsl:choose>
                     </xsl:for-each>
 
                     <!-- Spatial extent -->
