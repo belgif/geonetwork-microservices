@@ -338,7 +338,6 @@
           <dcat:themeTaxonomy>
             <skos:ConceptScheme rdf:about="{string(.)}">
               <xsl:variable name="schemeUri" select="string(.)"/>
-              <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/skos:prefLabel"/>
               <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:title"/>
               <xsl:copy-of select="$allThesauri//skos:ConceptScheme[@rdf:about=$schemeUri]/dct:issued"/>
               <xsl:choose>
