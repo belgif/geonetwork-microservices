@@ -333,7 +333,137 @@
             </vcard:hasAddress>
           </vcard:Organization>
         </dcat:contactPoint>
-        <dct:isPartOf rdf:resource="{$OgcAPIUrl}/collections/main/items"/>
+        <dct:isPartOf>
+          <dcat:Catalog rdf:about="https://opendata.fin.belgium.be/download/OperationalStatisticsFigures/DCAT.xml">
+            <dct:title xml:lang="nl">Catalogue Open data national</dct:title>
+            <dct:title xml:lang="fr">Nationale Open data catalogus</dct:title>
+            <dct:publisher>
+              <foaf:Organization rdf:about="https://org.belgif.be/id/CbeRegisteredEntity/0671516647">
+                <foaf:name xml:lang="nl">FOD Beleid &amp; Ondersteuning</foaf:name>
+                <foaf:name xml:lang="fr">SPF Stratégie &amp; Appui</foaf:name>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/NationalAuthority/"/>
+                <foaf:mbox mailto="opendata@belgium.be"/>
+                <foaf:workplaceHomepage>
+                  <rdf:Description rdf:about="https://bosa.belgium.be/nl">
+                    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/NLD"/>
+                  </rdf:Description>
+                </foaf:workplaceHomepage>
+                <foaf:workplaceHomepage>
+                  <rdf:Description rdf:about="https://bosa.belgium.be/fr">
+                    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/FRA"/>
+                  </rdf:Description>
+                </foaf:workplaceHomepage>
+                <foaf:workplaceHomepage>
+                  <rdf:Description rdf:about="https://bosa.belgium.be/en">
+                    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ENG"/>
+                  </rdf:Description>
+                </foaf:workplaceHomepage>
+                <foaf:workplaceHomepage>
+                  <rdf:Description rdf:about="https://bosa.belgium.be/de">
+                    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/DEU"/>
+                  </rdf:Description>
+                </foaf:workplaceHomepage>
+                <locn:address>
+                  <locn:Address rdf:about="https://databrussels.be/id/address/210591">
+                    <locn:thoroughfare xml:lang="nl">Simon Bolivarlaan 30</locn:thoroughfare>
+                    <locn:thoroughfare xml:lang="fr">Boulevard Simon Bolivar, 30</locn:thoroughfare>
+                    <locn:postName xml:lang="nl">Brussel</locn:postName>
+                    <locn:postName xml:lang="fr">Bruxelles</locn:postName>
+                    <locn:postCode>1000</locn:postCode>
+                    <locn:adminUnitL1 xml:lang="nl">België</locn:adminUnitL1>
+                    <locn:adminUnitL1 xml:lang="fr">Belgique</locn:adminUnitL1>
+                  </locn:Address>
+                </locn:address>
+              </foaf:Organization>
+            </dct:publisher>
+            <foaf:homepage>
+              <rdf:Description rdf:about="https://data.gov.be/nl">
+                <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/NLD"/>
+              </rdf:Description>
+            </foaf:homepage>
+            <foaf:homepage>
+              <rdf:Description rdf:about="https://data.gov.be/fr">
+                <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/FRA"/>
+              </rdf:Description>
+            </foaf:homepage>
+            <foaf:homepage>
+              <rdf:Description rdf:about="https://data.gov.be/nl">
+                <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ENG"/>
+              </rdf:Description>
+            </foaf:homepage>
+            <foaf:homepage>
+              <rdf:Description rdf:about="https://data.gov.be/de">
+                <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/DEU"/>
+              </rdf:Description>
+            </foaf:homepage>
+            <dct:language>
+              <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/NLD">
+                <skos:prefLabel xml:lang="nl">Nederlands</skos:prefLabel>
+                <skos:prefLabel xml:lang="fr">Néerlandais</skos:prefLabel>
+                <rdf:type rdf:resource="dct:LinguisticSystem"/>
+              </skos:Concept>
+            </dct:language>
+            <dct:language>
+              <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/language/FRA">
+                <skos:prefLabel xml:lang="nl">Frans</skos:prefLabel>
+                <skos:prefLabel xml:lang="fr">Français</skos:prefLabel>
+                <rdf:type rdf:resource="dct:LinguisticSystem"/>
+              </skos:Concept>
+            </dct:language>
+            <dct:issued rdf:datatype="xs:dateTime"/>
+            <dct:spatial>
+              <dct:Location>
+                <locn:geometry rdf:datatype="http://www.opengis.net/ont/geosparql#:wktLiteral">POLYGON((2.54 51.51,6.41 51.51,6.41 49.49,2.54 49.49,2.54 51.51))</locn:geometry>
+                <locn:geometry rdf:datatype="http://www.opengis.net/ont/geosparql#:gmlLiteral">&lt;gml:Envelope srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"&gt;&lt;gml:lowerCorner&gt;2.54 49.49&lt;/gml:lowerCorner&gt;&lt;gml:upperCorner&gt;6.41 51.51&lt;/gml:upperCorner&gt;&lt;/gml:Envelope&gt;</locn:geometry>
+                <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">{"type":"Polygon","coordinates":[[[2.54,51.51],[6.41,51.51],[6.41,49.49],[2.54,49.49],[2.54,51.51]]]}</locn:geometry>
+                <locn:geometry rdf:datatype="http://www.opengis.net/ont/geosparql#:geoJSONLiteral">{"type":"Polygon","coordinates":[[[2.54,51.51],[6.41,51.51],[6.41,49.49],[2.54,49.49],[2.54,51.51]]]}</locn:geometry>
+                <dcat:bbox rdf:datatype="http://www.opengis.net/ont/geosparql#:wktLiteral">POLYGON((2.54 51.51,6.41 51.51,6.41 49.49,2.54 49.49,2.54 51.51))</dcat:bbox>
+                <dcat:bbox rdf:datatype="http://www.opengis.net/ont/geosparql#:gmlLiteral">&lt;gml:Envelope srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"&gt;&lt;gml:lowerCorner&gt;2.54 49.49&lt;/gml:lowerCorner&gt;&lt;gml:upperCorner&gt;6.41 51.51&lt;/gml:upperCorner&gt;&lt;/gml:Envelope&gt;</dcat:bbox>
+                <dcat:bbox rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">{"type":"Polygon","coordinates":[[[2.54,51.51],[6.41,51.51],[6.41,49.49],[2.54,49.49],[2.54,51.51]]]}</dcat:bbox>
+                <dcat:bbox rdf:datatype="http://www.opengis.net/ont/geosparql#:geoJSONLiteral">{"type":"Polygon","coordinates":[[[2.54,51.51],[6.41,51.51],[6.41,49.49],[2.54,49.49],[2.54,51.51]]]}</dcat:bbox>
+              </dct:Location>
+            </dct:spatial>
+            <dcat:contactPoint>
+              <vcard:Organization rdf:about="https://org.belgif.be/id/CbeRegisteredEntity/0671516647">
+                <vcard:organization-name xml:lang="nl">FOD Beleid &amp; Ondersteuning</vcard:organization-name>
+                <vcard:organization-name xml:lang="fr">SPF Stratégie &amp; Appui</vcard:organization-name>
+                <vcard:hasEmail mailto="opendata@belgium.be"/>
+                <vcard:hasURL>
+                  <rdf:Description rdf:about="https://bosa.belgium.be/nl">
+                    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/NLD"/>
+                  </rdf:Description>
+                </vcard:hasURL>
+                <vcard:hasURL>
+                  <rdf:Description rdf:about="https://bosa.belgium.be/fr">
+                    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/FRA"/>
+                  </rdf:Description>
+                </vcard:hasURL>
+                <vcard:hasURL>
+                  <rdf:Description rdf:about="https://bosa.belgium.be/en">
+                    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ENG"/>
+                  </rdf:Description>
+                </vcard:hasURL>
+                <vcard:hasURL>
+                  <rdf:Description rdf:about="https://bosa.belgium.be/de">
+                    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/DEU"/>
+                  </rdf:Description>
+                </vcard:hasURL>
+                <vcard:hasAddress>
+                  <vcard:Address rdf:about="https://databrussels.be/id/address/210591">
+                    <vcard:street-address xml:lang="nl">Simon Bolivarlaan 30</vcard:street-address>
+                    <vcard:street-address xml:lang="fr">Boulevard Simon Bolivar, 30</vcard:street-address>
+                    <vcard:locality xml:lang="nl">Brussel</vcard:locality>
+                    <vcard:locality xml:lang="fr">Bruxelles</vcard:locality>
+                    <vcard:postal-code>1000</vcard:postal-code>
+                    <vcard:country-name xml:lang="nl">België</vcard:country-name>
+                    <vcard:country-name xml:lang="fr">Belgique</vcard:country-name>
+                  </vcard:Address>
+                </vcard:hasAddress>
+              </vcard:Organization>
+            </dcat:contactPoint>
+            <dct:identifier>TBDMetBart</dct:identifier>
+          </dcat:Catalog>
+        </dct:isPartOf>
         <xsl:for-each select="distinct-values($records//skos:inScheme/@rdf:resource)">
           <dcat:themeTaxonomy>
             <skos:ConceptScheme rdf:about="{string(.)}">
