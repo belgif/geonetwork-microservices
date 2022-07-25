@@ -57,7 +57,7 @@
   <xsl:output method="xml"
               indent="yes"
               encoding="utf-8"
-              cdata-section-elements="locn:geometry dcat:bbox" />
+              cdata-section-elements="" />
 
   <!--
     Mapping parameters
