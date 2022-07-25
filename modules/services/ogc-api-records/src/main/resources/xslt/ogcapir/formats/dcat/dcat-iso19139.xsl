@@ -464,6 +464,7 @@
             <dct:identifier>TBDMetBart</dct:identifier>
           </dcat:Catalog>
         </dct:isPartOf>
+        <dcat:distribution rdf:resource="{$OgcAPIUrl}/collections/main/items"/>
         <xsl:for-each select="distinct-values($records//skos:inScheme/@rdf:resource)">
           <dcat:themeTaxonomy>
             <skos:ConceptScheme rdf:about="{string(.)}">
