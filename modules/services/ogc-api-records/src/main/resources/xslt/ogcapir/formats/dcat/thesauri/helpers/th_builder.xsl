@@ -13,10 +13,10 @@
 
   <xsl:variable name="thesauri">
     <thesauri>
-      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.en.rdf')"/>
-      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.fr.rdf')"/>
-      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.nl.rdf')"/>
-      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.de.rdf')"/>
+      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/LimitationsOnPublicAccess.en.rdf')"/>
+      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/LimitationsOnPublicAccess.fr.rdf')"/>
+      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/LimitationsOnPublicAccess.nl.rdf')"/>
+      <xsl:copy-of select="document('https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/LimitationsOnPublicAccess.de.rdf')"/>
     </thesauri>
   </xsl:variable>
 

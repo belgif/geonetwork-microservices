@@ -163,6 +163,7 @@
     <xsl:copy-of select="document('./thesauri/federalthesaurus.rdf')"/>
     <xsl:copy-of select="document('./thesauri/inspire-theme.rdf')"/>
     <xsl:copy-of select="document('./thesauri/SpatialScope.rdf')"/>
+    <xsl:copy-of select="document('./thesauri/LimitationsOnPublicAccess.rdf')"/>
     <xsl:if test="//gmd:hierarchyLevel/gmd:MD_ScopeCode[@codeListValue = ('dataset', 'series')]">
       <xsl:copy-of select="document('./thesauri/file-types.rdf')"/>
     </xsl:if>
@@ -1568,9 +1569,15 @@
               </xsl:when>
             </xsl:choose>
           </xsl:variable>
+          <xsl:variable name="inspireConcept" select="$allThesauri//skos:Concept[@rdf:about = $xlink]"/>
           <xsl:if test="normalize-space($accessRightId) != ''">
             <dct:accessRights>
               <xsl:copy-of copy-namespaces="no" select="$allThesauri//skos:Concept[@rdf:about = concat('http://publications.europa.eu/resource/authority/access-right/', $accessRightId)]"/>
+            </dct:accessRights>
+          </xsl:if>
+          <xsl:if test="normalize-space($inspireConcept)">
+            <dct:accessRights>
+              <xsl:copy-of copy-namespaces="no" select="$inspireConcept"/>
             </dct:accessRights>
           </xsl:if>
         </xsl:when>
