@@ -343,7 +343,7 @@
                 <foaf:name xml:lang="nl">FOD Beleid &amp; Ondersteuning</foaf:name>
                 <foaf:name xml:lang="fr">SPF Stratégie &amp; Appui</foaf:name>
                 <dct:type rdf:resource="http://purl.org/adms/publishertype/NationalAuthority/"/>
-                <foaf:mbox mailto="opendata@belgium.be"/>
+                <foaf:mbox rdf:resource="mailto:opendata@belgium.be"/>
                 <foaf:workplaceHomepage>
                   <rdf:Description rdf:about="https://bosa.belgium.be/nl">
                     <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/NLD"/>
@@ -411,7 +411,6 @@
                 <rdf:type rdf:resource="dct:LinguisticSystem"/>
               </skos:Concept>
             </dct:language>
-            <dct:issued rdf:datatype="xs:dateTime"/>
             <dct:spatial>
               <dct:Location>
                 <locn:geometry rdf:datatype="http://www.opengis.net/ont/geosparql#:wktLiteral">POLYGON((2.54 51.51,6.41 51.51,6.41 49.49,2.54 49.49,2.54 51.51))</locn:geometry>
@@ -428,7 +427,7 @@
               <vcard:Organization rdf:about="https://org.belgif.be/id/CbeRegisteredEntity/0671516647">
                 <vcard:organization-name xml:lang="nl">FOD Beleid &amp; Ondersteuning</vcard:organization-name>
                 <vcard:organization-name xml:lang="fr">SPF Stratégie &amp; Appui</vcard:organization-name>
-                <vcard:hasEmail mailto="opendata@belgium.be"/>
+                <vcard:hasEmail rdf:resource="mailto:opendata@belgium.be"/>
                 <vcard:hasURL>
                   <rdf:Description rdf:about="https://bosa.belgium.be/nl">
                     <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/NLD"/>
