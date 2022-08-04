@@ -182,10 +182,10 @@
         </xsl:variable>
         <xsl:choose>
           <xsl:when test="$isSubset = 'yes'">
-            <dct:title xml:lang="en">(Subset) Geoportal of the Belgian federal institutions</dct:title>
-            <dct:title xml:lang="fr">(Subset) Géoportail des institutions fédérales belges</dct:title>
-            <dct:title xml:lang="nl">(Subset) Geoportaal van de Belgische federale instellingen</dct:title>
-            <dct:title xml:lang="de">(Subset) Geoportal des belgischen Institutionen</dct:title>
+            <dct:title xml:lang="en">A subset of the Geoportal of the Belgian federal institutions</dct:title>
+            <dct:title xml:lang="fr">Un sous-ensemble du Géoportail des institutions fédérales belges</dct:title>
+            <dct:title xml:lang="nl">Een deelverzameling van Geoportaal van de Belgische federale instellingen</dct:title>
+            <dct:title xml:lang="de">Eine Teilmenge der Geoportal des belgischen Institutionen</dct:title>
           </xsl:when>
           <xsl:otherwise>
             <dct:title xml:lang="en">Geoportal of the Belgian federal institutions</dct:title>

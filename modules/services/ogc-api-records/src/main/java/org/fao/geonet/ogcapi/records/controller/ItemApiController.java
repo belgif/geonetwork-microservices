@@ -318,6 +318,7 @@ public class ItemApiController {
           Node metadataXml = getRecordAsXml(collectionId, recordId, request, source);
           var params = new HashMap<QName, XdmValue>();
           params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
+          params.put(new QName("isSubset"), XsltUtil.stringToParam("yes"));
           dcatXml = XsltUtil.transformToString(XmlUtil.getNodeString(metadataXml), xsltFile, params);
         } else {
           JAXBContext context = null;
