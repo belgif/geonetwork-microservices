@@ -64,20 +64,21 @@
     ==================
       This section includes mapping parameters by the XSLT processor used, or, possibly, manually.
   -->
-
-  <!-- Parameter $CoupledResourceLookUp -->
-  <!--
-    This parameter specifies whether the coupled resource, referenced via @xlink:href, should be looked up to fetch the resource's  unique resource identifier (i.e., code and code space). More precisely:
-    - value "enabled": The coupled resource is looked up
-    - value "disabled": The coupled resource is not looked up
-    CAVEAT: Using this feature may cause the transformation to hang, in case the URL in @xlink:href is broken, the request hangs indefinitely, or does not return the expected resource (e.g., and HTML page, instead of an XML-encoded ISO 19139 record). It is strongly recommended that this issue is dealt with by using appropriate configuration parameters and error handling (e.g., by specifying a timeout on HTTP calls and by setting the HTTP Accept header to "application/xml").
-  -->
-  <xsl:variable name="CoupledResourceLookUp" select="'disabled'" />
+  <xsl:param name="OgcAPIUrl" select="'http://localhost:8080'" />
+  <xsl:param name="isSubset" select="'no'" />
 
   <!--
     Global variables
     =======================
   -->
+
+  <!--
+    This variable specifies whether the coupled resource, referenced via @xlink:href, should be looked up to fetch the resource's  unique resource identifier (i.e., code and code space). More precisely:
+    - value "enabled": The coupled resource is looked up
+    - value "disabled": The coupled resource is not looked up
+    CAVEAT: Using this feature may cause the transformation to hang, in case the URL in @xlink:href is broken, the request hangs indefinitely, or does not return the expected resource (e.g., and HTML page, instead of an XML-encoded ISO 19139 record). It is strongly recommended that this issue is dealt with by using appropriate configuration parameters and error handling (e.g., by specifying a timeout on HTTP calls and by setting the HTTP Accept header to "application/xml").
+  -->
+  <xsl:variable name="CoupledResourceLookUp" select="'disabled'" />
 
   <!-- Variables to be used to convert strings into lower/uppercase by using the translate() function. -->
   <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'"/>
@@ -152,7 +153,6 @@
   <xsl:variable name="INSPIREGlossaryUri" select="'http://inspire.ec.europa.eu/glossary/'"/>
 
   <!-- Other variables -->
-  <xsl:param name="OgcAPIUrl" select="'http://localhost:8080'" />
   <xsl:variable name="allThesauri">
     <xsl:copy-of select="document('./thesauri/language.rdf')"/>
     <xsl:copy-of select="document('./thesauri/TopicCategory.rdf')"/>
@@ -180,16 +180,27 @@
         <xsl:variable name="records">
           <xsl:apply-templates select="gmd:MD_Metadata|//gmd:MD_Metadata"/>
         </xsl:variable>
-        <dct:title xml:lang="en">Geoportal of the Belgian federal institutions</dct:title>
-        <dct:title xml:lang="fr">Géoportail des institutions fédérales belges</dct:title>
-        <dct:title xml:lang="nl">Geoportaal van de Belgische federale instellingen</dct:title>
-        <dct:title xml:lang="de">Geoportal des belgischen Institutionen</dct:title>
+        <xsl:choose>
+          <xsl:when test="$isSubset = 'yes'">
+            <dct:title xml:lang="en">(Subset) Geoportal of the Belgian federal institutions</dct:title>
+            <dct:title xml:lang="fr">(Subset) Géoportail des institutions fédérales belges</dct:title>
+            <dct:title xml:lang="nl">(Subset) Geoportaal van de Belgische federale instellingen</dct:title>
+            <dct:title xml:lang="de">(Subset) Geoportal des belgischen Institutionen</dct:title>
+          </xsl:when>
+          <xsl:otherwise>
+            <dct:title xml:lang="en">Geoportal of the Belgian federal institutions</dct:title>
+            <dct:title xml:lang="fr">Géoportail des institutions fédérales belges</dct:title>
+            <dct:title xml:lang="nl">Geoportaal van de Belgische federale instellingen</dct:title>
+            <dct:title xml:lang="de">Geoportal des belgischen Institutionen</dct:title>
+          </xsl:otherwise>
+        </xsl:choose>
         <dct:description xml:lang="en">The catalogue contains the metadata records for the geographical data and services of the Belgian federal institutions.</dct:description>
         <dct:description xml:lang="fr">Le catalogue contient les fiches de métadonnées des données et services géographiques des institutions fédérales belges.</dct:description>
         <dct:description xml:lang="nl">De catalogus bevat de metadatafiches voor de geografische gegevens en services van de Belgische federale instellingen.</dct:description>
         <dct:description xml:lang="de">Der Katalog enthält die Metadatenblätter für die geografischen Daten und Dienste der belgischen föderalen Institutionen.</dct:description>
+        <dct:identifier>be.geo.data.catalog</dct:identifier>
         <dct:publisher>
-          <foaf:Organization>
+          <foaf:Organization rdf:about="https://org.belgif.be/id/CbeRegisteredEntity/216755012">
             <foaf:name xml:lang="en">National Geographic Institute</foaf:name>
             <foaf:name xml:lang="fr">Institut géographique national</foaf:name>
             <foaf:name xml:lang="nl">Nationaal Geografisch Instituut</foaf:name>
@@ -204,7 +215,7 @@
               </rdf:Description>
             </foaf:workplaceHomepage>
             <locn:address>
-              <locn:Address>
+              <locn:Address rdf:about="https://databrussels.be/id/address/187993">
                 <locn:thoroughfare xml:lang="en">Kortenberglaan 115</locn:thoroughfare>
                 <locn:thoroughfare xml:lang="fr">Avenue de Cortenbergh 115</locn:thoroughfare>
                 <locn:thoroughfare xml:lang="nl">Kortenberglaan 115</locn:thoroughfare>
@@ -301,11 +312,11 @@
           <xsl:with-param name="MetadataLanguage" select="'en'"/>
         </xsl:apply-templates>
         <dcat:contactPoint>
-          <vcard:Organization>
-            <vcard:organization-name xml:lang="en">Geoportal of the Belgian federal institutions</vcard:organization-name>
-            <vcard:organization-name xml:lang="fr">Géoportail des institutions fédérales belges</vcard:organization-name>
-            <vcard:organization-name xml:lang="nl">Geoportaal van de Belgische federale instellingen</vcard:organization-name>
-            <vcard:organization-name xml:lang="de">Geoportal des belgischen Institutionen</vcard:organization-name>
+          <vcard:Organization rdf:about="https://org.belgif.be/id/CbeRegisteredEntity/216755012">
+            <vcard:organization-name xml:lang="en">National Geographic Institute</vcard:organization-name>
+            <vcard:organization-name xml:lang="fr">Institut géographique national</vcard:organization-name>
+            <vcard:organization-name xml:lang="nl">Nationaal Geografisch Instituut</vcard:organization-name>
+            <vcard:organization-name xml:lang="de">Nationales geographisches Institut</vcard:organization-name>
             <vcard:hasEmail rdf:resource="mailto:products@ngi.be"/>
             <vcard:hasURL>
               <rdf:Description rdf:about="https://www.ngi.be/website">
@@ -316,7 +327,7 @@
               </rdf:Description>
             </vcard:hasURL>
             <vcard:hasAddress>
-              <vcard:Address>
+              <vcard:Address rdf:about="https://databrussels.be/id/address/187993">
                 <vcard:street-address xml:lang="en">Kortenberglaan 115</vcard:street-address>
                 <vcard:street-address xml:lang="fr">Avenue de Cortenbergh 115</vcard:street-address>
                 <vcard:street-address xml:lang="nl">Kortenberglaan 115</vcard:street-address>
@@ -335,9 +346,10 @@
           </vcard:Organization>
         </dcat:contactPoint>
         <dct:isPartOf>
-          <dcat:Catalog rdf:about="https://opendata.fin.belgium.be/download/OperationalStatisticsFigures/DCAT.xml">
+          <dcat:Catalog>
             <dct:title xml:lang="nl">Catalogue Open data national</dct:title>
             <dct:title xml:lang="fr">Nationale Open data catalogus</dct:title>
+            <dct:identifier>http://data.gov.be/id/catalog</dct:identifier>
             <dct:publisher>
               <foaf:Organization rdf:about="https://org.belgif.be/id/CbeRegisteredEntity/0671516647">
                 <foaf:name xml:lang="nl">FOD Beleid &amp; Ondersteuning</foaf:name>
@@ -461,7 +473,6 @@
                 </vcard:hasAddress>
               </vcard:Organization>
             </dcat:contactPoint>
-            <dct:identifier>TBDMetBart</dct:identifier>
           </dcat:Catalog>
         </dct:isPartOf>
         <dcat:distribution rdf:resource="{$OgcAPIUrl}/collections/main/items"/>

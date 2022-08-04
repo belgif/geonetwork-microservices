@@ -87,7 +87,11 @@ public class MediaTypeUtil {
     }
 
     if (priorityMediatype == null) {
-      priorityMediatype = MediaType.APPLICATION_JSON;
+      if (request.getRequestURL().toString().contains("/items")) {
+       priorityMediatype = GnMediaType.APPLICATION_RDF_XML;
+      } else {
+        priorityMediatype = MediaType.APPLICATION_JSON;
+      }
     }
 
     return priorityMediatype;

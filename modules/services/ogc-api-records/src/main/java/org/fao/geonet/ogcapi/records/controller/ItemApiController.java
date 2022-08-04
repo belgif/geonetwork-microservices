@@ -764,8 +764,13 @@ public class ItemApiController {
       mediaType = request.getHeader("Accept");
     }
 
-    if (StringUtils.isEmpty(mediaType)) {
-      mediaType = MediaType.APPLICATION_JSON_VALUE;
+    if (StringUtils.isEmpty(mediaType) || mediaType.equals("*/*")) {
+      if (request.getRequestURL().toString().contains("/items")) {
+        mediaType = GnMediaType.APPLICATION_RDF_XML_VALUE;
+      } else {
+        mediaType = MediaType.APPLICATION_JSON_VALUE;
+      }
+
     }
 
     return mediaType;
