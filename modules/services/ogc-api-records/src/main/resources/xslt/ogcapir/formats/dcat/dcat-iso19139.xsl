@@ -858,7 +858,33 @@
           <xsl:with-param name="MetadataLanguage" select="$MetadataLanguage"/>
         </xsl:apply-templates>
 
-        <foaf:primaryTopic rdf:resource="{$ResourceUri}"/>
+        <foaf:primaryTopic>
+          <xsl:choose>
+            <xsl:when test="$ResourceType = 'dataset'">
+              <dcat:Dataset>
+                <xsl:attribute name="rdf:about" select="$ResourceUri"/>
+                <xsl:copy-of select="$ResourceDescription/*[name() = (
+                  'dct:title',
+                  'dct:description',
+                  'dct:identifier'
+                )]"/>
+              </dcat:Dataset>
+            </xsl:when>
+            <xsl:otherwise>
+              <dcat:DataService>
+                <xsl:attribute name="rdf:about" select="$ResourceUri"/>
+                <xsl:copy-of select="$ResourceDescription/*[name() = (
+                  'dct:title',
+                  'dct:description',
+                  'dcat:endpointURL',
+                  'dct:accessRights',
+                  'dct:license',
+                  'dct:identifier'
+                )]"/>
+              </dcat:DataService>
+            </xsl:otherwise>
+          </xsl:choose>
+        </foaf:primaryTopic>
       </dcat:CatalogRecord>
     </dcat:record>
 
