@@ -80,7 +80,7 @@ public class MediaTypeUtil {
 
     MediaType priorityMediatype = null;
     for (MediaType mediaType : mediaTypesInRequest) {
-      if (allowedMediaTypes.contains(mediaType)) {
+      if (allowedMediaTypes.contains(mediaType) && (!mediaType.equals(MediaType.TEXT_HTML) || mediaTypesInRequest.size() == 1)) {
         priorityMediatype = mediaType;
         break;
       }

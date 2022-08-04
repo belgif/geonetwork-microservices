@@ -577,6 +577,9 @@ public class ItemApiController {
       try {
         var params = new HashMap<QName, XdmValue>();
         params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
+        if (bbox != null || q != null || externalids != null) {
+          params.put(new QName("isSubset"), XsltUtil.stringToParam("yes"));
+        }
         var dcatXml = XsltUtil.transformToString(queryResponse, xsltFile, params);
 
         dcatXml = addPaging(request, queryResponse, limit, startindex, dcatXml);
@@ -764,9 +767,13 @@ public class ItemApiController {
       mediaType = request.getHeader("Accept");
     }
 
-    if (StringUtils.isEmpty(mediaType) || mediaType.equals("*/*")) {
+    var mediaTypeList = MediaType.parseMediaTypes(mediaType);
+
+    if (StringUtils.isEmpty(mediaType) || mediaType.equals("*/*") || mediaTypeList.size() > 1) {
       if (request.getRequestURL().toString().contains("/items")) {
         mediaType = GnMediaType.APPLICATION_RDF_XML_VALUE;
+      } else if (mediaTypeList.contains(MediaType.TEXT_HTML)) {
+        mediaType = MediaType.TEXT_HTML_VALUE;
       } else {
         mediaType = MediaType.APPLICATION_JSON_VALUE;
       }
