@@ -9,7 +9,7 @@ spring:
     password: geonetwork
 
 gn:
-  baseurl: http://metadata-dev:9901
+  baseurl: http://metadata-dev
   language:
     default: eng
   legacy.url: http://metadata-dev/geonetwork
