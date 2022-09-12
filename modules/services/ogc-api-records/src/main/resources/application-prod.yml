@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${GN_JDBC_URL}
+    username: ${GN_DB_USERNAME}
+    password: ${GN_DB_PASSWORD}
+
+gn:
+  baseurl: ${GN_BASEURL}
+  language:
+    default: eng
+  legacy.url: ${GN_URL}
+  index:
+    url: ${ES_URL}
+    records: ${ES_INDEX:gn-records}
+    username: ${ES_USERNAME}
+    password: ${ES_PASSWORD}
