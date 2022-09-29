@@ -344,7 +344,7 @@ public class ItemApiController {
           Rio.write(model, turtleWriter, RDFFormat.TURTLE);
           streamResult(response, turtleWriter.toString(), GnMediaType.TEXT_TURTLE_VALUE);
         } else {
-          streamResult(response, dcatXml, MediaType.APPLICATION_XML_VALUE);
+          streamResult(response, dcatXml, GnMediaType.APPLICATION_RDF_XML_VALUE);
         }
       } else {
         streamResult(response,  record.toString(), GnMediaType.APPLICATION_JSON_LD_VALUE);
