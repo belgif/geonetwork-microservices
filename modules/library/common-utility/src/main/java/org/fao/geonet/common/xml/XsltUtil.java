@@ -8,6 +8,7 @@ package org.fao.geonet.common.xml;
 
 
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.List;
@@ -97,7 +98,13 @@ public class XsltUtil {
       public Source resolve(String href, String base) {
         try {
           if (href.startsWith("http://") || href.startsWith("https://")) {
-            return new StreamSource(new URL(href).openStream());
+            var url = new URL(href);
+            var statusCode = ((HttpURLConnection) url.openConnection()).getResponseCode();
+            if (statusCode >= 200 && statusCode <= 299) {
+              return new StreamSource(new URL(href).openStream());
+            } else {
+              return new StreamSource(new ByteArrayInputStream("<null/>".getBytes()));
+            }
           } else {
             String path = Paths.get(xsltFile.getPath()).getParent().resolve(href).toString();
             return new StreamSource(new ClassPathResource(path).getInputStream());
