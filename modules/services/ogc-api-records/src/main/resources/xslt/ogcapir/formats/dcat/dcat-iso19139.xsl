@@ -1050,11 +1050,11 @@
     </xsl:variable>
     <xsl:variable name="Address-vCard">
       <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address">
-        <xsl:variable name="deliveryPoint" select="normalize-space(gmd:deliveryPoint/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
-        <xsl:variable name="city" select="normalize-space(gmd:city/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
-        <xsl:variable name="administrativeArea" select="normalize-space(gmd:administrativeArea/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
-        <xsl:variable name="postalCode" select="normalize-space(gmd:postalCode/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
-        <xsl:variable name="country" select="normalize-space(gmd:country/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
+        <xsl:variable name="deliveryPoint" select="normalize-space((gmd:deliveryPoint/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
+        <xsl:variable name="city" select="normalize-space((gmd:city/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
+        <xsl:variable name="administrativeArea" select="normalize-space((gmd:administrativeArea/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
+        <xsl:variable name="postalCode" select="normalize-space((gmd:postalCode/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
+        <xsl:variable name="country" select="normalize-space((gmd:country/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
         <xsl:if test="$deliveryPoint != '' or $city != '' or $administrativeArea != '' or $postalCode != '' or $country != ''">
           <vcard:hasAddress>
             <vcard:Address>
@@ -1186,11 +1186,11 @@
     </xsl:variable>
     <xsl:variable name="Address-FOAF">
       <xsl:for-each select="gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address">
-        <xsl:variable name="deliveryPoint" select="normalize-space(gmd:deliveryPoint/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
-        <xsl:variable name="city" select="normalize-space(gmd:city/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
-        <xsl:variable name="administrativeArea" select="normalize-space(gmd:administrativeArea/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
-        <xsl:variable name="postalCode" select="normalize-space(gmd:postalCode/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
-        <xsl:variable name="country" select="normalize-space(gmd:country/*[name() = ('gco:CharacterString', gmx:Anchor)])"/>
+        <xsl:variable name="deliveryPoint" select="normalize-space((gmd:deliveryPoint/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
+        <xsl:variable name="city" select="normalize-space((gmd:city/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
+        <xsl:variable name="administrativeArea" select="normalize-space((gmd:administrativeArea/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
+        <xsl:variable name="postalCode" select="normalize-space((gmd:postalCode/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
+        <xsl:variable name="country" select="normalize-space((gmd:country/*[name() = ('gco:CharacterString', gmx:Anchor)])[1])"/>
         <xsl:if test="$deliveryPoint != '' or $city != '' or $administrativeArea != '' or $postalCode != '' or $country != ''">
           <locn:address>
             <locn:Address>
