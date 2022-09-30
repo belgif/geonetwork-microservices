@@ -67,6 +67,7 @@ import org.jdom.Namespace;
 import org.jdom.output.XMLOutputter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.io.ClassPathResource;
@@ -114,6 +115,9 @@ public class ItemApiController {
   MediaTypeUtil mediaTypeUtil;
   @Autowired
   DcatConverter dcatConverter;
+
+  @Value("${dcat.baseurl:#{null}}")
+  private String dcatBaseURL;
 
   /**
    * Describe a collection item.
@@ -317,7 +321,11 @@ public class ItemApiController {
         if (xsltFile.exists()) {
           Node metadataXml = getRecordAsXml(collectionId, recordId, request, source);
           var params = new HashMap<QName, XdmValue>();
-          params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
+          if (StringUtils.isNotEmpty(this.dcatBaseURL)) {
+            params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(this.dcatBaseURL));
+          } else {
+            params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
+          }
           params.put(new QName("isSubset"), XsltUtil.stringToParam("yes"));
           dcatXml = XsltUtil.transformToString(XmlUtil.getNodeString(metadataXml), xsltFile, params);
         } else {
@@ -577,7 +585,11 @@ public class ItemApiController {
       ClassPathResource xsltFile = new ClassPathResource("xslt/ogcapir/formats/dcat/dcat-iso19139.xsl");
       try {
         var params = new HashMap<QName, XdmValue>();
-        params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
+        if (StringUtils.isNotEmpty(this.dcatBaseURL)) {
+          params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(this.dcatBaseURL));
+        } else {
+          params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
+        }
         if (bbox != null || q != null || externalids != null) {
           params.put(new QName("isSubset"), XsltUtil.stringToParam("yes"));
         }
