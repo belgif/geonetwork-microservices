@@ -321,11 +321,11 @@ public class ItemApiController {
         if (xsltFile.exists()) {
           Node metadataXml = getRecordAsXml(collectionId, recordId, request, source);
           var params = new HashMap<QName, XdmValue>();
-          if (StringUtils.isNotEmpty(this.dcatBaseURL)) {
-            params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(this.dcatBaseURL));
-          } else {
-            params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
-          }
+          params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(
+              StringUtils.isNotEmpty(this.dcatBaseURL) ?
+                  this.dcatBaseURL
+                  : request.getRequestURL().toString().split("/collections/")[0])
+          );
           params.put(new QName("isSubset"), XsltUtil.stringToParam("yes"));
           dcatXml = XsltUtil.transformToString(XmlUtil.getNodeString(metadataXml), xsltFile, params);
         } else {
@@ -585,11 +585,11 @@ public class ItemApiController {
       ClassPathResource xsltFile = new ClassPathResource("xslt/ogcapir/formats/dcat/dcat-iso19139.xsl");
       try {
         var params = new HashMap<QName, XdmValue>();
-        if (StringUtils.isNotEmpty(this.dcatBaseURL)) {
-          params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(this.dcatBaseURL));
-        } else {
-          params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(request.getRequestURL().toString().split("/collections/")[0]));
-        }
+        params.put(new QName("OgcAPIUrl"), XsltUtil.stringToParam(
+            StringUtils.isNotEmpty(this.dcatBaseURL) ?
+                this.dcatBaseURL
+                : request.getRequestURL().toString().split("/collections/")[0])
+        );
         if (bbox != null || q != null || externalids != null) {
           params.put(new QName("isSubset"), XsltUtil.stringToParam("yes"));
         }
@@ -627,9 +627,14 @@ public class ItemApiController {
     total = total.substring(0, total.indexOf("\""));
     var totalInt = Integer.parseInt(total);
     var parameters = request.getParameterMap();
-    StringBuilder baseUrlBuilder = new StringBuilder(request.getRequestURL().toString() + "?");
-    for (var param: parameters.entrySet()) {
-      if (!"limit".equalsIgnoreCase(param.getKey()) && !"startindex".equalsIgnoreCase(param.getKey())) {
+    var requestUrl = request.getRequestURL().toString();
+    StringBuilder baseUrlBuilder = StringUtils.isNotEmpty(this.dcatBaseURL) ?
+        new StringBuilder(this.dcatBaseURL + "/collections/" + requestUrl.split("/collections/")[1]) :
+        new StringBuilder(requestUrl);
+    baseUrlBuilder.append("?");
+    for (var param : parameters.entrySet()) {
+      if (!"limit".equalsIgnoreCase(param.getKey()) && !"startindex".equalsIgnoreCase(
+          param.getKey())) {
         baseUrlBuilder.append(param.getKey())
             .append("=")
             .append(String.join(",", param.getValue()))
